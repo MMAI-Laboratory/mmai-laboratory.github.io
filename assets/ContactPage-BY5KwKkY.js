@@ -1,4 +1,4 @@
-import{j as e,a,h as c,M as o}from"./index-DYhT9JJt.js";function r(){const t="jongbinryu@ajou.ac.kr",l=encodeURIComponent("MMAI Lab Inquiry"),i=encodeURIComponent(`Hello MMAI Lab,
+import{j as e,a,h as c,M as o}from"./index-Ce0ac4zz.js";function r(){const t="jongbinryu@ajou.ac.kr",l=encodeURIComponent("MMAI Lab Inquiry"),i=encodeURIComponent(`Hello MMAI Lab,
 
 I would like to ask about...
 
