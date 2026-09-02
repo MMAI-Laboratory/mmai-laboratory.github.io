@@ -144,7 +144,7 @@ type: notice
 title: Efficient Vision-Learning Model 세미나 공유
 summary: 연구실 내부 세미나에서 최신 실험 결과와 재현 전략을 공유했습니다.
 date: 2026-03-16
-related_person: CVL-Lab Seminar Team
+related_person: MMAI Lab Seminar Team
 venue: Ajou University
 external_url: ""
 is_external: false

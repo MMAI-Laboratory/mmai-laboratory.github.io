@@ -1,6 +1,6 @@
-# CVL-Lab 운영 문서
+# MMAI Lab 운영 문서
 
-이 폴더는 CVL-Lab 홈페이지를 꾸준히 운영하기 위한 문서 모음입니다. 화면 코드를 고치지 않고도 Research, News, Publication, Photo, People 정보를 안전하게 갱신하는 것을 목표로 합니다.
+이 폴더는 MMAI Lab 홈페이지를 꾸준히 운영하기 위한 문서 모음입니다. 화면 코드를 고치지 않고도 Research, News, Publication, Photo, People 정보를 안전하게 갱신하는 것을 목표로 합니다.
 
 ## 먼저 볼 것
 

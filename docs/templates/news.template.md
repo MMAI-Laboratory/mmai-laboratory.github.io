@@ -4,7 +4,7 @@ type: notice
 title: 예시 News 제목
 summary: Home + News archive 목록에 표시될 한 줄 요약.
 date: 2026-03-16
-related_person: CVL-Lab
+related_person: MMAI Lab
 venue: Ajou University
 external_url: ""
 is_external: false

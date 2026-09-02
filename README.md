@@ -1,6 +1,6 @@
-# CVL-Lab 홈페이지
+# MMAI Lab 홈페이지
 
-아주대학교 CVL-Lab 홈페이지입니다. React와 Vite로 만든 정적 사이트이며, GitHub Pages에 배포됩니다.
+아주대학교 MMAI Lab 홈페이지입니다. React와 Vite로 만든 정적 사이트이며, GitHub Pages에 배포됩니다.
 
 이 저장소에서 하는 일은 대략 이렇게 나뉩니다.
 
@@ -139,7 +139,7 @@ GitHub Pages는 새로고침하거나 직접 URL로 들어왔을 때 SPA 라우�
 
 문서에서는 딱딱한 번역투를 피하고, 아래 표현을 우선 사용합니다.
 
-- `사이트`: CVL-Lab 홈페이지 전체
+- `사이트`: MMAI Lab 홈페이지 전체
 - `앱`: 브라우저에서 동작하는 React 화면
 - `콘텐츠`: News, Publication, Photo, People처럼 운영자가 추가/수정하는 원본
 - `배포`: GitHub Pages에 반영하는 과정

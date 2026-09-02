@@ -441,7 +441,7 @@ brew install imagemagick
     git push origin main
     ```
 
-7. GitHub Actions에서 `Content Build Check`와 `Deploy GitHub Pages`가 모두 성공했는지 확인한 뒤, `https://cvl-lab.github.io/people/`에서 배포 결과를 확인합니다.
+7. GitHub Actions에서 `Content Build Check`와 `Deploy GitHub Pages`가 모두 성공했는지 확인한 뒤, `https://mmai-laboratory.github.io/people/`에서 배포 결과를 확인합니다.
 
 ### 9-2. GitHub 웹에서 바로 수정
 
