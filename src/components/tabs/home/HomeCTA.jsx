@@ -1,26 +1,14 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faArrowRight,
-    faEnvelope,
-    faUser,
-    faUserGraduate,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import MailIcon from "../../icons/MailIcon";
+import "../Contact.css";
 
-const PRIMARY_CONTACTS = [
-    {
-        id: "professor",
-        role: "Professor",
-        email: "jongbinryu@ajou.ac.kr",
-        icon: faUser,
-    },
-    {
-        id: "student-representative",
-        role: "Student Representative",
-        email: "kimsungeun@ajou.ac.kr",
-        icon: faUserGraduate,
-    },
-];
+const EMAIL_ADDRESS = "jongbinryu@ajou.ac.kr";
+const MAIL_SUBJECT = encodeURIComponent("MMAI Lab Inquiry");
+const MAIL_BODY = encodeURIComponent(
+    "Hello MMAI Lab,\n\nI would like to ask about...\n\nName:\nAffiliation:\n",
+);
 
 export default function HomeCTA() {
     return (
@@ -44,33 +32,59 @@ export default function HomeCTA() {
                 </p>
             </div>
             <div className="home-cta__actions">
-                <div
-                    className="home-cta__contacts"
-                    aria-label="Primary contacts">
-                    {PRIMARY_CONTACTS.map((contactItem) => (
-                        <article
-                            key={contactItem.id}
-                            className="home-cta__contact-card">
-                            <p className="home-cta__contact-role">
-                                <span
-                                    className="home-cta__contact-icon"
-                                    aria-hidden="true">
-                                    <FontAwesomeIcon icon={contactItem.icon} />
-                                </span>
-                                <span>{contactItem.role}</span>
-                            </p>
+                <div className="contact__details">
+                    <section
+                        data-reveal
+                        data-reveal-load-delay="300"
+                        className="contact__panel contact__panel--address">
+                        <p className="contact__panel-label">Address</p>
+                        <p className="contact__panel-title">
+                            Department of Artificial Intelligence, Ajou
+                            University
+                        </p>
+                        <address className="contact__address-text">
+                            Padal Hall, Room 624,
+                            <br />
+                            Department of Artificial Intelligence, Ajou
+                            University,
+                            <br />
+                            206 World cup-ro, Yeongtong-gu,
+                            <br />
+                            Suwon 16499, Korea
+                        </address>
+                    </section>
+
+                    <article
+                        data-reveal
+                        data-reveal-load-delay="340"
+                        className="contact__panel contact__panel--email">
+                        <p className="contact__panel-label">Email</p>
+                        <p className="contact__panel-title">
+                            General inquiries
+                        </p>
+                        <a
+                            className="contact__email-link btn btn--tertiary animated-underline"
+                            href={`mailto:${EMAIL_ADDRESS}`}>
+                            {EMAIL_ADDRESS}
+                        </a>
+                        <p className="contact__email-note">
+                            For collaboration, admissions, and project
+                            inquiries, please include your affiliation and
+                            topic.
+                        </p>
+                        <div className="contact__email-cta">
                             <a
-                                className="home-cta__contact-email"
-                                href={`mailto:${contactItem.email}`}>
-                                <span
-                                    className="home-cta__contact-icon"
-                                    aria-hidden="true">
-                                    <FontAwesomeIcon icon={faEnvelope} />
+                                className="contact__email-button btn btn--primary interactive-button lift-on-hover"
+                                href={`mailto:${EMAIL_ADDRESS}?subject=${MAIL_SUBJECT}&body=${MAIL_BODY}`}>
+                                <span className="contact__email-text">
+                                    Contact us
                                 </span>
-                                <span>{contactItem.email}</span>
+                                <span className="contact__email-icon">
+                                    <MailIcon className="icon-mail" />
+                                </span>
                             </a>
-                        </article>
-                    ))}
+                        </div>
+                    </article>
                 </div>
                 <Link
                     to="/contact"

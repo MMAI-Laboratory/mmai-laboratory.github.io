@@ -16,6 +16,11 @@ import TRAIN_OVERCOMPLETE_FIGURE_1 from "./figures/train-overcomplete-figure-1.w
 import LAYER_WISE_CURRICULUM_FIGURE_1 from "./figures/layer-wise-curriculum-figure-1.webp";
 import COLLA_Q_FIGURE_1 from "./figures/colla-q-figure-1.webp";
 import RECALIBRATED_CONTRASTIVE_FIGURE_1 from "./figures/recalibrated-contrastive-figure-1.webp";
+import PNEUMOTHORAX_CONTRAST_FIGURE_2 from "./figures/pneumothorax-contrast-figure-2.webp";
+import OMNIMVS_UNCERTAINTY_FIGURE_1 from "./figures/omnimvs-uncertainty-figure-1.webp";
+import DUAL_AGGREGATED_FPN_FIGURE_1 from "./figures/dual-aggregated-fpn-figure-1.webp";
+import SELF_TUNING_FIGURE_1 from "./figures/self-tuning-figure-1.webp";
+import INTUSSUSCEPTION_FIGURE_3 from "./figures/intussusception-figure-3.webp";
 
 const PUBLICATION_FIGURES = {
     "biomedical-bapub4-style-kd-class-imbalanced-medical-image": {
@@ -135,6 +140,40 @@ const PUBLICATION_FIGURES = {
         figureLabel: "Figure 1",
         alt: "Figure 1 illustrating learnable text prompts and an augmented contrastive space built from image and text encoders over transformed image-text pairs, with adaptive re-calibration reweighting the contrastive loss targets.",
         sourceUrl: "",
+    },
+    "biomedical-2023-contrast-level-pneumothorax-detection": {
+        image: PNEUMOTHORAX_CONTRAST_FIGURE_2,
+        figureLabel: "Figure 2",
+        alt: "Figure 2 showing the study pipeline: a DICOM input image is contrast-converted by setting window width and level, optionally converted to JPEG, then classified by a ResNet-50 backbone into pneumothorax or normal.",
+        sourceUrl:
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10287877/figure/Fig2/",
+    },
+    "core-2021-omnidirectional-stereo-matching": {
+        image: OMNIMVS_UNCERTAINTY_FIGURE_1,
+        figureLabel: "Example results",
+        alt: "Example results showing four wide-angle fisheye camera inputs on the left and, on the right, the reconstructed panorama with its estimated inverse depth map and uncertainty map.",
+        sourceUrl: "https://github.com/hyu-cvlab/omnimvs-pytorch",
+    },
+    "core-2021-dual-aggregated-feature-pyramid-network": {
+        image: DUAL_AGGREGATED_FPN_FIGURE_1,
+        figureLabel: "Figure 1",
+        alt: "Figure 1 illustrating the dual aggregation design: multi-scale activation maps are down-channeled and combined in a dense aggregation layer for feature level aggregation, then passed to class-wise classifiers whose positive scores are aggregated at the classifier level.",
+        sourceUrl:
+            "https://ars.els-cdn.com/content/image/1-s2.0-S016786552100026X-gr1_lrg.jpg",
+    },
+    "core-2021-unsupervised-feature-learning-self-tuning": {
+        image: SELF_TUNING_FIGURE_1,
+        figureLabel: "Figure 1",
+        alt: "Figure 1 showing the self-tuning pipeline: a mini-batch with an anchor is encoded by a convolutional network, grouped by bagged clustering, ranked by clustering and distance to reveal violations, and used to form triplets.",
+        sourceUrl:
+            "https://ars.els-cdn.com/content/image/1-s2.0-S089360802030366X-gr1_lrg.jpg",
+    },
+    "biomedical-2020-intussusception-detection-radiography": {
+        image: INTUSSUSCEPTION_FIGURE_3,
+        figureLabel: "Figure 3",
+        alt: "Figure 3 showing pairs of paediatric abdominal radiographs and their class activation maps, where the heatmap overlay highlights the region the model used to detect intussusception.",
+        sourceUrl:
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7567788/figure/Fig3/",
     },
 };
 

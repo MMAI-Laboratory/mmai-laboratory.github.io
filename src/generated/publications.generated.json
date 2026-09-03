@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.1",
-    "generated_at": "2026-08-28T06:56:23.455Z",
+    "generated_at": "2026-09-03T08:12:44.520Z",
     "source": "content/publications",
     "categories": [
       "computer_vision_and_learning_algorithms",
@@ -548,6 +548,156 @@
         "project_link": "https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/html/Park_Robust_Asymmetric_Loss_for_Multi-Label_Long-Tailed_Learning_ICCVW_2023_paper.html",
         "source_code_link": "https://github.com/kalelpark/RAL",
         "paper_link": "https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/html/Park_Robust_Asymmetric_Loss_for_Multi-Label_Long-Tailed_Learning_ICCVW_2023_paper.html"
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
+      "id": "biomedical-2023-contrast-level-pneumothorax-detection",
+      "key": "biomedical-2023-contrast-level-pneumothorax-detection",
+      "category": "industrial_and_medical_ai",
+      "status": "published",
+      "title": "Effect of Contrast Level and Image Format on a Deep Learning Algorithm for the Detection of Pneumothorax with Chest Radiography",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Myeong Seong Yoon, Gitaek Kwon, Jaehoon Oh*, Jongbin Ryu*, Jongwoo Lim, Bo-kyeong Kang, Juncheol Lee, Dong-Kyoon Han (*corresponding author)",
+        "published_place": "Journal of Digital Imaging",
+        "published_date": "2023-01-25",
+        "keywords": [
+          "Chest Radiography",
+          "Pneumothorax Detection",
+          "Medical Image Analysis"
+        ],
+        "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10287877/pdf/10278_2022_Article_772.pdf",
+        "arxiv_link": "",
+        "github_link": "",
+        "project_link": "https://link.springer.com/article/10.1007/s10278-022-00772-y",
+        "source_code_link": "",
+        "paper_link": "https://link.springer.com/article/10.1007/s10278-022-00772-y"
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
+      "id": "core-2021-dual-aggregated-feature-pyramid-network",
+      "key": "core-2021-dual-aggregated-feature-pyramid-network",
+      "category": "computer_vision_and_learning_algorithms",
+      "status": "published",
+      "title": "Dual Aggregated Feature Pyramid Network for Multi Label Classification",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Dongjoo Yun, Jongbin Ryu*, Jongwoo Lim (*corresponding author)",
+        "published_place": "Pattern Recognition Letters",
+        "published_date": "2021-01-01",
+        "keywords": [
+          "Feature Pyramid Network",
+          "Multi-Label Classification",
+          "Feature Aggregation"
+        ],
+        "pdf_link": "",
+        "arxiv_link": "",
+        "github_link": "",
+        "project_link": "https://www.sciencedirect.com/science/article/abs/pii/S016786552100026X",
+        "source_code_link": "",
+        "paper_link": "https://www.sciencedirect.com/science/article/abs/pii/S016786552100026X"
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
+      "id": "core-2021-omnidirectional-stereo-matching",
+      "key": "core-2021-omnidirectional-stereo-matching",
+      "category": "computer_vision_and_learning_algorithms",
+      "status": "published",
+      "title": "End-to-End Learning for Omnidirectional Stereo Matching with Uncertainty Prior",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Changhee Won, Jongbin Ryu, Jongwoo Lim",
+        "published_place": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+        "published_date": "2021-01-01",
+        "keywords": [
+          "Omnidirectional Stereo",
+          "Depth Estimation",
+          "Uncertainty Estimation"
+        ],
+        "pdf_link": "",
+        "arxiv_link": "",
+        "github_link": "https://github.com/hyu-cvlab/omnimvs-pytorch",
+        "project_link": "https://ieeexplore.ieee.org/document/9086445",
+        "source_code_link": "https://github.com/hyu-cvlab/omnimvs-pytorch",
+        "paper_link": "https://ieeexplore.ieee.org/document/9086445"
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
+      "id": "core-2021-unsupervised-feature-learning-self-tuning",
+      "key": "core-2021-unsupervised-feature-learning-self-tuning",
+      "category": "computer_vision_and_learning_algorithms",
+      "status": "published",
+      "title": "Unsupervised Feature Learning for Self-Tuning Neural Networks",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Jongbin Ryu, Ming-Hsuan Yang, Jongwoo Lim",
+        "published_place": "Neural Networks",
+        "published_date": "2021-01-01",
+        "keywords": [
+          "Unsupervised Feature Learning",
+          "Self-Tuning Networks",
+          "Representation Learning"
+        ],
+        "pdf_link": "https://faculty.ucmerced.edu/mhyang/papers/neural_networks2021.pdf",
+        "arxiv_link": "",
+        "github_link": "",
+        "project_link": "https://www.sciencedirect.com/science/article/abs/pii/S089360802030366X",
+        "source_code_link": "",
+        "paper_link": "https://www.sciencedirect.com/science/article/abs/pii/S089360802030366X"
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
+      "id": "biomedical-2020-intussusception-detection-radiography",
+      "key": "biomedical-2020-intussusception-detection-radiography",
+      "category": "industrial_and_medical_ai",
+      "status": "published",
+      "title": "Deep Learning Algorithms for Detecting and Visualising Intussusception on Plain Abdominal Radiography in Children: A Retrospective Multicenter Study",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Gitaek Kwon*, Jongbin Ryu*, Jaehoon Oh, Jongwoo Lim, Bo-kyeong Kang, Chiwon Ahn, Junwon Bae, Dong Keon Lee (*co-first author)",
+        "published_place": "Scientific Reports",
+        "published_date": "2020-01-01",
+        "keywords": [
+          "Abdominal Radiography",
+          "Intussusception Detection",
+          "Visual Explanation"
+        ],
+        "pdf_link": "https://www.nature.com/articles/s41598-020-74653-1.pdf",
+        "arxiv_link": "",
+        "github_link": "",
+        "project_link": "https://www.nature.com/articles/s41598-020-74653-1",
+        "source_code_link": "",
+        "paper_link": "https://www.nature.com/articles/s41598-020-74653-1"
       },
       "content": {
         "problem": "",

@@ -170,10 +170,6 @@ export default function Nav() {
             label: "Photo",
         },
         {
-            key: "contact",
-            label: "Contact",
-        },
-        {
             key: "deadlines",
             label: "Conference",
         },

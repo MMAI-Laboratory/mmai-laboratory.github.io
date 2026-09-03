@@ -42,11 +42,13 @@
 .home-introduction h1 {
     margin: 0;
     max-width: none;
-    font-size: clamp(1.15rem, 4.4vw, 2.5rem);
+    font-size: clamp(1.75rem, 4.4vw, 2.5rem);
     font-weight: var(--type-h1-weight);
     line-height: var(--display-title-line-height);
     color: var(--text-primary);
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-wrap: balance;
 }
 
 .home-introduction__head p {
@@ -187,9 +189,9 @@
 
     .home-introduction h1 {
         max-width: none;
-        font-size: clamp(1.35rem, 6.6vw, var(--display-title-size));
+        font-size: clamp(1.5rem, 6.6vw, var(--display-title-size));
         line-height: var(--display-title-line-height);
-        white-space: nowrap;
+        white-space: normal;
     }
 
     .home-introduction__media {

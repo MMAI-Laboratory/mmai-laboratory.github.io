@@ -74,6 +74,9 @@
     --home-block-tint: var(--tab-contact-tint);
     --home-block-border: var(--tab-contact-border);
     --home-block-accent: var(--tab-contact-accent);
+    --tab-identity-tint: var(--tab-contact-tint);
+    --tab-identity-border: var(--tab-contact-border);
+    --tab-identity-accent: var(--tab-contact-accent);
 }
 
 .home-block__head {
@@ -733,58 +736,6 @@
         color-mix(in srgb, var(--tab-contact-border) 72%, transparent);
 }
 
-.home-cta__contacts {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--grid-gap);
-}
-
-.home-cta__contact-card {
-    min-height: 5.2rem;
-    padding: var(--panel-pad-sm);
-    border: 1px solid
-        color-mix(in srgb, var(--tab-contact-border) 82%, transparent);
-    border-radius: var(--radius-md);
-    background: color-mix(in srgb, var(--tab-contact-tint) 50%, var(--surface));
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: var(--space-1);
-}
-
-.home-cta__contact-role {
-    margin: 0;
-    color: var(--text-primary);
-    font-size: var(--type-support-size);
-    font-weight: 700;
-    line-height: var(--type-support-line-height);
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-1);
-}
-
-.home-cta__contact-email {
-    color: var(--link);
-    text-decoration: none;
-    font-size: var(--type-support-size);
-    font-weight: var(--type-support-weight);
-    line-height: var(--type-support-line-height);
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-1);
-    width: fit-content;
-}
-
-.home-cta__contact-icon {
-    width: 0.9rem;
-    min-width: 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--tab-contact-accent, var(--text-primary));
-}
-
 .home-cta__info-btn {
     min-width: 8.4rem;
     width: fit-content;
@@ -932,10 +883,6 @@
         align-items: stretch;
     }
 
-    .home-cta__contacts {
-        grid-template-columns: 1fr;
-    }
-
     .home-block__section-footer {
         margin-top: var(--section-head-bottom);
         padding-top: var(--section-head-bottom);
@@ -1007,9 +954,5 @@
 
     .home-cta__info-btn--primary:hover {
         color: var(--tab-contact-accent, var(--text-primary));
-    }
-
-    .home-cta__contact-email:hover {
-        color: var(--link-hover);
     }
 }

@@ -72,10 +72,10 @@ function Contact() {
             className="contact__panel contact__panel--address"
           >
             <p className="contact__panel-label">Address</p>
-            <p className="contact__panel-title">Department of Computer Science, Ajou University</p>
+            <p className="contact__panel-title">Department of Artificial Intelligence, Ajou University</p>
             <address className="contact__address-text">
               Padal Hall, Room 624,<br />
-              Department of Computer Science, Ajou University,<br />
+              Department of Artificial Intelligence, Ajou University,<br />
               206 World cup-ro, Yeongtong-gu,<br />
               Suwon 16499, Korea
             </address>
