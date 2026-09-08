@@ -178,6 +178,175 @@ const createAutoPublicationNewsItem = (publicationItem) => {
     };
 };
 
+const COUNT_WORDS = [
+    "",
+    "A",
+    "Two",
+    "Three",
+    "Four",
+    "Five",
+    "Six",
+    "Seven",
+    "Eight",
+    "Nine",
+    "Ten",
+];
+
+const YEAR_PATTERN = /\b(?:19|20)\d{2}\b/;
+
+const stripAcronym = (value) =>
+    normalizeText(value)
+        .replace(/\s*\([^()]*\)\s*$/, "")
+        .trim();
+
+// Journals are spelled out in full and carry no year, so they must be told
+// apart from conferences. A parenthesised acronym is not a reliable signal
+// (both "Medical Image Analysis (MedIA)" and TPAMI are journals), so list the
+// venues the lab publishes in and fall back to journal-style naming cues.
+const JOURNAL_VENUES = new Set([
+    "applied energy",
+    "medical image analysis",
+    "biomedical signal processing and control",
+    "expert systems with applications",
+    "computer methods and programs in biomedicine",
+    "computers in biology and medicine",
+    "neural networks",
+]);
+
+const JOURNAL_NAME_PATTERN =
+    /\b(?:journal|transactions|letters|reports|annals|bulletin)\b/i;
+
+const isJournalVenue = (raw) =>
+    JOURNAL_VENUES.has(stripAcronym(raw).toLowerCase()) ||
+    JOURNAL_NAME_PATTERN.test(raw);
+
+// Conference headlines use the short form ("CVPR 2025"): prefer a trailing
+// parenthesised acronym and append the publication year unless the venue
+// already carries one. Journals keep their full name and no year.
+const formatVenueLabel = (venue, date) => {
+    const raw = normalizeText(venue);
+    if (!raw) {
+        return "";
+    }
+
+    if (isJournalVenue(raw)) {
+        return stripAcronym(raw);
+    }
+
+    const acronymMatch = raw.match(/\(([^()]+)\)\s*$/);
+    const label = acronymMatch ? acronymMatch[1].trim() : raw;
+
+    if (YEAR_PATTERN.test(label)) {
+        return label;
+    }
+
+    const year = toYear(date);
+    return year ? `${label} ${year}` : label;
+};
+
+const formatPaperAcceptedTitle = (count, venue, date) => {
+    const countWord = COUNT_WORDS[count] ?? String(count);
+    const noun = count === 1 ? "paper" : "papers";
+    const verb = count === 1 ? "has" : "have";
+    return `${countWord} ${noun} ${verb} been accepted at ${formatVenueLabel(venue, date)}`;
+};
+
+const splitAuthors = (value) =>
+    normalizeText(value)
+        .split(",")
+        .map((name) => name.trim())
+        .filter(Boolean);
+
+// Presents accepted papers as "A paper has been accepted at <venue>" (or
+// "Three papers have been accepted at <venue>" when a venue accepted several
+// on the same date), moving the paper titles into the summary and keeping the
+// authors on the trailing line.
+const formatPaperAcceptedItems = (items) => {
+    const groups = new Map();
+    const result = [];
+
+    items.forEach((item) => {
+        if (
+            item.type !== PAPER_ACCEPTED_TYPE ||
+            item.generated_from !== AUTO_PUBLICATION_SOURCE ||
+            !normalizeText(item.venue)
+        ) {
+            // Manual entries keep their authored copy; only retitle the ones
+            // that carry a venue so the wording stays consistent.
+            if (
+                item.type === PAPER_ACCEPTED_TYPE &&
+                normalizeText(item.venue)
+            ) {
+                result.push({
+                    ...item,
+                    title: formatPaperAcceptedTitle(1, item.venue, item.date),
+                });
+                return;
+            }
+            result.push(item);
+            return;
+        }
+
+        const key = `${item.date}||${item.venue}`;
+        if (!groups.has(key)) {
+            const bucket = { key, members: [], index: result.length };
+            groups.set(key, bucket);
+            result.push(bucket);
+        }
+        groups.get(key).members.push(item);
+    });
+
+    return result.map((entry) => {
+        if (!entry || !Array.isArray(entry.members)) {
+            return entry;
+        }
+
+        const members = entry.members;
+        const first = members[0];
+
+        if (members.length === 1) {
+            return {
+                ...first,
+                title: formatPaperAcceptedTitle(1, first.venue, first.date),
+                summary: first.publication_title || first.title,
+            };
+        }
+
+        const titles = members
+            .map((member) => member.publication_title || member.title)
+            .filter(Boolean);
+        const authors = [];
+        members.forEach((member) => {
+            splitAuthors(member.related_person).forEach((name) => {
+                if (!authors.includes(name)) {
+                    authors.push(name);
+                }
+            });
+        });
+
+        return {
+            ...first,
+            id: `publication-group-${normalizeSlug(`${first.venue}-${first.date}`)}`,
+            title: formatPaperAcceptedTitle(
+                members.length,
+                first.venue,
+                first.date,
+            ),
+            summary: titles.join("\n"),
+            related_person: authors.join(", "),
+            internal_slug: normalizeSlug(
+                `publication-group-${first.venue}-${first.date}`,
+            ),
+            publication_id: "",
+            publication_title: "",
+            publication_query: first.venue,
+            grouped_publication_ids: members.map((member) =>
+                normalizeText(member.publication_id),
+            ),
+        };
+    });
+};
+
 const mergePublicationNewsItems = (manualItems, publicationItems) => {
     const mergedItems = [...manualItems];
     const seenIds = new Set(manualItems.map((item) => item.id));
@@ -259,17 +428,16 @@ export const syncNewsContent = async ({
         ? publicationItems
         : await syncPublicationContent({ validateOnly: true });
 
-    const mergedItems = mergePublicationNewsItems(
-        items,
-        resolvedPublicationItems,
+    const mergedItems = formatPaperAcceptedItems(
+        mergePublicationNewsItems(items, resolvedPublicationItems).sort(
+            (a, b) => {
+                if (a.date === b.date) {
+                    return a.id.localeCompare(b.id);
+                }
+                return b.date.localeCompare(a.date);
+            },
+        ),
     );
-
-    mergedItems.sort((a, b) => {
-        if (a.date === b.date) {
-            return a.id.localeCompare(b.id);
-        }
-        return b.date.localeCompare(a.date);
-    });
 
     if (validateOnly) {
         console.log(`[news] validated ${mergedItems.length} entries`);

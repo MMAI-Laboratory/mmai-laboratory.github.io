@@ -214,6 +214,8 @@
 
 .news-page__summary {
     margin: 0;
+    /* Grouped paper-accepted items join their titles with newlines. */
+    white-space: pre-line;
     color: var(--text-secondary);
     font-size: var(--type-body-size);
     font-weight: var(--type-body-weight);

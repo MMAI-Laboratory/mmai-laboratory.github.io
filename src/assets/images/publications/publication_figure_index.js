@@ -21,6 +21,8 @@ import OMNIMVS_UNCERTAINTY_FIGURE_1 from "./figures/omnimvs-uncertainty-figure-1
 import DUAL_AGGREGATED_FPN_FIGURE_1 from "./figures/dual-aggregated-fpn-figure-1.webp";
 import SELF_TUNING_FIGURE_1 from "./figures/self-tuning-figure-1.webp";
 import INTUSSUSCEPTION_FIGURE_3 from "./figures/intussusception-figure-3.webp";
+import FLOWVLA_FIGURE_1 from "./figures/flowvla-figure-1.webp";
+import ONE_CYCLE_BATTERY_RUL_FIGURE_1 from "./figures/one-cycle-battery-rul-figure-1.webp";
 
 const PUBLICATION_FIGURES = {
     "biomedical-bapub4-style-kd-class-imbalanced-medical-image": {
@@ -167,6 +169,18 @@ const PUBLICATION_FIGURES = {
         alt: "Figure 1 showing the self-tuning pipeline: a mini-batch with an anchor is encoded by a convolutional network, grouped by bagged clustering, ranked by clustering and distance to reveal violations, and used to form triplets.",
         sourceUrl:
             "https://ars.els-cdn.com/content/image/1-s2.0-S089360802030366X-gr1_lrg.jpg",
+    },
+    "robot-2026-flowvla-pluggable-3d-flow-learning": {
+        image: FLOWVLA_FIGURE_1,
+        figureLabel: "Figure 1",
+        alt: "Figure 1 showing FlowVLA: multimodal RGB, language, and proprioception inputs feed a VLA transformer backbone that decodes actions, with training-only dual-level supervision from reference-anchored 3D point trajectories at point and TCP flow levels.",
+        sourceUrl: "",
+    },
+    "biomedical-2026-one-cycle-battery-rul-prediction": {
+        image: ONE_CYCLE_BATTERY_RUL_FIGURE_1,
+        figureLabel: "Figure 1",
+        alt: "Figure 1 showing the pipeline: charge and discharge curves from a single cycle are transformed by a continuous wavelet transform, compressed across scales to remove redundancy, and fed to a deep neural network that predicts the remaining useful life capacity curve.",
+        sourceUrl: "",
     },
     "biomedical-2020-intussusception-detection-radiography": {
         image: INTUSSUSCEPTION_FIGURE_3,

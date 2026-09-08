@@ -200,16 +200,11 @@
                         "linkedin": "https://www.linkedin.com/in/edg1113",
                         "google_scholar": null
                     }
-                }
-            }
-        },
-        "master": {
-            "title": "M.S",
-            "entries": {
+                },
                 "eunju_shin": {
-                    "order": 0,
+                    "order": 8,
                     "name": "Eunju Shin",
-                    "position": "M.S Student",
+                    "position": "Ph.D Student",
                     "email": "eunjushin@ajou.ac.kr",
                     "homepage": null,
                     "research_interests": [
@@ -222,9 +217,14 @@
                         "linkedin": null,
                         "google_scholar": null
                     }
-                },
+                }
+            }
+        },
+        "master": {
+            "title": "M.S",
+            "entries": {
                 "duyeon_na": {
-                    "order": 1,
+                    "order": 0,
                     "name": "Duyeon Na",
                     "position": "M.S Student",
                     "email": "dooyeonna@ajou.ac.kr",
@@ -243,7 +243,7 @@
                     }
                 },
                 "mingyu_jeong": {
-                    "order": 2,
+                    "order": 1,
                     "name": "Mingyu Jeong",
                     "position": "M.S Student",
                     "email": "mingyujung0730@ajou.ac.kr",
@@ -260,7 +260,7 @@
                     }
                 },
                 "chaeyun_eom": {
-                    "order": 3,
+                    "order": 2,
                     "name": "Chaeyun Eom",
                     "position": "M.S Student",
                     "email": "chaeyuneom@ajou.ac.kr",
@@ -278,7 +278,7 @@
                     }
                 },
                 "minjae_kim": {
-                    "order": 4,
+                    "order": 3,
                     "name": "Minjae Kim",
                     "position": "M.S Student",
                     "email": "minjae.kim@ajou.ac.kr",
@@ -292,7 +292,7 @@
                     }
                 },
                 "byungjee_hwang": {
-                    "order": 5,
+                    "order": 4,
                     "name": "Byungjee Hwang",
                     "position": "M.S Student",
                     "email": "byungjeehwang@ajou.ac.kr",

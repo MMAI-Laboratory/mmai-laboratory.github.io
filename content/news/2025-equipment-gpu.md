@@ -2,7 +2,7 @@
 id: 2025-equipment-gpu
 type: equipment
 title: "New multi-GPU workstation installed"
-summary: "A dedicated training workstation was added to support larger vision and learning experiments."
+summary: "16 GPUs were added, bringing the lab cluster to 144 GPUs in total."
 date: 2025-12-03
 related_person: "Lab Infrastructure Team"
 venue: "MMAI Lab, Ajou University"
@@ -12,4 +12,4 @@ featured: false
 internal_slug: new-gpu-workstation-2025
 ---
 
-A dedicated training workstation was added to support larger vision and learning experiments.
+16 GPUs were added, bringing the lab cluster to 144 GPUs in total.

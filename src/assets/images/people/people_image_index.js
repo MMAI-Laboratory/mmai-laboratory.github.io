@@ -54,9 +54,9 @@ const people_images = {
         "seunghun_kang": PeopleImage008,
         "donghyun_kim": PeopleImage009,
         "donggun_lee": PeopleImage010,
+        "eunju_shin": PeopleImage011,
     },
     "master": {
-        "eunju_shin": PeopleImage011,
         "duyeon_na": PeopleImage012,
         "mingyu_jeong": PeopleImage013,
         "chaeyun_eom": PeopleImage014,

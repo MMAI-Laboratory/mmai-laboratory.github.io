@@ -535,6 +535,8 @@
 .home-news__headline,
 .home-news__meta {
     margin: 0;
+    /* Grouped paper-accepted items join their titles with newlines. */
+    white-space: pre-line;
 }
 
 .home-news__date {

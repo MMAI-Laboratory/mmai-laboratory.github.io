@@ -9,7 +9,8 @@ import {
 const isNonEmpty = (value) =>
     typeof value === "string" && value.trim().length > 0;
 
-const PAPER_ACCEPTED_TITLE_PATTERN = /^paper\s+accepted\b/i;
+const PAPER_ACCEPTED_TITLE_PATTERN =
+    /^(?:paper\s+accepted\b|(?:a|an|one|two|three|four|five|six|seven|eight|nine|ten|\d+)\s+papers?\s+(?:has|have)\s+been\s+accepted\b)/i;
 
 const getPublicationSearchQuery = (item) => {
     const candidates = [
