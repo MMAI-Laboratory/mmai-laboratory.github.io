@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "4.0",
-    "generated_at": "2026-09-08T05:00:19.988Z",
+    "generated_at": "2026-09-10T03:21:07.029Z",
     "default_sort": "date_desc",
     "source": "content/news + publications(published)",
     "type_labels": {
@@ -536,6 +536,24 @@
       "generated_from": "publications-auto"
     },
     {
+      "id": "publication-core-2023-gramian-attention-heads",
+      "type": "paper_accepted",
+      "title": "A paper has been accepted at ICCV 2023",
+      "summary": "Gramian Attention Heads are Strong yet Efficient Vision Learners",
+      "date": "2023-10-02",
+      "year": 2023,
+      "related_person": "Jongbin Ryu*, Dongyoon Han*, Jongwoo Lim (*co-first author)",
+      "venue": "International Conference on Computer Vision (ICCV)",
+      "external_url": "",
+      "internal_slug": "publication-core-2023-gramian-attention-heads",
+      "is_external": false,
+      "featured": false,
+      "publication_id": "core-2023-gramian-attention-heads",
+      "publication_title": "Gramian Attention Heads are Strong yet Efficient Vision Learners",
+      "publication_query": "Gramian Attention Heads are Strong yet Efficient Vision Learners",
+      "generated_from": "publications-auto"
+    },
+    {
       "id": "2023-graduation-august",
       "type": "graduation",
       "title": "Congratulations to our August 2023 graduates",
@@ -561,7 +579,7 @@
       "date": "2023-08-10",
       "year": 2023,
       "related_person": "Wongi Park, Inhyuk Park, Sungeun Kim, Jongbin Ryu",
-      "venue": "ICCVW",
+      "venue": "International Conference on Computer Vision Workshops (ICCVW)",
       "external_url": "",
       "internal_slug": "publication-biomedical-bapub1-robust-asymmetric-loss-for-multi-label-lon",
       "is_external": false,

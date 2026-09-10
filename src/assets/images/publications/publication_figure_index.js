@@ -23,6 +23,7 @@ import SELF_TUNING_FIGURE_1 from "./figures/self-tuning-figure-1.webp";
 import INTUSSUSCEPTION_FIGURE_3 from "./figures/intussusception-figure-3.webp";
 import FLOWVLA_FIGURE_1 from "./figures/flowvla-figure-1.webp";
 import ONE_CYCLE_BATTERY_RUL_FIGURE_1 from "./figures/one-cycle-battery-rul-figure-1.webp";
+import GRAMIAN_ATTENTION_FIGURE_2 from "./figures/gramian-attention-figure-2.webp";
 
 const PUBLICATION_FIGURES = {
     "biomedical-bapub4-style-kd-class-imbalanced-medical-image": {
@@ -169,6 +170,13 @@ const PUBLICATION_FIGURES = {
         alt: "Figure 1 showing the self-tuning pipeline: a mini-batch with an anchor is encoded by a convolutional network, grouped by bagged clustering, ranked by clustering and distance to reveal violations, and used to form triplets.",
         sourceUrl:
             "https://ars.els-cdn.com/content/image/1-s2.0-S089360802030366X-gr1_lrg.jpg",
+    },
+    "core-2023-gramian-attention-heads": {
+        image: GRAMIAN_ATTENTION_FIGURE_2,
+        figureLabel: "Figure 2",
+        alt: "Figure 2 showing the proposed learning method: a backbone feeds N lightweight heads whose features are pulled toward the target by cross-entropy loss while a decorrelation loss pushes them apart from an anchor point, yielding less-correlated clusters after training.",
+        sourceUrl:
+            "https://openaccess.thecvf.com/content/ICCV2023/papers/Ryu_Gramian_Attention_Heads_are_Strong_yet_Efficient_Vision_Learners_ICCV_2023_paper.pdf",
     },
     "robot-2026-flowvla-pluggable-3d-flow-learning": {
         image: FLOWVLA_FIGURE_1,

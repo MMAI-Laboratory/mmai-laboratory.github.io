@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.1",
-    "generated_at": "2026-09-08T05:00:19.980Z",
+    "generated_at": "2026-09-10T03:21:07.019Z",
     "source": "content/publications",
     "categories": [
       "computer_vision_and_learning_algorithms",
@@ -587,6 +587,36 @@
       }
     },
     {
+      "id": "core-2023-gramian-attention-heads",
+      "key": "core-2023-gramian-attention-heads",
+      "category": "computer_vision_and_learning_algorithms",
+      "status": "published",
+      "title": "Gramian Attention Heads are Strong yet Efficient Vision Learners",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Jongbin Ryu*, Dongyoon Han*, Jongwoo Lim (*co-first author)",
+        "published_place": "International Conference on Computer Vision (ICCV)",
+        "published_date": "2023-10-02",
+        "keywords": [
+          "Gramian Attention",
+          "Head Classifier",
+          "Efficient Architecture"
+        ],
+        "pdf_link": "https://openaccess.thecvf.com/content/ICCV2023/papers/Ryu_Gramian_Attention_Heads_are_Strong_yet_Efficient_Vision_Learners_ICCV_2023_paper.pdf",
+        "arxiv_link": "https://arxiv.org/abs/2310.16483",
+        "github_link": "",
+        "project_link": "https://openaccess.thecvf.com/content/ICCV2023/html/Ryu_Gramian_Attention_Heads_are_Strong_yet_Efficient_Vision_Learners_ICCV_2023_paper.html",
+        "source_code_link": "",
+        "paper_link": "https://openaccess.thecvf.com/content/ICCV2023/html/Ryu_Gramian_Attention_Heads_are_Strong_yet_Efficient_Vision_Learners_ICCV_2023_paper.html"
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
       "id": "biomedical-bapub1-robust-asymmetric-loss-for-multi-label-lon",
       "key": "biomedical-bapub1-robust-asymmetric-loss-for-multi-label-lon",
       "category": "industrial_and_medical_ai",
@@ -596,7 +626,7 @@
       "featured": false,
       "research_meta": {
         "author": "Wongi Park, Inhyuk Park, Sungeun Kim, Jongbin Ryu",
-        "published_place": "ICCVW",
+        "published_place": "International Conference on Computer Vision Workshops (ICCVW)",
         "published_date": "2023-08-10",
         "keywords": [
           "Long-tailed Learning",
