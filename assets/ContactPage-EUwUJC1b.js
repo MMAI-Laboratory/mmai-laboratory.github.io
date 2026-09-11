@@ -1,4 +1,4 @@
-/* empty css                */import{j as e,a,h as c,M as o}from"./index-B6U53smL.js";function r(){const t="jongbinryu@ajou.ac.kr",l=encodeURIComponent("MMAI Lab Inquiry"),i=encodeURIComponent(`Hello MMAI Lab,
+/* empty css                */import{j as e,a,h as c,M as o}from"./index-DX7SEsnV.js";function r(){const t="jongbinryu@ajou.ac.kr",l=encodeURIComponent("MMAI Lab Inquiry"),i=encodeURIComponent(`Hello MMAI Lab,
 
 I would like to ask about...
 
