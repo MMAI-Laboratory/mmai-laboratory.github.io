@@ -91,3 +91,36 @@ export const getPublicationCategories = () => {
 
 export const getLatestPublications = (limit = 3) =>
     getAllPublications().slice(0, limit);
+
+// Journals rarely carry a parenthesised acronym in the metadata, so map the
+// ones the lab publishes in to the short forms used on their own sites.
+const VENUE_TAG_ABBREVIATIONS = {
+    "applied energy": "Applied Energy",
+    "biomedical signal processing and control": "BSPC",
+    "computer methods and programs in biomedicine": "CMPB",
+    "computers in biology and medicine": "CIBM",
+    "expert systems with applications": "ESWA",
+    "international journal of surgery": "IJS",
+    "journal of digital imaging": "JDI",
+    "neural networks": "Neural Networks",
+    "pattern recognition letters": "PRL",
+    "scientific reports": "Sci Rep",
+};
+
+// Cards show the venue as a compact tag next to the research area, so prefer a
+// trailing parenthesised acronym ("Conference on Robot Learning (CoRL)" ->
+// "CoRL"), then a known journal short form, then the name as written.
+export const getVenueTagLabel = (venue) => {
+    const raw = normalizeText(venue);
+    if (!raw) {
+        return "";
+    }
+
+    const mapped = VENUE_TAG_ABBREVIATIONS[raw.toLowerCase()];
+    if (mapped) {
+        return mapped;
+    }
+
+    const acronym = raw.match(/\(([^()]+)\)\s*$/);
+    return acronym ? acronym[1].trim() : raw;
+};

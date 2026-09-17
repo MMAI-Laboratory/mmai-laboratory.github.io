@@ -116,6 +116,12 @@
     --tab-identity-accent: var(--tab-contact-accent);
 }
 
+.main-content__body--deadlines {
+    --tab-identity-tint: var(--tab-deadlines-tint);
+    --tab-identity-border: var(--tab-deadlines-border);
+    --tab-identity-accent: var(--tab-deadlines-accent);
+}
+
 .main-content__body--route {
     animation: route-enter var(--dur-route) var(--ease-standard);
     animation-fill-mode: both;
@@ -269,6 +275,12 @@
     --page-head-tint: var(--tab-contact-tint);
     --page-head-border: var(--tab-contact-border);
     --page-head-accent: var(--tab-contact-accent);
+}
+
+.page-head--deadlines {
+    --page-head-tint: var(--tab-deadlines-tint);
+    --page-head-border: var(--tab-deadlines-border);
+    --page-head-accent: var(--tab-deadlines-accent);
 }
 
 .section-start-head {

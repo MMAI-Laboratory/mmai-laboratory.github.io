@@ -22,18 +22,27 @@ const buildIntroductionMediaMap = () => {
 
     return {
         intro_group_photo: {
-            title: "People",
+            title: "Human Members",
             description: `${professorCount} Professor, ${phdCount} PhD, ${masterCount} MS, ${internCount} Interns`,
             to: "/people",
-        },
-        intro_meeting_room: {
-            title: "Lab Resources",
-            description: resourceSummary,
-            image: HOME_MEDIA_IMAGES.resource_gpu_nodes,
-            to: "/research",
             state: {
                 scroll: {
-                    mode: "top",
+                    mode: "selector",
+                    selector: "#human-members",
+                    block: "start",
+                },
+            },
+        },
+        intro_meeting_room: {
+            title: "Non-Human Members",
+            description: resourceSummary,
+            image: HOME_MEDIA_IMAGES.resource_gpu_nodes,
+            to: "/people",
+            state: {
+                scroll: {
+                    mode: "selector",
+                    selector: "#non-human-members",
+                    block: "start",
                 },
             },
         },

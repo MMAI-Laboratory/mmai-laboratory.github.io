@@ -2,6 +2,8 @@ import "./People.css";
 import PeopleCard from "./People.Card";
 import PeopleProfessorCard from "./People.ProfessorCard";
 import { getPeopleSections } from "../../utils/peopleData";
+import { getResearchResources } from "../../utils/researchData";
+import "./Resources.css";
 
 const HERO_SECTION_KEYS = new Set(["professor", "administrative_staff"]);
 
@@ -92,16 +94,21 @@ function People() {
     const restSections = sections.filter(
         (section) => !HERO_SECTION_KEYS.has(section.key),
     );
+    const nonHumanMembers = getResearchResources();
 
     return (
         <div data-reveal data-reveal-load-delay="60" className="people">
             <div data-reveal className="tab-header page-head page-head--people">
-                <h1>People</h1>
+                <h1>Members</h1>
                 <p className="page-head__summary">
-                    Meet the professor, graduate researchers, interns, and
-                    alumni contributing to ongoing MMAI Lab projects.
+                    The people and the research infrastructure behind ongoing
+                    MMAI Lab projects.
                 </p>
             </div>
+
+            <h2 className="people__group-title" id="human-members">
+                Human Members
+            </h2>
 
             {heroSections.length > 0 ? (
                 <div data-reveal className="people__hero-row">
@@ -133,6 +140,55 @@ function People() {
                     />
                 </section>
             ))}
+
+            {nonHumanMembers.length ? (
+                <>
+                    <h2 className="people__group-title" id="non-human-members">
+                        Non-Human Members
+                    </h2>
+                    <section
+                        data-reveal
+                        className="people__section page-panel page-panel--compact"
+                        aria-labelledby="non-human-members">
+                        <div className="resources__grid people__non-human-grid">
+                            {nonHumanMembers.map((resource, index) => (
+                                <article
+                                    key={resource.id}
+                                    data-reveal
+                                    data-reveal-load-delay={`${120 + Math.min(index, 4) * 60}`}
+                                    style={{
+                                        "--reveal-delay": `${Math.min(index, 4) * 60}ms`,
+                                    }}
+                                    className="resources__card interactive-card">
+                                    <div className="resources__card-media">
+                                        {resource.image ? (
+                                            <img
+                                                src={resource.image}
+                                                alt={resource.imageAlt}
+                                                loading="lazy"
+                                                decoding="async"
+                                                sizes="(max-width: 480px) 100vw, 12rem"
+                                            />
+                                        ) : (
+                                            <div className="resources__card-media-placeholder">
+                                                Image placeholder
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div className="resources__card-copy">
+                                        <p className="resources__card-label">
+                                            {resource.label}
+                                        </p>
+                                        <p className="resources__card-value">
+                                            {resource.value}
+                                        </p>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </section>
+                </>
+            ) : null}
         </div>
     );
 }

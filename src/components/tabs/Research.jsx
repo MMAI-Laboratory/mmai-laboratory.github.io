@@ -1,10 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import "./Research.css";
-import "./Resources.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
     getResearchAreas,
-    getResearchResources,
     resolveResearchTopic,
 } from "../../utils/researchData";
 import focusAreaSampleImage from "../../assets/images/research_concepts/optimized/focus-sample.svg";
@@ -61,7 +59,6 @@ function Research({ selectedResearchTopic }) {
     const location = useLocation();
     const tabRefs = useRef({});
     const researchContents = useMemo(() => getResearchAreas(), []);
-    const labResources = useMemo(() => getResearchResources(), []);
 
     const currentTopicKey = useMemo(
         () => resolveResearchTopic(selectedResearchTopic),
@@ -171,57 +168,6 @@ function Research({ selectedResearchTopic }) {
                     research, multimodal intelligence, robotics, and biomedical
                     impact.
                 </p>
-
-                {labResources.length ? (
-                    <section
-                        data-reveal
-                        className="resources__grid-section"
-                        aria-labelledby="resources-title">
-                        <div className="resources__section-head">
-                            <div>
-                                <h2 id="resources-title">
-                                    Infrastructure
-                                </h2>
-                            </div>
-                        </div>
-                        <div className="resources__grid">
-                            {labResources.map((resource, index) => (
-                                <article
-                                    key={resource.id}
-                                    data-reveal
-                                    data-reveal-load-delay={`${120 + Math.min(index, 4) * 60}`}
-                                    style={{
-                                        "--reveal-delay": `${Math.min(index, 4) * 60}ms`,
-                                    }}
-                                    className="resources__card interactive-card">
-                                    <div className="resources__card-media">
-                                        {resource.image ? (
-                                            <img
-                                                src={resource.image}
-                                                alt={resource.imageAlt}
-                                                loading="lazy"
-                                                decoding="async"
-                                                sizes="(max-width: 480px) 100vw, 12rem"
-                                            />
-                                        ) : (
-                                            <div className="resources__card-media-placeholder">
-                                                Image placeholder
-                                            </div>
-                                        )}
-                                    </div>
-                                    <div className="resources__card-copy">
-                                        <p className="resources__card-label">
-                                            {resource.label}
-                                        </p>
-                                        <p className="resources__card-value">
-                                            {resource.value}
-                                        </p>
-                                    </div>
-                                </article>
-                            ))}
-                        </div>
-                    </section>
-                ) : null}
             </div>
 
             <section

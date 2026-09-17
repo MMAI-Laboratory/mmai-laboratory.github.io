@@ -9,40 +9,6 @@ import {
 const isNonEmpty = (value) =>
     typeof value === "string" && value.trim().length > 0;
 
-const PAPER_ACCEPTED_TITLE_PATTERN =
-    /^(?:paper\s+accepted\b|(?:a|an|one|two|three|four|five|six|seven|eight|nine|ten|\d+)\s+papers?\s+(?:has|have)\s+been\s+accepted\b)/i;
-
-const getPublicationSearchQuery = (item) => {
-    const candidates = [
-        item.publication_id,
-        item.publication_title,
-        item.publication_query,
-    ];
-
-    for (const candidate of candidates) {
-        if (isNonEmpty(candidate)) {
-            return candidate.trim();
-        }
-    }
-
-    if (
-        isNonEmpty(item.title) &&
-        !PAPER_ACCEPTED_TITLE_PATTERN.test(item.title.trim())
-    ) {
-        return item.title.trim();
-    }
-
-    if (isNonEmpty(item.summary)) {
-        return item.summary.trim();
-    }
-
-    if (isNonEmpty(item.venue)) {
-        return item.venue.trim();
-    }
-
-    return "";
-};
-
 export default function HomeLatestNewsList() {
     const newsItems = getLatestNews(4);
 
@@ -65,20 +31,14 @@ export default function HomeLatestNewsList() {
             <div className="home-news__list">
                 {newsItems.map((item, index) => {
                     const isPaperAccepted = item.type === "paper_accepted";
-                    const publicationQuery = getPublicationSearchQuery(item);
-                    const publicationTarget = publicationQuery
-                        ? `/publication?q=${encodeURIComponent(publicationQuery)}&scope=title-authors-venue`
-                        : "/publication";
                     const isExternal =
                         !isPaperAccepted &&
                         item.is_external &&
                         isValidHttpUrl(item.external_url);
-                    const internalTarget = item.internal_slug
+                    // Every row points at its own entry on the News page.
+                    const targetPath = item.internal_slug
                         ? `/news#${item.internal_slug}`
                         : "/news";
-                    const targetPath = isPaperAccepted
-                        ? publicationTarget
-                        : internalTarget;
                     const revealDelay = `${index * 60}ms`;
                     const revealLoadDelay = `${120 + index * 60}`;
                     const typeLabel = getNewsTypeMeta(item.type).label;
@@ -88,11 +48,10 @@ export default function HomeLatestNewsList() {
                           ? "External"
                           : "Lab update";
                     const headline = item.title;
-                    const summary = isNonEmpty(item.summary)
-                        ? item.summary.trim()
-                        : "";
-                    const details = isNonEmpty(item.related_person)
-                        ? item.related_person.trim()
+                    // Grouped items carry several titles separated by newlines;
+                    // flatten them so the row stays on a single line.
+                    const detail = isNonEmpty(item.summary)
+                        ? item.summary.trim().replace(/\s*\n\s*/g, " · ")
                         : "";
                     const commonProps = {
                         "data-reveal": true,
@@ -120,12 +79,16 @@ export default function HomeLatestNewsList() {
                                 <p className="home-news__headline interactive-row__title animated-underline">
                                     {headline}
                                 </p>
-                                {summary ? (
-                                    <p className="home-news__meta">{summary}</p>
+                                {detail ? (
+                                    <p className="home-news__detail">
+                                        {detail}
+                                    </p>
                                 ) : null}
-                                {details ? (
-                                    <p className="home-news__meta">{details}</p>
-                                ) : null}
+                                <span
+                                    className="home-news__go"
+                                    aria-hidden="true">
+                                    →
+                                </span>
                             </div>
                         </>
                     );

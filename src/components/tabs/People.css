@@ -629,3 +629,64 @@
         color: #2a56c6;
     }
 }
+
+/* Splits the roster into Human / Non-Human member groups. */
+.people__group-title {
+    width: 100%;
+    margin: 0;
+    color: var(--text-primary);
+    font-size: var(--section-title-size);
+    font-weight: var(--type-h2-weight);
+    line-height: var(--section-title-line-height);
+    scroll-margin-top: var(--anchor-scroll-margin);
+}
+
+/* Non-human members follow the human roster's two-column rhythm rather than
+   the three-column layout the resource cards use elsewhere. Qualified with
+   .resources__grid so it outranks that rule regardless of bundle order. */
+.resources__grid.people__non-human-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--grid-gap);
+    align-items: stretch;
+}
+
+/* Match the human member card: same outer padding, same minimum height, and
+   the image column sized like the member photo instead of a fixed 9rem row. */
+.people__non-human-grid .resources__card {
+    height: 100%;
+    min-height: 11.8rem;
+    padding: var(--panel-pad-sm);
+    border-radius: var(--radius-lg);
+    grid-template-columns: minmax(8.75rem, 9.75rem) minmax(0, 1fr);
+    gap: var(--row-gap);
+}
+
+.people__non-human-grid .resources__card-media {
+    height: 100%;
+    border: 1px solid var(--outline-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--surface-2);
+}
+
+.people__non-human-grid .resources__card-media img {
+    height: 100%;
+    object-fit: contain;
+    background: var(--surface);
+}
+
+/* Keep the label/value block vertically centred rather than pinned to the
+   bottom of a taller card. */
+.people__non-human-grid .resources__card-copy {
+    padding: 0;
+    padding-left: var(--row-gap);
+    border-left: 1px solid
+        color-mix(in srgb, var(--outline-color) 86%, transparent);
+    align-content: center;
+}
+
+@media (max-width: 48rem) {
+    .resources__grid.people__non-human-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,751 +1,1375 @@
 {
-  "meta": {
-    "title": "CVL-Lab conference deadlines",
-    "updated_at": "2026-08-12T09:00:00+09:00",
-    "display_timezone": "Asia/Seoul",
-    "area_order": [
-      "computer-vision",
-      "machine-learning",
-      "llm-nlp",
-      "robotics"
-    ],
-    "area_labels": {
-      "computer-vision": "Computer Vision",
-      "machine-learning": "Machine Learning / AI",
-      "llm-nlp": "LLM / NLP",
-      "robotics": "Robotics"
-    }
-  },
-  "venues": [
-    {
-      "id": "cvpr",
-      "name": "CVPR",
-      "full_name": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
-      "areas": ["computer-vision"],
-      "official_url": "https://cvpr.thecvf.com/",
-      "cfp_url": "https://cvpr.thecvf.com/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "June 20-24, 2027",
-        "location": "Seattle, Washington, USA",
-        "venue": "Venue TBA",
-        "source_url": "https://www.thecvf.com/?p=137",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "iccv",
-      "name": "ICCV",
-      "full_name": "IEEE/CVF International Conference on Computer Vision",
-      "areas": ["computer-vision"],
-      "official_url": "https://iccv.thecvf.com/",
-      "cfp_url": "https://iccv.thecvf.com/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "October 2-8, 2027",
-        "location": "Hong Kong",
-        "venue": "Venue TBA",
-        "source_url": "https://www.thecvf.com/?p=137",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "eccv",
-      "name": "ECCV",
-      "full_name": "European Conference on Computer Vision",
-      "areas": ["computer-vision"],
-      "official_url": "https://eccv.ecva.net/",
-      "cfp_url": "https://eccv.ecva.net/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "September 8-12, 2026",
-        "location": "Malmo, Sweden",
-        "venue": "Malmo Arena and Malmomassan",
-        "source_url": "https://eccv.ecva.net/Conferences/2026",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "wacv",
-      "name": "WACV 2027",
-      "full_name": "IEEE/CVF Winter Conference on Applications of Computer Vision",
-      "areas": ["computer-vision"],
-      "official_url": "https://wacv.thecvf.com/",
-      "cfp_url": "https://wacv.thecvf.com/",
-      "status": "verified",
-      "source_checked_at": "2026-08-12T09:00:00+09:00",
-      "source_evidence": "Round 2 Paper Submissions",
-      "event": {
-        "dates": "January 4-8, 2027",
-        "location": "Buena Vista, Florida, USA",
-        "venue": "Disney Springs",
-        "source_url": "https://wacv.thecvf.com/",
-        "status": "official"
-      },
-      "milestones": [
-        {
-          "id": "round-2-registration",
-          "label": "Round 2 registration",
-          "short_label": "Registration",
-          "kind": "registration",
-          "deadline_at": "2026-08-21T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "Round 2 New Paper Registration.{0,220}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
-            "timezone": "AoE"
-          }
-        },
-        {
-          "id": "round-2-paper",
-          "label": "Round 2 paper submission",
-          "short_label": "Paper",
-          "kind": "paper",
-          "deadline_at": "2026-08-28T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "Round 2 Paper Submissions.{0,220}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
-            "timezone": "AoE"
-          }
-        },
-        {
-          "id": "round-2-supplementary",
-          "label": "Round 2 supplementary material",
-          "short_label": "Supplementary",
-          "kind": "supplementary",
-          "deadline_at": "2026-08-30T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "Round 2 Supplemental Material.{0,220}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
-            "timezone": "AoE"
-          }
-        },
-        {
-          "id": "final-decision",
-          "label": "Final decisions released",
-          "short_label": "Decision",
-          "kind": "notification",
-          "deadline_at": "2026-10-09T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "Round 2 Reviews and Final Decisions to Authors.{0,220}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
-            "timezone": "AoE"
-          }
+    "meta": {
+        "title": "CVL-Lab conference deadlines",
+        "updated_at": "2026-08-12T09:00:00+09:00",
+        "display_timezone": "Asia/Seoul",
+        "area_order": [
+            "computer-vision",
+            "machine-learning",
+            "llm-nlp",
+            "robotics"
+        ],
+        "area_labels": {
+            "computer-vision": "Computer Vision",
+            "machine-learning": "Machine Learning / AI",
+            "llm-nlp": "LLM / NLP",
+            "robotics": "Robotics"
         }
-      ]
     },
-    {
-      "id": "bmvc",
-      "name": "BMVC",
-      "full_name": "British Machine Vision Conference",
-      "areas": ["computer-vision"],
-      "official_url": "https://bmvc2026.org/",
-      "cfp_url": "https://bmvc2026.org/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "November 23-26, 2026",
-        "location": "Lancaster, United Kingdom",
-        "venue": "Venue TBA",
-        "source_url": "https://www.bmva.org/bmvc",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "accv",
-      "name": "ACCV",
-      "full_name": "Asian Conference on Computer Vision",
-      "areas": ["computer-vision"],
-      "official_url": "https://accv2026.org/",
-      "cfp_url": "https://accv2026.org/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "December 14-18, 2026",
-        "location": "Osaka, Japan",
-        "venue": "Venue TBA",
-        "source_url": "https://accv2026.org/",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "3dv",
-      "name": "3DV",
-      "full_name": "International Conference on 3D Vision",
-      "areas": ["computer-vision"],
-      "official_url": "https://3dvconf.github.io/2027/",
-      "cfp_url": "https://3dvconf.github.io/2027/",
-      "status": "verified",
-      "source_checked_at": "2026-08-12T18:30:00+09:00",
-      "source_evidence": "Paper Submission",
-      "event": {
-        "dates": "April 6-9, 2027",
-        "location": "Thessaloniki, Greece",
-        "venue": "Thessaloniki Concert Hall (M2 building)",
-        "source_url": "https://3dvconf.github.io/2027/",
-        "status": "official"
-      },
-      "milestones": [
+    "venues": [
         {
-          "id": "paper",
-          "label": "Paper submission",
-          "short_label": "Paper",
-          "kind": "paper",
-          "deadline_at": "2026-08-28T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "Paper Submission\\s+([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})",
-            "timezone": "AoE"
-          }
+            "id": "cvpr",
+            "name": "CVPR",
+            "full_name": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+            "areas": [
+                "computer-vision"
+            ],
+            "official_url": "https://cvpr.thecvf.com/",
+            "cfp_url": "https://cvpr.thecvf.com/Conferences/2027/Dates",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "June 20-24, 2027",
+                "location": "Seattle, Washington, USA",
+                "venue": "Venue TBA",
+                "source_url": "https://www.thecvf.com/?p=137",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "registration",
+                    "label": "Paper registration",
+                    "short_label": "Registration",
+                    "kind": "registration",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Paper Registration Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Submission Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "supplementary",
+                    "label": "Supplementary material",
+                    "short_label": "Supplementary",
+                    "kind": "supplementary",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Supplementary Materials Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "reviews",
+                    "label": "Reviews released",
+                    "short_label": "Reviews",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Reviews Released\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "decision",
+                    "label": "Final decisions",
+                    "short_label": "Decision",
+                    "kind": "decision",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Final Decisions.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "CVPR 2027"
         },
         {
-          "id": "supplementary",
-          "label": "Supplementary material",
-          "short_label": "Supplementary",
-          "kind": "supplementary",
-          "deadline_at": "2026-09-02T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "Supplementary Material\\s+([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})",
-            "timezone": "AoE"
-          }
+            "id": "iccv",
+            "name": "ICCV",
+            "full_name": "IEEE/CVF International Conference on Computer Vision",
+            "areas": [
+                "computer-vision"
+            ],
+            "official_url": "https://iccv.thecvf.com/",
+            "cfp_url": "https://iccv.thecvf.com/Conferences/2027/Dates",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "October 2-8, 2027",
+                "location": "Hong Kong",
+                "venue": "Venue TBA",
+                "source_url": "https://www.thecvf.com/?p=137",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Submission and Supplementary Materials Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "decision",
+                    "label": "Paper decisions",
+                    "short_label": "Decision",
+                    "kind": "decision",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Main Conference Paper Decisions.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "ICCV 2027"
         },
         {
-          "id": "preliminary-notification",
-          "label": "Preliminary notification",
-          "short_label": "Prelim. decision",
-          "kind": "notification",
-          "deadline_at": "2026-10-27T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified"
+            "id": "eccv",
+            "name": "ECCV",
+            "full_name": "European Conference on Computer Vision",
+            "areas": [
+                "computer-vision"
+            ],
+            "official_url": "https://eccv.ecva.net/",
+            "cfp_url": "https://eccv.ecva.net/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "September 8-12, 2026",
+                "location": "Malmo, Sweden",
+                "venue": "Malmo Arena and Malmomassan",
+                "source_url": "https://eccv.ecva.net/Conferences/2026",
+                "status": "official"
+            },
+            "milestones": []
         },
         {
-          "id": "final-notification",
-          "label": "Final notification",
-          "short_label": "Final decision",
-          "kind": "notification",
-          "deadline_at": "2026-12-02T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified"
+            "id": "wacv",
+            "name": "WACV 2027",
+            "full_name": "IEEE/CVF Winter Conference on Applications of Computer Vision",
+            "areas": [
+                "computer-vision"
+            ],
+            "official_url": "https://wacv.thecvf.com/",
+            "cfp_url": "https://wacv.thecvf.com/",
+            "status": "verified",
+            "source_checked_at": "2026-08-12T09:00:00+09:00",
+            "source_evidence": "Round 2 Paper Submissions",
+            "event": {
+                "dates": "January 4-8, 2027",
+                "location": "Buena Vista, Florida, USA",
+                "venue": "Disney Springs",
+                "source_url": "https://wacv.thecvf.com/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "round-2-registration",
+                    "label": "Round 2 registration",
+                    "short_label": "Registration",
+                    "kind": "registration",
+                    "deadline_at": "2026-08-21T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "Round 2 New Paper Registration.{0,220}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "round-2-paper",
+                    "label": "Round 2 paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "2026-08-28T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "Round 2 Paper Submissions.{0,220}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "round-2-supplementary",
+                    "label": "Round 2 supplementary material",
+                    "short_label": "Supplementary",
+                    "kind": "supplementary",
+                    "deadline_at": "2026-08-30T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "Round 2 Supplemental Material.{0,220}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "final-decision",
+                    "label": "Final decisions released",
+                    "short_label": "Decision",
+                    "kind": "notification",
+                    "deadline_at": "2026-10-09T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "Round 2 Reviews and Final Decisions to Authors.{0,220}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "bmvc",
+            "name": "BMVC",
+            "full_name": "British Machine Vision Conference",
+            "areas": [
+                "computer-vision"
+            ],
+            "official_url": "https://bmvc2026.org/",
+            "cfp_url": "https://bmvc2026.org/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "November 23-26, 2026",
+                "location": "Lancaster, United Kingdom",
+                "venue": "Venue TBA",
+                "source_url": "https://www.bmva.org/bmvc",
+                "status": "official"
+            },
+            "milestones": []
+        },
+        {
+            "id": "accv",
+            "name": "ACCV",
+            "full_name": "Asian Conference on Computer Vision",
+            "areas": [
+                "computer-vision"
+            ],
+            "official_url": "https://accv2026.org/",
+            "cfp_url": "https://accv2026.org/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "December 14-18, 2026",
+                "location": "Osaka, Japan",
+                "venue": "Venue TBA",
+                "source_url": "https://accv2026.org/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "registration",
+                    "label": "Paper registration",
+                    "short_label": "Registration",
+                    "kind": "registration",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Paper registration deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Paper submission deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "supplementary",
+                    "label": "Supplementary material",
+                    "short_label": "Supplementary",
+                    "kind": "supplementary",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Supplementary material deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "reviews",
+                    "label": "Reviews released",
+                    "short_label": "Reviews",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Reviews are released to authors\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "rebuttal",
+                    "label": "Rebuttal deadline",
+                    "short_label": "Rebuttal",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Rebuttal deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "decision",
+                    "label": "Paper decision notification",
+                    "short_label": "Decision",
+                    "kind": "decision",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Paper decision notification\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "ACCV 2026"
+        },
+        {
+            "id": "3dv",
+            "name": "3DV",
+            "full_name": "International Conference on 3D Vision",
+            "areas": [
+                "computer-vision"
+            ],
+            "official_url": "https://3dvconf.github.io/2027/",
+            "cfp_url": "https://3dvconf.github.io/2027/",
+            "status": "verified",
+            "source_checked_at": "2026-08-12T18:30:00+09:00",
+            "source_evidence": "Paper Submission",
+            "event": {
+                "dates": "April 6-9, 2027",
+                "location": "Thessaloniki, Greece",
+                "venue": "Thessaloniki Concert Hall (M2 building)",
+                "source_url": "https://3dvconf.github.io/2027/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "2026-08-28T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "Paper Submission\\s+([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "supplementary",
+                    "label": "Supplementary material",
+                    "short_label": "Supplementary",
+                    "kind": "supplementary",
+                    "deadline_at": "2026-09-02T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "Supplementary Material\\s+([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "preliminary-notification",
+                    "label": "Preliminary notification",
+                    "short_label": "Prelim. decision",
+                    "kind": "notification",
+                    "deadline_at": "2026-10-27T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified"
+                },
+                {
+                    "id": "final-notification",
+                    "label": "Final notification",
+                    "short_label": "Final decision",
+                    "kind": "notification",
+                    "deadline_at": "2026-12-02T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified"
+                }
+            ]
+        },
+        {
+            "id": "miccai",
+            "name": "MICCAI",
+            "full_name": "Medical Image Computing and Computer Assisted Intervention",
+            "areas": [
+                "computer-vision"
+            ],
+            "official_url": "https://conferences.miccai.org/",
+            "cfp_url": "https://conferences.miccai.org/2026/en/IMPORTANT-DATES.html",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "September 27-October 1, 2026",
+                "location": "Strasbourg, France",
+                "venue": "Strasbourg Convention Center",
+                "source_url": "https://conferences.miccai.org/2026/en/default.asp",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "intention",
+                    "label": "Intention to submit",
+                    "short_label": "Intention",
+                    "kind": "abstract",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "PT",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Intention to Submit\\)?\\s*(?:[A-Z][a-z]+day,\\s*)?([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "America/Los_Angeles"
+                    }
+                },
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "PT",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Main Conference Paper Submission[^)]{0,60}\\)?\\s*(?:[A-Z][a-z]+day,\\s*)?([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "America/Los_Angeles"
+                    }
+                },
+                {
+                    "id": "reviews",
+                    "label": "Reviews released",
+                    "short_label": "Reviews",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "PT",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Reviews released to Authors\\s*(?:EOD on\\s*)?([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "America/Los_Angeles"
+                    }
+                },
+                {
+                    "id": "decision",
+                    "label": "Notification of paper decisions",
+                    "short_label": "Decision",
+                    "kind": "decision",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "PT",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Notification of Paper Decisions\\s*(?:EOD on\\s*)?([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "America/Los_Angeles"
+                    }
+                }
+            ],
+            "source_evidence": "MICCAI 2026"
+        },
+        {
+            "id": "neurips",
+            "name": "NeurIPS",
+            "full_name": "Conference on Neural Information Processing Systems",
+            "areas": [
+                "machine-learning",
+                "llm-nlp"
+            ],
+            "official_url": "https://neurips.cc/",
+            "cfp_url": "https://neurips.cc/Conferences/2026/Dates",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "December 6-13, 2026",
+                "location": "Sydney, Australia; Atlanta, Georgia, USA; Paris, France",
+                "venue": "Multi-site conference",
+                "source_url": "https://neurips.cc/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "abstract",
+                    "label": "Abstract submission",
+                    "short_label": "Abstract",
+                    "kind": "abstract",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Paper Abstract Submission Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Full Paper Submission Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "reviews",
+                    "label": "Reviews released",
+                    "short_label": "Reviews",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Reviews Released to Authors\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "notification",
+                    "label": "Acceptance notification",
+                    "short_label": "Notification",
+                    "kind": "notification",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Paper Author Notifications\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "NeurIPS 2026"
+        },
+        {
+            "id": "icml",
+            "name": "ICML",
+            "full_name": "International Conference on Machine Learning",
+            "areas": [
+                "machine-learning"
+            ],
+            "official_url": "https://icml.cc/",
+            "cfp_url": "https://icml.cc/Conferences/2026/Dates",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "July 6-11, 2026",
+                "location": "Seoul, South Korea",
+                "venue": "COEX Convention & Exhibition Center",
+                "source_url": "https://icml.cc/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "abstract",
+                    "label": "Abstract submission",
+                    "short_label": "Abstract",
+                    "kind": "abstract",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Abstract Submission Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "(?:Full |Main Conference )?Paper Submission Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "reviews",
+                    "label": "Reviews released",
+                    "short_label": "Reviews",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Reviews Released to Authors\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "rebuttal",
+                    "label": "Author response deadline",
+                    "short_label": "Rebuttal",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Author Response Deadline\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "notification",
+                    "label": "Acceptance notification",
+                    "short_label": "Notification",
+                    "kind": "notification",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Author Notification\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "ICML 2026"
+        },
+        {
+            "id": "iclr",
+            "name": "ICLR 2027",
+            "full_name": "International Conference on Learning Representations",
+            "areas": [
+                "machine-learning",
+                "llm-nlp",
+                "robotics"
+            ],
+            "official_url": "https://iclr.cc/",
+            "cfp_url": "https://iclr.cc/Conferences/2027/AuthorGuidelines",
+            "status": "verified",
+            "source_checked_at": "2026-08-12T18:30:00+09:00",
+            "source_evidence": "full paper submission deadline",
+            "event": {
+                "dates": "October 6-9, 2026",
+                "location": "California, USA",
+                "venue": "Venue TBA",
+                "source_url": "https://iclr.cc/Conferences/2027",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "abstract",
+                    "label": "Abstract deadline",
+                    "short_label": "Abstract",
+                    "kind": "abstract",
+                    "deadline_at": "2026-09-18T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "abstract submission deadline(?:\\s+of)?\\s+([A-Za-z]+\\s+\\d{1,2}(?:,)?\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "paper",
+                    "label": "Paper deadline",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "2026-09-25T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "full paper submission deadline(?:\\s+is)?\\s+([A-Za-z]+\\s+\\d{1,2}(?:,)?\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "reviews",
+                    "label": "Reviews released",
+                    "short_label": "Reviews",
+                    "kind": "review",
+                    "deadline_at": "2026-11-05T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified"
+                },
+                {
+                    "id": "decision",
+                    "label": "Final decisions",
+                    "short_label": "Decision",
+                    "kind": "notification",
+                    "deadline_at": "2026-12-16T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified"
+                }
+            ]
+        },
+        {
+            "id": "aaai",
+            "name": "AAAI",
+            "full_name": "AAAI Conference on Artificial Intelligence",
+            "areas": [
+                "machine-learning",
+                "llm-nlp",
+                "robotics"
+            ],
+            "official_url": "https://aaai.org/conference/aaai/aaai-27/",
+            "cfp_url": "https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/",
+            "status": "verified",
+            "source_checked_at": "2026-08-12T18:30:00+09:00",
+            "source_evidence": "Full papers due",
+            "event": {
+                "dates": "February 16-23, 2027",
+                "location": "Montreal, Canada",
+                "venue": "Venue TBA",
+                "source_url": "https://aaai.org/conference/aaai/aaai-27/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "abstract",
+                    "label": "Abstract deadline",
+                    "short_label": "Abstract",
+                    "kind": "abstract",
+                    "deadline_at": "2026-07-21T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})\\s+Abstracts due",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "paper",
+                    "label": "Full paper deadline",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "2026-07-28T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})\\s+Full papers due",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "supplementary",
+                    "label": "Supplementary material and code",
+                    "short_label": "Supplementary",
+                    "kind": "supplementary",
+                    "deadline_at": "2026-07-31T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})\\s+Supplementary material and code due",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "phase-1-decision",
+                    "label": "Phase 1 rejection notification",
+                    "short_label": "Phase 1 decision",
+                    "kind": "notification",
+                    "deadline_at": "2026-09-24T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified"
+                },
+                {
+                    "id": "final-decision",
+                    "label": "Final acceptance notification",
+                    "short_label": "Final decision",
+                    "kind": "notification",
+                    "deadline_at": "2026-11-30T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified"
+                }
+            ]
+        },
+        {
+            "id": "aistats",
+            "name": "AISTATS",
+            "full_name": "International Conference on Artificial Intelligence and Statistics",
+            "areas": [
+                "machine-learning"
+            ],
+            "official_url": "https://aistats.org/",
+            "cfp_url": "https://aistats.org/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "May 2-5, 2026",
+                "location": "Tangier, Morocco",
+                "venue": "Hilton Tangier Al Houara Resort & Spa",
+                "source_url": "https://virtual.aistats.org/",
+                "status": "official"
+            },
+            "milestones": []
+        },
+        {
+            "id": "uai",
+            "name": "UAI",
+            "full_name": "Conference on Uncertainty in Artificial Intelligence",
+            "areas": [
+                "machine-learning"
+            ],
+            "official_url": "https://www.auai.org/uai/",
+            "cfp_url": "https://www.auai.org/uai2026/important_dates",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "August 17-21, 2026",
+                "location": "Amsterdam, Netherlands",
+                "venue": "KIT Events",
+                "source_url": "https://www.auai.org/uai2026/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Paper submission deadline[\\s\\S]{0,45}?([A-Z][a-z]+\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "reviews",
+                    "label": "Reviews released",
+                    "short_label": "Reviews",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Reviews released to Authors\\s*([A-Z][a-z]+\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "decision",
+                    "label": "Author notification",
+                    "short_label": "Decision",
+                    "kind": "decision",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Author notification[\\s\\S]{0,20}?([A-Z][a-z]+\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "camera-ready",
+                    "label": "Camera-ready deadline",
+                    "short_label": "Camera-ready",
+                    "kind": "camera_ready",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Camera-ready deadline[\\s\\S]{0,20}?([A-Z][a-z]+\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "UAI"
+        },
+        {
+            "id": "acl",
+            "name": "ACL",
+            "full_name": "Annual Meeting of the Association for Computational Linguistics",
+            "areas": [
+                "llm-nlp"
+            ],
+            "official_url": "https://www.aclweb.org/portal/",
+            "cfp_url": "https://2026.aclweb.org/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "August 17-22, 2027",
+                "location": "Kyoto, Japan",
+                "venue": "Venue TBA",
+                "source_url": "https://2027.aclweb.org/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "arr-submission",
+                    "label": "ARR submission",
+                    "short_label": "ARR submission",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Submission deadline[^)]{0,60}\\)?\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "commitment",
+                    "label": "Commitment deadline",
+                    "short_label": "Commitment",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Commitment deadline for ACL 2026\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "decision",
+                    "label": "Notification of acceptance",
+                    "short_label": "Decision",
+                    "kind": "decision",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Notification of acceptance\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "ACL 2026"
+        },
+        {
+            "id": "emnlp",
+            "name": "EMNLP",
+            "full_name": "Conference on Empirical Methods in Natural Language Processing",
+            "areas": [
+                "llm-nlp"
+            ],
+            "official_url": "https://2026.emnlp.org/",
+            "cfp_url": "https://2026.emnlp.org/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "October 22-29, 2026",
+                "location": "Budapest, Hungary",
+                "venue": "Hungexpo",
+                "source_url": "https://2026.emnlp.org/venue/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "arr-submission",
+                    "label": "ARR submission",
+                    "short_label": "ARR submission",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "ARR submission deadline[^)]{0,40}\\)?\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "reviews",
+                    "label": "Meta review released",
+                    "short_label": "Reviews",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Meta review released\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "commitment",
+                    "label": "Commitment deadline",
+                    "short_label": "Commitment",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "EMNLP commitment deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "decision",
+                    "label": "Notification of acceptance",
+                    "short_label": "Decision",
+                    "kind": "decision",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Notification of acceptance[^)]{0,40}\\)?\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "EMNLP 2026"
+        },
+        {
+            "id": "naacl",
+            "name": "NAACL",
+            "full_name": "North American Chapter of the Association for Computational Linguistics",
+            "areas": [
+                "llm-nlp"
+            ],
+            "official_url": "https://2027.naacl.org/",
+            "cfp_url": "https://2027.naacl.org/",
+            "status": "verified",
+            "source_checked_at": "2026-08-12T18:30:00+09:00",
+            "source_evidence": "Submission deadline (ARR)",
+            "event": {
+                "dates": "June 1-5, 2027",
+                "location": "San Francisco, California, USA",
+                "venue": "Venue TBA",
+                "source_url": "https://2027.naacl.org/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "arr-submission",
+                    "label": "ARR submission deadline",
+                    "short_label": "ARR submission",
+                    "kind": "paper",
+                    "deadline_at": "2026-10-12T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "Submission deadline \\(ARR\\)[^A-Za-z]{0,20}([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "eacl",
+            "name": "EACL",
+            "full_name": "European Chapter of the Association for Computational Linguistics",
+            "areas": [
+                "llm-nlp"
+            ],
+            "official_url": "https://2027.eacl.org/",
+            "cfp_url": "https://2027.eacl.org/calls/papers/",
+            "status": "verified",
+            "source_checked_at": "2026-08-12T18:30:00+09:00",
+            "source_evidence": "ARR submission deadline",
+            "event": {
+                "dates": "March 9-14, 2027",
+                "location": "Athens, Greece",
+                "venue": "Venue TBA",
+                "source_url": "https://2027.eacl.org/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "arr-submission",
+                    "label": "ARR submission deadline",
+                    "short_label": "ARR submission",
+                    "kind": "paper",
+                    "deadline_at": "2026-08-03T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "ARR submission deadline \\(long (?:&|&amp;) short papers\\)[^A-Za-z]{0,20}([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "reviews",
+                    "label": "Meta review released",
+                    "short_label": "Reviews",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Meta review released\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "commitment",
+                    "label": "EACL commitment deadline",
+                    "short_label": "Commitment",
+                    "kind": "paper",
+                    "deadline_at": "2026-10-11T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "EACL 2027 commitment deadline[^A-Za-z]{0,20}([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "notification",
+                    "label": "Acceptance notification",
+                    "short_label": "Decision",
+                    "kind": "notification",
+                    "deadline_at": "2026-11-12T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "verified"
+                }
+            ]
+        },
+        {
+            "id": "aacl",
+            "name": "AACL",
+            "full_name": "Asia-Pacific Chapter of the Association for Computational Linguistics",
+            "areas": [
+                "llm-nlp"
+            ],
+            "official_url": "https://www.aaclweb.org/",
+            "cfp_url": "https://www.aaclweb.org/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "November 6-10, 2026",
+                "location": "Hengqin, China",
+                "venue": "Venue TBA",
+                "source_url": "https://2026.aaclnet.org/",
+                "status": "official"
+            },
+            "milestones": []
+        },
+        {
+            "id": "coling",
+            "name": "COLING",
+            "full_name": "International Conference on Computational Linguistics",
+            "areas": [
+                "llm-nlp"
+            ],
+            "official_url": "https://coling2025.org/",
+            "cfp_url": "https://coling2025.org/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "May 9-14, 2027",
+                "location": "Macau, China",
+                "venue": "Venue TBA",
+                "source_url": "https://2027.coling-iccl.org/about/",
+                "status": "official"
+            },
+            "milestones": []
+        },
+        {
+            "id": "conll",
+            "name": "CoNLL",
+            "full_name": "Conference on Computational Natural Language Learning",
+            "areas": [
+                "llm-nlp"
+            ],
+            "official_url": "https://www.conll.org/",
+            "cfp_url": "https://www.conll.org/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "July 3-4, 2026",
+                "location": "San Diego, California, USA",
+                "venue": "Co-located with ACL 2026",
+                "source_url": "https://www.conll.org/2026",
+                "status": "official"
+            },
+            "milestones": []
+        },
+        {
+            "id": "icra",
+            "name": "ICRA",
+            "full_name": "IEEE International Conference on Robotics and Automation",
+            "areas": [
+                "robotics"
+            ],
+            "official_url": "https://2027.ieee-icra.org/",
+            "cfp_url": "https://2027.ieee-icra.org/announcements/call-for-technical-papers/",
+            "status": "verified",
+            "source_checked_at": "2026-08-12T18:30:00+09:00",
+            "source_evidence": "Contributed paper submission deadline",
+            "event": {
+                "dates": "May 24-28, 2027",
+                "location": "Seoul, South Korea",
+                "venue": "COEX",
+                "source_url": "https://2027.ieee-icra.org/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "paper",
+                    "label": "Contributed paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "2026-09-15T23:59:00-07:00",
+                    "timezone_label": "Pacific Time (PT)",
+                    "status": "verified",
+                    "source_parser": {
+                        "match": "([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})[\\s\\S]{0,80}11:59[\\s\\S]{0,80}Contributed paper submission deadline",
+                        "timezone": "America/Los_Angeles"
+                    }
+                },
+                {
+                    "id": "decision",
+                    "label": "Notification of decision",
+                    "short_label": "Decision",
+                    "kind": "notification",
+                    "deadline_at": "2027-01-31T23:59:00-08:00",
+                    "timezone_label": "Pacific Time (PT)",
+                    "status": "verified"
+                }
+            ]
+        },
+        {
+            "id": "iros",
+            "name": "IROS",
+            "full_name": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
+            "areas": [
+                "robotics"
+            ],
+            "official_url": "https://www.ieee-ras.org/event/2027-ieee-rsj-international-conference-on-intelligent-robots-and-systems-iros-70525/",
+            "cfp_url": "https://www.ieee-ras.org/event/2027-ieee-rsj-international-conference-on-intelligent-robots-and-systems-iros-70525/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "September 26-October 1, 2027",
+                "location": "Florence, Italy",
+                "venue": "Fortezza da Basso",
+                "source_url": "https://www.ieee-ras.org/event/2027-ieee-rsj-international-conference-on-intelligent-robots-and-systems-iros-70525/",
+                "status": "official"
+            },
+            "milestones": []
+        },
+        {
+            "id": "rss",
+            "name": "RSS",
+            "full_name": "Robotics: Science and Systems",
+            "areas": [
+                "robotics"
+            ],
+            "official_url": "https://roboticsconference.org/",
+            "cfp_url": "https://roboticsconference.org/2026/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "July 13-17, 2026",
+                "location": "Sydney, Australia",
+                "venue": "University of Technology Sydney and ICC Sydney",
+                "source_url": "https://roboticsconference.org/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "abstract",
+                    "label": "Abstract submission",
+                    "short_label": "Abstract",
+                    "kind": "abstract",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})\\s*11:59pm AoE\\s*Abstract/Title Submission Deadline",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})\\s*11:59pm AoE\\s*Paper Submission Deadline",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "supplementary",
+                    "label": "Supplementary material",
+                    "short_label": "Supplementary",
+                    "kind": "supplementary",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})\\s*11:59pm AoE\\s*Supplementary Material Submission Deadline",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "rebuttal",
+                    "label": "Rebuttal submission",
+                    "short_label": "Rebuttal",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Rebuttal Submission Deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "RSS 2026"
+        },
+        {
+            "id": "corl",
+            "name": "CoRL",
+            "full_name": "Conference on Robot Learning",
+            "areas": [
+                "robotics",
+                "machine-learning"
+            ],
+            "official_url": "https://www.corl.org/",
+            "cfp_url": "https://www.corl.org/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "November 9-12, 2026",
+                "location": "Austin, Texas, USA",
+                "venue": "JW Marriott Austin, Hilton Austin, and Bass Hall",
+                "source_url": "https://www.corl.org/home",
+                "status": "official"
+            },
+            "milestones": []
+        },
+        {
+            "id": "humanoids",
+            "name": "Humanoids",
+            "full_name": "IEEE-RAS International Conference on Humanoid Robots",
+            "areas": [
+                "robotics"
+            ],
+            "official_url": "https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/humanoids",
+            "cfp_url": "https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/humanoids",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "December 7-9, 2026",
+                "location": "Santa Clara, California, USA",
+                "venue": "Santa Clara Convention Center",
+                "source_url": "https://www.ieee-ras.org/event/2026-ieee-ras-25th-international-conference-on-humanoid-robots-humanoids-68892/",
+                "status": "official"
+            },
+            "milestones": []
         }
-      ]
-    },
-    {
-      "id": "miccai",
-      "name": "MICCAI",
-      "full_name": "Medical Image Computing and Computer Assisted Intervention",
-      "areas": ["computer-vision"],
-      "official_url": "https://conferences.miccai.org/",
-      "cfp_url": "https://conferences.miccai.org/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "September 27-October 1, 2026",
-        "location": "Strasbourg, France",
-        "venue": "Strasbourg Convention Center",
-        "source_url": "https://conferences.miccai.org/2026/en/default.asp",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "neurips",
-      "name": "NeurIPS",
-      "full_name": "Conference on Neural Information Processing Systems",
-      "areas": ["machine-learning", "llm-nlp"],
-      "official_url": "https://neurips.cc/",
-      "cfp_url": "https://neurips.cc/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "December 6-13, 2026",
-        "location": "Sydney, Australia; Atlanta, Georgia, USA; Paris, France",
-        "venue": "Multi-site conference",
-        "source_url": "https://neurips.cc/",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "icml",
-      "name": "ICML",
-      "full_name": "International Conference on Machine Learning",
-      "areas": ["machine-learning"],
-      "official_url": "https://icml.cc/",
-      "cfp_url": "https://icml.cc/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "July 6-11, 2026",
-        "location": "Seoul, South Korea",
-        "venue": "COEX Convention & Exhibition Center",
-        "source_url": "https://icml.cc/",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "iclr",
-      "name": "ICLR 2027",
-      "full_name": "International Conference on Learning Representations",
-      "areas": ["machine-learning", "llm-nlp", "robotics"],
-      "official_url": "https://iclr.cc/",
-      "cfp_url": "https://iclr.cc/Conferences/2027/AuthorGuidelines",
-      "status": "verified",
-      "source_checked_at": "2026-08-12T18:30:00+09:00",
-      "source_evidence": "full paper submission deadline",
-      "event": {
-        "dates": "October 6-9, 2026",
-        "location": "California, USA",
-        "venue": "Venue TBA",
-        "source_url": "https://iclr.cc/Conferences/2027",
-        "status": "official"
-      },
-      "milestones": [
-        {
-          "id": "abstract",
-          "label": "Abstract deadline",
-          "short_label": "Abstract",
-          "kind": "abstract",
-          "deadline_at": "2026-09-18T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "abstract submission deadline(?:\\s+of)?\\s+([A-Za-z]+\\s+\\d{1,2}(?:,)?\\s+\\d{4})",
-            "timezone": "AoE"
-          }
-        },
-        {
-          "id": "paper",
-          "label": "Paper deadline",
-          "short_label": "Paper",
-          "kind": "paper",
-          "deadline_at": "2026-09-25T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "full paper submission deadline(?:\\s+is)?\\s+([A-Za-z]+\\s+\\d{1,2}(?:,)?\\s+\\d{4})",
-            "timezone": "AoE"
-          }
-        },
-        {
-          "id": "reviews",
-          "label": "Reviews released",
-          "short_label": "Reviews",
-          "kind": "review",
-          "deadline_at": "2026-11-05T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified"
-        },
-        {
-          "id": "decision",
-          "label": "Final decisions",
-          "short_label": "Decision",
-          "kind": "notification",
-          "deadline_at": "2026-12-16T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified"
-        }
-      ]
-    },
-    {
-      "id": "aaai",
-      "name": "AAAI",
-      "full_name": "AAAI Conference on Artificial Intelligence",
-      "areas": ["machine-learning", "llm-nlp", "robotics"],
-      "official_url": "https://aaai.org/conference/aaai/aaai-27/",
-      "cfp_url": "https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/",
-      "status": "verified",
-      "source_checked_at": "2026-08-12T18:30:00+09:00",
-      "source_evidence": "Full papers due",
-      "event": {
-        "dates": "February 16-23, 2027",
-        "location": "Montreal, Canada",
-        "venue": "Venue TBA",
-        "source_url": "https://aaai.org/conference/aaai/aaai-27/",
-        "status": "official"
-      },
-      "milestones": [
-        {
-          "id": "abstract",
-          "label": "Abstract deadline",
-          "short_label": "Abstract",
-          "kind": "abstract",
-          "deadline_at": "2026-07-21T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})\\s+Abstracts due",
-            "timezone": "AoE"
-          }
-        },
-        {
-          "id": "paper",
-          "label": "Full paper deadline",
-          "short_label": "Paper",
-          "kind": "paper",
-          "deadline_at": "2026-07-28T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})\\s+Full papers due",
-            "timezone": "AoE"
-          }
-        },
-        {
-          "id": "supplementary",
-          "label": "Supplementary material and code",
-          "short_label": "Supplementary",
-          "kind": "supplementary",
-          "deadline_at": "2026-07-31T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})\\s+Supplementary material and code due",
-            "timezone": "AoE"
-          }
-        },
-        {
-          "id": "phase-1-decision",
-          "label": "Phase 1 rejection notification",
-          "short_label": "Phase 1 decision",
-          "kind": "notification",
-          "deadline_at": "2026-09-24T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified"
-        },
-        {
-          "id": "final-decision",
-          "label": "Final acceptance notification",
-          "short_label": "Final decision",
-          "kind": "notification",
-          "deadline_at": "2026-11-30T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified"
-        }
-      ]
-    },
-    {
-      "id": "aistats",
-      "name": "AISTATS",
-      "full_name": "International Conference on Artificial Intelligence and Statistics",
-      "areas": ["machine-learning"],
-      "official_url": "https://aistats.org/",
-      "cfp_url": "https://aistats.org/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "May 2-5, 2026",
-        "location": "Tangier, Morocco",
-        "venue": "Hilton Tangier Al Houara Resort & Spa",
-        "source_url": "https://virtual.aistats.org/",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "uai",
-      "name": "UAI",
-      "full_name": "Conference on Uncertainty in Artificial Intelligence",
-      "areas": ["machine-learning"],
-      "official_url": "https://www.auai.org/uai/",
-      "cfp_url": "https://www.auai.org/uai/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "August 17-21, 2026",
-        "location": "Amsterdam, Netherlands",
-        "venue": "KIT Events",
-        "source_url": "https://www.auai.org/uai2026/",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "acl",
-      "name": "ACL",
-      "full_name": "Annual Meeting of the Association for Computational Linguistics",
-      "areas": ["llm-nlp"],
-      "official_url": "https://www.aclweb.org/portal/",
-      "cfp_url": "https://www.aclweb.org/portal/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "August 17-22, 2027",
-        "location": "Kyoto, Japan",
-        "venue": "Venue TBA",
-        "source_url": "https://2027.aclweb.org/",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "emnlp",
-      "name": "EMNLP",
-      "full_name": "Conference on Empirical Methods in Natural Language Processing",
-      "areas": ["llm-nlp"],
-      "official_url": "https://2026.emnlp.org/",
-      "cfp_url": "https://2026.emnlp.org/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "October 22-29, 2026",
-        "location": "Budapest, Hungary",
-        "venue": "Hungexpo",
-        "source_url": "https://2026.emnlp.org/venue/",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "naacl",
-      "name": "NAACL",
-      "full_name": "North American Chapter of the Association for Computational Linguistics",
-      "areas": ["llm-nlp"],
-      "official_url": "https://2027.naacl.org/",
-      "cfp_url": "https://2027.naacl.org/",
-      "status": "verified",
-      "source_checked_at": "2026-08-12T18:30:00+09:00",
-      "source_evidence": "Submission deadline (ARR)",
-      "event": {
-        "dates": "June 1-5, 2027",
-        "location": "San Francisco, California, USA",
-        "venue": "Venue TBA",
-        "source_url": "https://2027.naacl.org/",
-        "status": "official"
-      },
-      "milestones": [
-        {
-          "id": "arr-submission",
-          "label": "ARR submission deadline",
-          "short_label": "ARR submission",
-          "kind": "paper",
-          "deadline_at": "2026-10-12T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "Submission deadline \\(ARR\\)[^A-Za-z]{0,20}([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})",
-            "timezone": "AoE"
-          }
-        }
-      ]
-    },
-    {
-      "id": "eacl",
-      "name": "EACL",
-      "full_name": "European Chapter of the Association for Computational Linguistics",
-      "areas": ["llm-nlp"],
-      "official_url": "https://2027.eacl.org/",
-      "cfp_url": "https://2027.eacl.org/calls/papers/",
-      "status": "verified",
-      "source_checked_at": "2026-08-12T18:30:00+09:00",
-      "source_evidence": "ARR submission deadline",
-      "event": {
-        "dates": "March 9-14, 2027",
-        "location": "Athens, Greece",
-        "venue": "Venue TBA",
-        "source_url": "https://2027.eacl.org/",
-        "status": "official"
-      },
-      "milestones": [
-        {
-          "id": "arr-submission",
-          "label": "ARR submission deadline",
-          "short_label": "ARR submission",
-          "kind": "paper",
-          "deadline_at": "2026-08-03T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "ARR submission deadline \\(long (?:&|&amp;) short papers\\)[^A-Za-z]{0,20}([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})",
-            "timezone": "AoE"
-          }
-        },
-        {
-          "id": "commitment",
-          "label": "EACL commitment deadline",
-          "short_label": "Commitment",
-          "kind": "paper",
-          "deadline_at": "2026-10-11T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified",
-          "source_parser": {
-            "match": "EACL 2027 commitment deadline[^A-Za-z]{0,20}([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})",
-            "timezone": "AoE"
-          }
-        },
-        {
-          "id": "notification",
-          "label": "Acceptance notification",
-          "short_label": "Decision",
-          "kind": "notification",
-          "deadline_at": "2026-11-12T23:59:00-12:00",
-          "timezone_label": "AoE",
-          "status": "verified"
-        }
-      ]
-    },
-    {
-      "id": "aacl",
-      "name": "AACL",
-      "full_name": "Asia-Pacific Chapter of the Association for Computational Linguistics",
-      "areas": ["llm-nlp"],
-      "official_url": "https://www.aaclweb.org/",
-      "cfp_url": "https://www.aaclweb.org/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "November 6-10, 2026",
-        "location": "Hengqin, China",
-        "venue": "Venue TBA",
-        "source_url": "https://2026.aaclnet.org/",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "coling",
-      "name": "COLING",
-      "full_name": "International Conference on Computational Linguistics",
-      "areas": ["llm-nlp"],
-      "official_url": "https://coling2025.org/",
-      "cfp_url": "https://coling2025.org/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "May 9-14, 2027",
-        "location": "Macau, China",
-        "venue": "Venue TBA",
-        "source_url": "https://2027.coling-iccl.org/about/",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "conll",
-      "name": "CoNLL",
-      "full_name": "Conference on Computational Natural Language Learning",
-      "areas": ["llm-nlp"],
-      "official_url": "https://www.conll.org/",
-      "cfp_url": "https://www.conll.org/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "July 3-4, 2026",
-        "location": "San Diego, California, USA",
-        "venue": "Co-located with ACL 2026",
-        "source_url": "https://www.conll.org/2026",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "icra",
-      "name": "ICRA",
-      "full_name": "IEEE International Conference on Robotics and Automation",
-      "areas": ["robotics"],
-      "official_url": "https://2027.ieee-icra.org/",
-      "cfp_url": "https://2027.ieee-icra.org/announcements/call-for-technical-papers/",
-      "status": "verified",
-      "source_checked_at": "2026-08-12T18:30:00+09:00",
-      "source_evidence": "Contributed paper submission deadline",
-      "event": {
-        "dates": "May 24-28, 2027",
-        "location": "Seoul, South Korea",
-        "venue": "COEX",
-        "source_url": "https://2027.ieee-icra.org/",
-        "status": "official"
-      },
-      "milestones": [
-        {
-          "id": "paper",
-          "label": "Contributed paper submission",
-          "short_label": "Paper",
-          "kind": "paper",
-          "deadline_at": "2026-09-15T23:59:00-07:00",
-          "timezone_label": "Pacific Time (PT)",
-          "status": "verified",
-          "source_parser": {
-            "match": "([A-Za-z]+\\s+\\d{1,2},\\s+\\d{4})[\\s\\S]{0,80}11:59[\\s\\S]{0,80}Contributed paper submission deadline",
-            "timezone": "America/Los_Angeles"
-          }
-        },
-        {
-          "id": "decision",
-          "label": "Notification of decision",
-          "short_label": "Decision",
-          "kind": "notification",
-          "deadline_at": "2027-01-31T23:59:00-08:00",
-          "timezone_label": "Pacific Time (PT)",
-          "status": "verified"
-        }
-      ]
-    },
-    {
-      "id": "iros",
-      "name": "IROS",
-      "full_name": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
-      "areas": ["robotics"],
-      "official_url": "https://www.ieee-ras.org/event/2027-ieee-rsj-international-conference-on-intelligent-robots-and-systems-iros-70525/",
-      "cfp_url": "https://www.ieee-ras.org/event/2027-ieee-rsj-international-conference-on-intelligent-robots-and-systems-iros-70525/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "September 26-October 1, 2027",
-        "location": "Florence, Italy",
-        "venue": "Fortezza da Basso",
-        "source_url": "https://www.ieee-ras.org/event/2027-ieee-rsj-international-conference-on-intelligent-robots-and-systems-iros-70525/",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "rss",
-      "name": "RSS",
-      "full_name": "Robotics: Science and Systems",
-      "areas": ["robotics"],
-      "official_url": "https://roboticsconference.org/",
-      "cfp_url": "https://roboticsconference.org/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "July 13-17, 2026",
-        "location": "Sydney, Australia",
-        "venue": "University of Technology Sydney and ICC Sydney",
-        "source_url": "https://roboticsconference.org/",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "corl",
-      "name": "CoRL",
-      "full_name": "Conference on Robot Learning",
-      "areas": ["robotics", "machine-learning"],
-      "official_url": "https://www.corl.org/",
-      "cfp_url": "https://www.corl.org/",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "November 9-12, 2026",
-        "location": "Austin, Texas, USA",
-        "venue": "JW Marriott Austin, Hilton Austin, and Bass Hall",
-        "source_url": "https://www.corl.org/home",
-        "status": "official"
-      },
-      "milestones": []
-    },
-    {
-      "id": "humanoids",
-      "name": "Humanoids",
-      "full_name": "IEEE-RAS International Conference on Humanoid Robots",
-      "areas": ["robotics"],
-      "official_url": "https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/humanoids",
-      "cfp_url": "https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/humanoids",
-      "status": "awaiting_cfp",
-      "event": {
-        "dates": "December 7-9, 2026",
-        "location": "Santa Clara, California, USA",
-        "venue": "Santa Clara Convention Center",
-        "source_url": "https://www.ieee-ras.org/event/2026-ieee-ras-25th-international-conference-on-humanoid-robots-humanoids-68892/",
-        "status": "official"
-      },
-      "milestones": []
-    }
-  ]
+    ]
 }

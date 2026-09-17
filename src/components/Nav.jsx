@@ -163,7 +163,7 @@ export default function Nav() {
         },
         {
             key: "people",
-            label: "People",
+            label: "Member",
         },
         {
             key: "photo",

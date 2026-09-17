@@ -3,6 +3,7 @@ import PublicationLinkIcons, {
 } from "./Publication.LinkIcons";
 import PublicationFigure from "./Publication.Figure";
 import { RESEARCH_CATEGORY_LABELS } from "../../utils/researchData";
+import { getVenueTagLabel } from "../../utils/publicationData";
 
 const isValidHttpUrl = (url) => {
     if (!url) return false;
@@ -28,7 +29,7 @@ function PublicationCard({
     const authorText = meta.author?.trim() ?? "";
     const venueText = meta.published_place?.trim() ?? "";
     const dateText = meta.published_date?.trim() ?? "";
-    const keywordList = Array.isArray(meta.keywords) ? meta.keywords : [];
+    const venueTag = getVenueTagLabel(venueText);
 
     return (
         <article
@@ -47,20 +48,12 @@ function PublicationCard({
                         className={`publication__card-badge publication__card-badge--${category}`}>
                         {categoryLabel}
                     </p>
+                    {venueTag ? (
+                        <p className="publication__card-badge publication__card-badge--venue">
+                            {venueTag}
+                        </p>
+                    ) : null}
                 </div>
-                {keywordList.length ? (
-                    <div
-                        className="publication__card-keywords"
-                        aria-label={`${title} keywords`}>
-                        {keywordList.map((keywordItem, keywordIndex) => (
-                            <span
-                                key={`${title}-${keywordItem}-${keywordIndex}`}
-                                className="publication__card-keyword-chip">
-                                {keywordItem}
-                            </span>
-                        ))}
-                    </div>
-                ) : null}
                 <h3 className="publication__card-title">
                     {hasPaperLink ? (
                         <a

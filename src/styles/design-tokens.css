@@ -156,8 +156,8 @@
     --identity-photo-accent: #73beb3;
     --identity-contact-soft: #fff0f5;
     --identity-contact-accent: #e3a0b8;
-    --identity-deadlines-soft: #edf4ff;
-    --identity-deadlines-accent: #6d95d5;
+    --identity-deadlines-soft: #edf8f4;
+    --identity-deadlines-accent: #4d9a83;
 
     --tab-home-tint: #edf8f4;
     --tab-home-border: #cde9dd;
@@ -188,7 +188,7 @@
     --tab-contact-accent: var(--identity-contact-accent);
 
     --tab-deadlines-tint: var(--identity-deadlines-soft);
-    --tab-deadlines-border: #d0def4;
+    --tab-deadlines-border: #cde9dd;
     --tab-deadlines-accent: var(--identity-deadlines-accent);
 
     --font-base:
@@ -391,8 +391,8 @@
     --identity-photo-accent: #98d8cf;
     --identity-contact-soft: #3a1f30;
     --identity-contact-accent: #f0bdd1;
-    --identity-deadlines-soft: #192b48;
-    --identity-deadlines-accent: #a6c6ff;
+    --identity-deadlines-soft: #142f2d;
+    --identity-deadlines-accent: #8bd7c4;
 
     --tab-home-tint: #142f2d;
     --tab-home-border: #2f5f57;
@@ -404,7 +404,7 @@
     --tab-people-border: #544076;
     --tab-photo-border: #3d6166;
     --tab-contact-border: #6d4260;
-    --tab-deadlines-border: #3b5d92;
+    --tab-deadlines-border: #2f5f57;
     --backdrop-line: rgba(154, 192, 255, 0.11);
     --backdrop-line-strong: rgba(154, 192, 255, 0.2);
     --backdrop-band: color-mix(

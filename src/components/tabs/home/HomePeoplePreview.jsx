@@ -22,7 +22,7 @@ export default function HomePeoplePreview() {
             aria-labelledby="home-people-title">
             <div className="home-block__head">
                 <div>
-                    <h2 id="home-people-title">People</h2>
+                    <h2 id="home-people-title">Members</h2>
                     <p>
                         Meet the professor and members behind current MMAI Lab
                         research.
@@ -87,7 +87,7 @@ export default function HomePeoplePreview() {
                     to="/people"
                     state={{ scroll: { mode: "top" } }}
                     className="home-block__section-action btn btn--tertiary animated-underline">
-                    View all people
+                    View all members
                     <span className="home-block__section-action-icon">→</span>
                 </Link>
             </div>

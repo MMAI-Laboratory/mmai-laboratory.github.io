@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
 import {
+    PROGRAMMATIC_SCROLL_DURATION_MS,
     notifyProgrammaticScroll,
     scrollWindowTo,
 } from "../utils/scrollMotion";
@@ -10,6 +11,11 @@ const SCROLL_RETRY_DELAY_MS = 50;
 const TOP_SCROLL_MARGIN = 16;
 const SCROLL_TARGET_CLASS = "scroll-target-highlight";
 const SCROLL_TARGET_CLEAR_DELAY_MS = 1600;
+// Content above the target can still settle after the scroll is computed (a
+// late reflow shifts it by a card's height), which leaves the target stranded
+// under the sticky nav. Re-check once the animation ends and correct.
+const SETTLE_CHECK_DELAYS_MS = [PROGRAMMATIC_SCROLL_DURATION_MS + 60, 420];
+const SETTLE_TOLERANCE_PX = 4;
 
 let activeScrollTarget = null;
 let scrollTargetTimeoutId = null;
@@ -115,6 +121,39 @@ const scrollToTopOfContent = (behavior) => {
     return true;
 };
 
+let settleTimeoutIds = [];
+
+const clearSettleCorrection = () => {
+    settleTimeoutIds.forEach((id) => window.clearTimeout(id));
+    settleTimeoutIds = [];
+};
+
+// After the smooth scroll ends, verify the target actually sits below the nav
+// and jump the remaining distance if a late reflow moved it.
+const scheduleSettleCorrection = (element, clearance) => {
+    clearSettleCorrection();
+
+    settleTimeoutIds = SETTLE_CHECK_DELAYS_MS.map((delay) =>
+        window.setTimeout(() => {
+            if (!element.isConnected) {
+                return;
+            }
+
+            const drift = element.getBoundingClientRect().top - clearance;
+            if (Math.abs(drift) <= SETTLE_TOLERANCE_PX) {
+                return;
+            }
+
+            notifyProgrammaticScroll(0);
+            scrollWindowTo({
+                top: window.scrollY + drift,
+                behavior: "auto",
+                notify: false,
+            });
+        }, delay),
+    );
+};
+
 const scrollToSelector = ({ selector, block = "start" }, behavior) => {
     if (!selector) {
         return false;
@@ -134,14 +173,28 @@ const scrollToSelector = ({ selector, block = "start" }, behavior) => {
             2,
         0,
     );
+    // scroll-margin-top only applies to native anchor jumps, so honour it here
+    // as a floor: it is what the stylesheet declares as the clearance the
+    // sticky nav needs, and it stays correct if the nav is measured mid-animation.
+    const declaredMargin = toPx(
+        window.getComputedStyle(highlightTarget).scrollMarginTop,
+    );
+    const startClearance = Math.max(
+        topOffset + TOP_SCROLL_MARGIN,
+        declaredMargin,
+    );
     const nextTop =
         block === "center"
             ? absoluteTop - centerOffset - topOffset
-            : absoluteTop - topOffset - TOP_SCROLL_MARGIN;
+            : absoluteTop - startClearance;
 
     notifyProgrammaticScroll();
     scrollWindowTo({ top: nextTop, behavior, notify: false });
     highlightScrollTarget(target);
+
+    if (block !== "center") {
+        scheduleSettleCorrection(highlightTarget, startClearance);
+    }
 
     return true;
 };
@@ -240,6 +293,7 @@ function RouteScrollManager() {
             if (timeoutId !== null) {
                 window.clearTimeout(timeoutId);
             }
+            clearSettleCorrection();
         };
     }, [location, navigationType]);
 

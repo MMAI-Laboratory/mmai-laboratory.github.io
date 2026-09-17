@@ -25,7 +25,7 @@
         "computer-vision"
       ],
       "official_url": "https://cvpr.thecvf.com/",
-      "cfp_url": "https://cvpr.thecvf.com/",
+      "cfp_url": "https://cvpr.thecvf.com/Conferences/2027/Dates",
       "status": "awaiting_cfp",
       "event": {
         "dates": "June 20-24, 2027",
@@ -34,13 +34,86 @@
         "source_url": "https://www.thecvf.com/?p=137",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "registration",
+          "label": "Paper registration",
+          "short_label": "Registration",
+          "kind": "registration",
+          "deadline_at": "2026-11-10T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Paper Registration Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "paper",
+          "label": "Paper submission",
+          "short_label": "Paper",
+          "kind": "paper",
+          "deadline_at": "2026-11-16T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Submission Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "supplementary",
+          "label": "Supplementary material",
+          "short_label": "Supplementary",
+          "kind": "supplementary",
+          "deadline_at": "2026-11-23T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Supplementary Materials Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": "Reviews released",
+          "short_label": "Reviews",
+          "kind": "review",
+          "deadline_at": "2027-01-25T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Reviews Released\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "decision",
+          "label": "Final decisions",
+          "short_label": "Decision",
+          "kind": "decision",
+          "deadline_at": "2027-02-25T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Final Decisions.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        }
+      ],
+      "source_evidence": "CVPR 2027",
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.373Z",
+        "checked_at": "2026-09-17T05:28:57.289Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "df9cca766b463b89",
-        "extracted_milestones": {},
+        "content_fingerprint": "e528326fe4ff5a5a",
+        "extracted_milestones": {
+          "registration": "2026-11-10T23:59:00-12:00",
+          "paper": "2026-11-16T23:59:00-12:00",
+          "supplementary": "2026-11-23T23:59:00-12:00",
+          "reviews": "2027-01-25T23:59:00-12:00",
+          "decision": "2027-02-25T23:59:00-12:00"
+        },
         "message": "Official source matched the configured evidence."
       }
     },
@@ -52,7 +125,7 @@
         "computer-vision"
       ],
       "official_url": "https://iccv.thecvf.com/",
-      "cfp_url": "https://iccv.thecvf.com/",
+      "cfp_url": "https://iccv.thecvf.com/Conferences/2027/Dates",
       "status": "awaiting_cfp",
       "event": {
         "dates": "October 2-8, 2027",
@@ -62,13 +135,14 @@
         "status": "official"
       },
       "milestones": [],
+      "source_evidence": "ICCV 2027",
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.394Z",
-        "state": "matched",
-        "http_status": 200,
-        "content_fingerprint": "21d8ae8ccbca0680",
+        "checked_at": "2026-09-17T05:28:57.317Z",
+        "state": "needs_review",
+        "http_status": 404,
+        "content_fingerprint": "44522e22d60c90fe",
         "extracted_milestones": {},
-        "message": "Official source matched the configured evidence."
+        "message": "Official source returned HTTP 404."
       }
     },
     {
@@ -90,12 +164,12 @@
       },
       "milestones": [],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.395Z",
-        "state": "matched",
+        "checked_at": "2026-09-17T05:28:57.318Z",
+        "state": "awaiting_cfp",
         "http_status": 200,
-        "content_fingerprint": "87bf552c3c1aec01",
+        "content_fingerprint": "173907855a2964a9",
         "extracted_milestones": {},
-        "message": "Official source matched the configured evidence."
+        "message": "No parser configured yet: the official CFP for the next round is not published."
       }
     },
     {
@@ -172,17 +246,14 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.395Z",
-        "state": "matched",
+        "checked_at": "2026-09-17T05:28:57.319Z",
+        "state": "needs_review",
         "http_status": 200,
-        "content_fingerprint": "20f5e9a0b08c0b3e",
+        "content_fingerprint": "208a1a404d4823ff",
         "extracted_milestones": {
-          "round-2-registration": "2026-08-21T23:59:00-12:00",
-          "round-2-paper": "2026-08-28T23:59:00-12:00",
-          "round-2-supplementary": "2026-08-30T23:59:00-12:00",
           "final-decision": "2026-10-09T23:59:00-12:00"
         },
-        "message": "Official source matched the configured evidence."
+        "message": "Official source changed or no longer contains the configured evidence."
       }
     },
     {
@@ -204,7 +275,7 @@
       },
       "milestones": [],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.396Z",
+        "checked_at": "2026-09-17T05:28:57.319Z",
         "state": "unavailable",
         "http_status": null,
         "content_fingerprint": null,
@@ -229,13 +300,100 @@
         "source_url": "https://accv2026.org/",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "registration",
+          "label": "Paper registration",
+          "short_label": "Registration",
+          "kind": "registration",
+          "deadline_at": "2026-07-03T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Paper registration deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "paper",
+          "label": "Paper submission",
+          "short_label": "Paper",
+          "kind": "paper",
+          "deadline_at": "2026-07-05T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Paper submission deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "supplementary",
+          "label": "Supplementary material",
+          "short_label": "Supplementary",
+          "kind": "supplementary",
+          "deadline_at": "2026-07-08T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Supplementary material deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": "Reviews released",
+          "short_label": "Reviews",
+          "kind": "review",
+          "deadline_at": "2026-08-26T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Reviews are released to authors\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "rebuttal",
+          "label": "Rebuttal deadline",
+          "short_label": "Rebuttal",
+          "kind": "review",
+          "deadline_at": "2026-09-02T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Rebuttal deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "decision",
+          "label": "Paper decision notification",
+          "short_label": "Decision",
+          "kind": "decision",
+          "deadline_at": "2026-09-20T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Paper decision notification\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        }
+      ],
+      "source_evidence": "ACCV 2026",
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.396Z",
+        "checked_at": "2026-09-17T05:28:57.320Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "1a466d0c3989c11f",
-        "extracted_milestones": {},
+        "content_fingerprint": "f1b6ac90bc2d0568",
+        "extracted_milestones": {
+          "registration": "2026-07-03T23:59:00-12:00",
+          "paper": "2026-07-05T23:59:00-12:00",
+          "supplementary": "2026-07-08T23:59:00-12:00",
+          "reviews": "2026-08-26T23:59:00-12:00",
+          "rebuttal": "2026-09-02T23:59:00-12:00",
+          "decision": "2026-09-20T23:59:00-12:00"
+        },
         "message": "Official source matched the configured evidence."
       }
     },
@@ -305,10 +463,10 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.396Z",
+        "checked_at": "2026-09-17T05:28:57.320Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "6351c2ff68b3bc95",
+        "content_fingerprint": "705f576e2492ae1b",
         "extracted_milestones": {
           "paper": "2026-08-28T23:59:00-12:00",
           "supplementary": "2026-09-02T23:59:00-12:00"
@@ -324,7 +482,7 @@
         "computer-vision"
       ],
       "official_url": "https://conferences.miccai.org/",
-      "cfp_url": "https://conferences.miccai.org/",
+      "cfp_url": "https://conferences.miccai.org/2026/en/IMPORTANT-DATES.html",
       "status": "awaiting_cfp",
       "event": {
         "dates": "September 27-October 1, 2026",
@@ -333,14 +491,73 @@
         "source_url": "https://conferences.miccai.org/2026/en/default.asp",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "intention",
+          "label": "Intention to submit",
+          "short_label": "Intention",
+          "kind": "abstract",
+          "deadline_at": "2026-02-12T23:59:00-08:00",
+          "timezone_label": "PT",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Intention to Submit\\)?\\s*(?:[A-Z][a-z]+day,\\s*)?([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "America/Los_Angeles"
+          }
+        },
+        {
+          "id": "paper",
+          "label": "Paper submission",
+          "short_label": "Paper",
+          "kind": "paper",
+          "deadline_at": "2026-02-26T23:59:00-08:00",
+          "timezone_label": "PT",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Main Conference Paper Submission[^)]{0,60}\\)?\\s*(?:[A-Z][a-z]+day,\\s*)?([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "America/Los_Angeles"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": "Reviews released",
+          "short_label": "Reviews",
+          "kind": "review",
+          "deadline_at": "2026-05-07T23:59:00-07:00",
+          "timezone_label": "PT",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Reviews released to Authors\\s*(?:EOD on\\s*)?([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "America/Los_Angeles"
+          }
+        },
+        {
+          "id": "decision",
+          "label": "Notification of paper decisions",
+          "short_label": "Decision",
+          "kind": "decision",
+          "deadline_at": "2026-06-12T23:59:00-07:00",
+          "timezone_label": "PT",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Notification of Paper Decisions\\s*(?:EOD on\\s*)?([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "America/Los_Angeles"
+          }
+        }
+      ],
+      "source_evidence": "MICCAI 2026",
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.397Z",
-        "state": "needs_review",
-        "http_status": 403,
-        "content_fingerprint": "3c8e4551b538b9c5",
-        "extracted_milestones": {},
-        "message": "Official source returned HTTP 403."
+        "checked_at": "2026-09-17T05:28:57.321Z",
+        "state": "matched",
+        "http_status": 200,
+        "content_fingerprint": "348616d0b57c4af2",
+        "extracted_milestones": {
+          "intention": "2026-02-12T23:59:00-08:00",
+          "paper": "2026-02-26T23:59:00-08:00",
+          "reviews": "2026-05-07T23:59:00-07:00",
+          "decision": "2026-06-12T23:59:00-07:00"
+        },
+        "message": "Official source matched the configured evidence."
       }
     },
     {
@@ -352,7 +569,7 @@
         "llm-nlp"
       ],
       "official_url": "https://neurips.cc/",
-      "cfp_url": "https://neurips.cc/",
+      "cfp_url": "https://neurips.cc/Conferences/2026/Dates",
       "status": "awaiting_cfp",
       "event": {
         "dates": "December 6-13, 2026",
@@ -361,13 +578,72 @@
         "source_url": "https://neurips.cc/",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "abstract",
+          "label": "Abstract submission",
+          "short_label": "Abstract",
+          "kind": "abstract",
+          "deadline_at": "2026-05-04T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Paper Abstract Submission Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "paper",
+          "label": "Paper submission",
+          "short_label": "Paper",
+          "kind": "paper",
+          "deadline_at": "2026-05-06T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Full Paper Submission Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": "Reviews released",
+          "short_label": "Reviews",
+          "kind": "review",
+          "deadline_at": "2026-07-22T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Reviews Released to Authors\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "notification",
+          "label": "Acceptance notification",
+          "short_label": "Notification",
+          "kind": "notification",
+          "deadline_at": "2026-09-24T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Paper Author Notifications\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        }
+      ],
+      "source_evidence": "NeurIPS 2026",
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.397Z",
+        "checked_at": "2026-09-17T05:28:57.321Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "8507f5d0ba16175e",
-        "extracted_milestones": {},
+        "content_fingerprint": "42892176d282a64a",
+        "extracted_milestones": {
+          "abstract": "2026-05-04T23:59:00-12:00",
+          "paper": "2026-05-06T23:59:00-12:00",
+          "reviews": "2026-07-22T23:59:00-12:00",
+          "notification": "2026-09-24T23:59:00-12:00"
+        },
         "message": "Official source matched the configured evidence."
       }
     },
@@ -379,7 +655,7 @@
         "machine-learning"
       ],
       "official_url": "https://icml.cc/",
-      "cfp_url": "https://icml.cc/",
+      "cfp_url": "https://icml.cc/Conferences/2026/Dates",
       "status": "awaiting_cfp",
       "event": {
         "dates": "July 6-11, 2026",
@@ -388,13 +664,86 @@
         "source_url": "https://icml.cc/",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "abstract",
+          "label": "Abstract submission",
+          "short_label": "Abstract",
+          "kind": "abstract",
+          "deadline_at": "2026-01-23T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Abstract Submission Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "paper",
+          "label": "Paper submission",
+          "short_label": "Paper",
+          "kind": "paper",
+          "deadline_at": "2026-01-28T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "(?:Full |Main Conference )?Paper Submission Deadline.{0,80}?([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": "Reviews released",
+          "short_label": "Reviews",
+          "kind": "review",
+          "deadline_at": "2026-03-24T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Reviews Released to Authors\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "rebuttal",
+          "label": "Author response deadline",
+          "short_label": "Rebuttal",
+          "kind": "review",
+          "deadline_at": "2026-03-30T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Author Response Deadline\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "notification",
+          "label": "Acceptance notification",
+          "short_label": "Notification",
+          "kind": "notification",
+          "deadline_at": "2026-04-30T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Author Notification\\s*([A-Z][a-z]{2}\\s+\\d{1,2}\\s+'\\d{2})",
+            "timezone": "AoE"
+          }
+        }
+      ],
+      "source_evidence": "ICML 2026",
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.397Z",
+        "checked_at": "2026-09-17T05:28:57.322Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "508fb44aaec5e9dc",
-        "extracted_milestones": {},
+        "content_fingerprint": "c679556f1a4109fa",
+        "extracted_milestones": {
+          "abstract": "2026-01-23T23:59:00-12:00",
+          "paper": "2026-01-28T23:59:00-12:00",
+          "reviews": "2026-03-24T23:59:00-12:00",
+          "rebuttal": "2026-03-30T23:59:00-12:00",
+          "notification": "2026-04-30T23:59:00-12:00"
+        },
         "message": "Official source matched the configured evidence."
       }
     },
@@ -466,10 +815,10 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.397Z",
+        "checked_at": "2026-09-17T05:28:57.322Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "8f6749dff9eb3aaa",
+        "content_fingerprint": "9a31bb3f7eff5ab2",
         "extracted_milestones": {
           "abstract": "2026-09-18T23:59:00-12:00",
           "paper": "2026-09-25T23:59:00-12:00"
@@ -558,10 +907,10 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.398Z",
+        "checked_at": "2026-09-17T05:28:57.322Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "04dbde09822af144",
+        "content_fingerprint": "a5e464bd2c0a4b5c",
         "extracted_milestones": {
           "abstract": "2026-07-21T23:59:00-12:00",
           "paper": "2026-07-28T23:59:00-12:00",
@@ -589,12 +938,12 @@
       },
       "milestones": [],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.398Z",
-        "state": "matched",
+        "checked_at": "2026-09-17T05:28:57.323Z",
+        "state": "awaiting_cfp",
         "http_status": 200,
-        "content_fingerprint": "8577f2e2b650e82f",
+        "content_fingerprint": "aefc4ff891adbe6d",
         "extracted_milestones": {},
-        "message": "Official source matched the configured evidence."
+        "message": "No parser configured yet: the official CFP for the next round is not published."
       }
     },
     {
@@ -605,7 +954,7 @@
         "machine-learning"
       ],
       "official_url": "https://www.auai.org/uai/",
-      "cfp_url": "https://www.auai.org/uai/",
+      "cfp_url": "https://www.auai.org/uai2026/important_dates",
       "status": "awaiting_cfp",
       "event": {
         "dates": "August 17-21, 2026",
@@ -614,14 +963,73 @@
         "source_url": "https://www.auai.org/uai2026/",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "paper",
+          "label": "Paper submission",
+          "short_label": "Paper",
+          "kind": "paper",
+          "deadline_at": "2026-02-25T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Paper submission deadline[\\s\\S]{0,45}?([A-Z][a-z]+\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": "Reviews released",
+          "short_label": "Reviews",
+          "kind": "review",
+          "deadline_at": "2026-04-23T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Reviews released to Authors\\s*([A-Z][a-z]+\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "decision",
+          "label": "Author notification",
+          "short_label": "Decision",
+          "kind": "decision",
+          "deadline_at": "2026-06-01T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Author notification[\\s\\S]{0,20}?([A-Z][a-z]+\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "camera-ready",
+          "label": "Camera-ready deadline",
+          "short_label": "Camera-ready",
+          "kind": "camera_ready",
+          "deadline_at": "2026-07-08T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Camera-ready deadline[\\s\\S]{0,20}?([A-Z][a-z]+\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        }
+      ],
+      "source_evidence": "UAI",
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.398Z",
-        "state": "needs_review",
-        "http_status": 404,
-        "content_fingerprint": "b8c1d648ac198b1e",
-        "extracted_milestones": {},
-        "message": "Official source returned HTTP 404."
+        "checked_at": "2026-09-17T05:28:57.323Z",
+        "state": "matched",
+        "http_status": 200,
+        "content_fingerprint": "8d174df270e92731",
+        "extracted_milestones": {
+          "paper": "2026-02-25T23:59:00-12:00",
+          "reviews": "2026-04-23T23:59:00-12:00",
+          "decision": "2026-06-01T23:59:00-12:00",
+          "camera-ready": "2026-07-08T23:59:00-12:00"
+        },
+        "message": "Official source matched the configured evidence."
       }
     },
     {
@@ -632,7 +1040,7 @@
         "llm-nlp"
       ],
       "official_url": "https://www.aclweb.org/portal/",
-      "cfp_url": "https://www.aclweb.org/portal/",
+      "cfp_url": "https://2026.aclweb.org/",
       "status": "awaiting_cfp",
       "event": {
         "dates": "August 17-22, 2027",
@@ -641,13 +1049,58 @@
         "source_url": "https://2027.aclweb.org/",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "arr-submission",
+          "label": "ARR submission",
+          "short_label": "ARR submission",
+          "kind": "paper",
+          "deadline_at": "2026-01-05T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Submission deadline[^)]{0,60}\\)?\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "commitment",
+          "label": "Commitment deadline",
+          "short_label": "Commitment",
+          "kind": "paper",
+          "deadline_at": "2026-03-14T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Commitment deadline for ACL 2026\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "decision",
+          "label": "Notification of acceptance",
+          "short_label": "Decision",
+          "kind": "decision",
+          "deadline_at": "2026-04-04T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Notification of acceptance\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        }
+      ],
+      "source_evidence": "ACL 2026",
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.399Z",
+        "checked_at": "2026-09-17T05:28:57.323Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "53f6aae209dd3a9c",
-        "extracted_milestones": {},
+        "content_fingerprint": "d2fcea258883f6ec",
+        "extracted_milestones": {
+          "arr-submission": "2026-01-05T23:59:00-12:00",
+          "commitment": "2026-03-14T23:59:00-12:00",
+          "decision": "2026-04-04T23:59:00-12:00"
+        },
         "message": "Official source matched the configured evidence."
       }
     },
@@ -668,13 +1121,72 @@
         "source_url": "https://2026.emnlp.org/venue/",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "arr-submission",
+          "label": "ARR submission",
+          "short_label": "ARR submission",
+          "kind": "paper",
+          "deadline_at": "2026-05-25T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "ARR submission deadline[^)]{0,40}\\)?\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "reviews",
+          "label": "Meta review released",
+          "short_label": "Reviews",
+          "kind": "review",
+          "deadline_at": "2026-07-30T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Meta review released\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "commitment",
+          "label": "Commitment deadline",
+          "short_label": "Commitment",
+          "kind": "paper",
+          "deadline_at": "2026-08-02T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "EMNLP commitment deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "decision",
+          "label": "Notification of acceptance",
+          "short_label": "Decision",
+          "kind": "decision",
+          "deadline_at": "2026-08-20T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Notification of acceptance[^)]{0,40}\\)?\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        }
+      ],
+      "source_evidence": "EMNLP 2026",
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.399Z",
+        "checked_at": "2026-09-17T05:28:57.324Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "f0a2284452494587",
-        "extracted_milestones": {},
+        "content_fingerprint": "4fa78f62409e68b4",
+        "extracted_milestones": {
+          "arr-submission": "2026-05-25T23:59:00-12:00",
+          "reviews": "2026-07-30T23:59:00-12:00",
+          "commitment": "2026-08-02T23:59:00-12:00",
+          "decision": "2026-08-20T23:59:00-12:00"
+        },
         "message": "Official source matched the configured evidence."
       }
     },
@@ -713,10 +1225,10 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.399Z",
+        "checked_at": "2026-09-17T05:28:57.324Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "25b93a93dcbd5100",
+        "content_fingerprint": "f584ec469eb16c23",
         "extracted_milestones": {
           "arr-submission": "2026-10-12T23:59:00-12:00"
         },
@@ -757,6 +1269,19 @@
           }
         },
         {
+          "id": "reviews",
+          "label": "Meta review released",
+          "short_label": "Reviews",
+          "kind": "review",
+          "deadline_at": "2026-10-08T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Meta review released\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        },
+        {
           "id": "commitment",
           "label": "EACL commitment deadline",
           "short_label": "Commitment",
@@ -780,12 +1305,13 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.399Z",
+        "checked_at": "2026-09-17T05:28:57.324Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "f3c439b4df339ad5",
+        "content_fingerprint": "9840d97764656a34",
         "extracted_milestones": {
           "arr-submission": "2026-08-03T23:59:00-12:00",
+          "reviews": "2026-10-08T23:59:00-12:00",
           "commitment": "2026-10-11T23:59:00-12:00"
         },
         "message": "Official source matched the configured evidence."
@@ -810,7 +1336,7 @@
       },
       "milestones": [],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.400Z",
+        "checked_at": "2026-09-17T05:28:57.324Z",
         "state": "unavailable",
         "http_status": null,
         "content_fingerprint": null,
@@ -837,12 +1363,12 @@
       },
       "milestones": [],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.400Z",
-        "state": "matched",
+        "checked_at": "2026-09-17T05:28:57.325Z",
+        "state": "awaiting_cfp",
         "http_status": 200,
         "content_fingerprint": "79dd6dd6681be131",
         "extracted_milestones": {},
-        "message": "Official source matched the configured evidence."
+        "message": "No parser configured yet: the official CFP for the next round is not published."
       }
     },
     {
@@ -864,12 +1390,12 @@
       },
       "milestones": [],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.400Z",
-        "state": "matched",
-        "http_status": 200,
-        "content_fingerprint": "95348c1e4d2eb4e5",
+        "checked_at": "2026-09-17T05:28:57.325Z",
+        "state": "unavailable",
+        "http_status": null,
+        "content_fingerprint": null,
         "extracted_milestones": {},
-        "message": "Official source matched the configured evidence."
+        "message": "Official source could not be checked: fetch failed."
       }
     },
     {
@@ -916,14 +1442,12 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.400Z",
-        "state": "matched",
+        "checked_at": "2026-09-17T05:28:57.325Z",
+        "state": "needs_review",
         "http_status": 200,
-        "content_fingerprint": "83952fb1efda6869",
-        "extracted_milestones": {
-          "paper": "2026-09-15T23:59:00-07:00"
-        },
-        "message": "Official source matched the configured evidence."
+        "content_fingerprint": "7d6634ef8377c01e",
+        "extracted_milestones": {},
+        "message": "Official source needs review: Paper could not be extracted."
       }
     },
     {
@@ -945,12 +1469,12 @@
       },
       "milestones": [],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.401Z",
-        "state": "matched",
+        "checked_at": "2026-09-17T05:28:57.325Z",
+        "state": "awaiting_cfp",
         "http_status": 200,
-        "content_fingerprint": "4597fda4cef8e8ee",
+        "content_fingerprint": "969cb3687a1c5f08",
         "extracted_milestones": {},
-        "message": "Official source matched the configured evidence."
+        "message": "No parser configured yet: the official CFP for the next round is not published."
       }
     },
     {
@@ -961,7 +1485,7 @@
         "robotics"
       ],
       "official_url": "https://roboticsconference.org/",
-      "cfp_url": "https://roboticsconference.org/",
+      "cfp_url": "https://roboticsconference.org/2026/",
       "status": "awaiting_cfp",
       "event": {
         "dates": "July 13-17, 2026",
@@ -970,13 +1494,72 @@
         "source_url": "https://roboticsconference.org/",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "abstract",
+          "label": "Abstract submission",
+          "short_label": "Abstract",
+          "kind": "abstract",
+          "deadline_at": "2026-01-23T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})\\s*11:59pm AoE\\s*Abstract/Title Submission Deadline",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "paper",
+          "label": "Paper submission",
+          "short_label": "Paper",
+          "kind": "paper",
+          "deadline_at": "2026-01-30T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})\\s*11:59pm AoE\\s*Paper Submission Deadline",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "supplementary",
+          "label": "Supplementary material",
+          "short_label": "Supplementary",
+          "kind": "supplementary",
+          "deadline_at": "2026-02-06T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})\\s*11:59pm AoE\\s*Supplementary Material Submission Deadline",
+            "timezone": "AoE"
+          }
+        },
+        {
+          "id": "rebuttal",
+          "label": "Rebuttal submission",
+          "short_label": "Rebuttal",
+          "kind": "review",
+          "deadline_at": "2026-04-27T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "awaiting_cfp",
+          "source_parser": {
+            "match": "Rebuttal Submission Deadline\\s*([A-Z][a-z]+\\s+\\d{1,2},\\s*\\d{4})",
+            "timezone": "AoE"
+          }
+        }
+      ],
+      "source_evidence": "RSS 2026",
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.401Z",
+        "checked_at": "2026-09-17T05:28:57.326Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "77165ff831242873",
-        "extracted_milestones": {},
+        "content_fingerprint": "7c9be2749767f8da",
+        "extracted_milestones": {
+          "abstract": "2026-01-23T23:59:00-12:00",
+          "paper": "2026-01-30T23:59:00-12:00",
+          "supplementary": "2026-02-06T23:59:00-12:00",
+          "rebuttal": "2026-04-27T23:59:00-12:00"
+        },
         "message": "Official source matched the configured evidence."
       }
     },
@@ -1000,12 +1583,12 @@
       },
       "milestones": [],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.401Z",
-        "state": "matched",
+        "checked_at": "2026-09-17T05:28:57.326Z",
+        "state": "awaiting_cfp",
         "http_status": 200,
-        "content_fingerprint": "50dadf680b736f1b",
+        "content_fingerprint": "2732b8a1b6009008",
         "extracted_milestones": {},
-        "message": "Official source matched the configured evidence."
+        "message": "No parser configured yet: the official CFP for the next round is not published."
       }
     },
     {
@@ -1027,12 +1610,12 @@
       },
       "milestones": [],
       "source_check": {
-        "checked_at": "2026-08-12T09:37:55.401Z",
-        "state": "matched",
+        "checked_at": "2026-09-17T05:28:57.326Z",
+        "state": "awaiting_cfp",
         "http_status": 200,
-        "content_fingerprint": "673d1d958ed36078",
+        "content_fingerprint": "78784a1c4cb8684f",
         "extracted_milestones": {},
-        "message": "Official source matched the configured evidence."
+        "message": "No parser configured yet: the official CFP for the next round is not published."
       }
     }
   ]
