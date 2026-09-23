@@ -92,6 +92,8 @@
 .deadlines__venue {
   display: grid;
   gap: var(--row-gap);
+  /* Clears the fixed nav when scrolled to from a calendar entry. */
+  scroll-margin-top: 5.5rem;
 }
 
 .deadlines__venue-head {
@@ -445,14 +447,28 @@
   color: var(--surface);
 }
 
+/* Each entry links to its venue in the schedule below, so it is a full-width
+   button reset to look like the original card. */
 .deadlines__calendar-entry {
+  display: block;
+  width: 100%;
   padding: var(--space-0p5) var(--space-1);
+  border: none;
   border-left: 3px solid var(--tab-deadlines-accent);
   border-radius: var(--radius-sm);
   background: var(--surface-2);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+
+.deadlines__calendar-entry:hover,
+.deadlines__calendar-entry:focus-visible {
+  background: var(--tab-deadlines-tint);
 }
 
 .deadlines__calendar-entry-venue {
+  display: block;
   margin: 0;
   color: var(--text-primary);
   font-size: var(--meta-text-size);
@@ -461,6 +477,7 @@
 }
 
 .deadlines__calendar-entry-label {
+  display: block;
   margin: 0;
   color: var(--text-muted);
   font-size: var(--meta-text-size);

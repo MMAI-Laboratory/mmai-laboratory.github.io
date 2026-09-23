@@ -20,7 +20,7 @@ const parseDayKey = (dayKey) => {
     return { year, monthIndex: month - 1, day };
 };
 
-export default function DeadlineCalendar({ venues, now }) {
+export default function DeadlineCalendar({ venues, now, onSelectVenue }) {
     const entriesByDay = useMemo(
         () => getDeadlineCalendarEntries(venues),
         [venues],
@@ -141,16 +141,19 @@ export default function DeadlineCalendar({ venues, now }) {
                                     {cell.day}
                                 </p>
                                 {dayEntries.map((entry) => (
-                                    <article
+                                    <button
                                         key={entry.id}
-                                        className={`deadlines__calendar-entry deadlines__calendar-entry--${entry.kind}`}>
-                                        <p className="deadlines__calendar-entry-venue">
+                                        type="button"
+                                        className={`deadlines__calendar-entry deadlines__calendar-entry--${entry.kind}`}
+                                        onClick={() => onSelectVenue(entry.venueId)}
+                                        aria-label={`Jump to ${entry.venueName} ${entry.label} in the schedule`}>
+                                        <span className="deadlines__calendar-entry-venue">
                                             {entry.venueName}
-                                        </p>
-                                        <p className="deadlines__calendar-entry-label">
+                                        </span>
+                                        <span className="deadlines__calendar-entry-label">
                                             {entry.label}
-                                        </p>
-                                    </article>
+                                        </span>
+                                    </button>
                                 ))}
                             </div>
                         );

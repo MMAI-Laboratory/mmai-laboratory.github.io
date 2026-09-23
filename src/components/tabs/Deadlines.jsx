@@ -36,6 +36,7 @@ function DeadlineCard({ venue, selectedMilestones, onSelectMilestone, now }) {
 
   return (
     <article
+      id={`venue-${venue.id}`}
       data-reveal
       className="deadlines__venue page-panel page-panel--compact"
     >
@@ -220,6 +221,16 @@ function Deadlines() {
     [selectedArea, normalizedQuery, venues],
   );
 
+  const handleSelectVenue = (venueId) => {
+    if (typeof document === "undefined") {
+      return;
+    }
+    const target = document.getElementById(`venue-${venueId}`);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const handleSelectMilestone = (venueId, milestoneId) => {
     setSelectedMilestones((current) => ({
       ...current,
@@ -257,7 +268,11 @@ function Deadlines() {
       </section>
       */}
 
-      <DeadlineCalendar venues={filteredVenues} now={now} />
+      <DeadlineCalendar
+        venues={filteredVenues}
+        now={now}
+        onSelectVenue={handleSelectVenue}
+      />
 
       <section
         className="deadlines__list"
