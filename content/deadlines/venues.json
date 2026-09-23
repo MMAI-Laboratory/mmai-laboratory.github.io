@@ -1370,6 +1370,228 @@
                 "status": "official"
             },
             "milestones": []
+        },
+        {
+            "id": "kdd",
+            "name": "KDD",
+            "full_name": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
+            "areas": [
+                "machine-learning"
+            ],
+            "official_url": "https://kdd2027.kdd.org/",
+            "cfp_url": "https://kdd2027.kdd.org/research-track-call-for-papers/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "August 2027",
+                "location": "San Jose, California, USA",
+                "venue": "San Jose",
+                "source_url": "https://kdd2027.kdd.org/research-track-call-for-papers/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "abstract",
+                    "label": "Abstract submission (Cycle 1)",
+                    "short_label": "Abstract",
+                    "kind": "abstract",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Abstract Deadline:\\s*([A-Z][a-z]{2,8}\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "paper",
+                    "label": "Paper submission (Cycle 1)",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Paper Deadline:\\s*([A-Z][a-z]{2,8}\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "rebuttal",
+                    "label": "Author rebuttal (period start)",
+                    "short_label": "Rebuttal",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Author Rebuttal Period:\\s*([A-Z][a-z]+\\s+\\d{1,2})\\s*[-–]\\s*[A-Za-z]*\\s*\\d{1,2},\\s*(\\d{4})",
+                        "timezone": "AoE",
+                        "compose": "$1, $2"
+                    }
+                },
+                {
+                    "id": "notification",
+                    "label": "Acceptance notification (Cycle 1)",
+                    "short_label": "Notification",
+                    "kind": "notification",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Notification:\\s*([A-Z][a-z]{2,8}\\s+\\d{1,2},\\s*\\d{4})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "KDD 2027"
+        },
+        {
+            "id": "pakdd",
+            "name": "PAKDD",
+            "full_name": "Pacific-Asia Conference on Knowledge Discovery and Data Mining",
+            "areas": [
+                "machine-learning"
+            ],
+            "official_url": "https://www.pakdd2027.org/",
+            "cfp_url": "https://www.pakdd2027.org/pages/dates",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "June 29 - July 2, 2027",
+                "location": "Wellington, New Zealand",
+                "venue": "Wellington",
+                "source_url": "https://www.pakdd2027.org/pages/dates",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Paper submission deadline\\s+(?:[A-Za-z]+,\\s*)?(\\d{1,2}\\s+[A-Z][a-z]{2,8}\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "notification",
+                    "label": "Acceptance notification",
+                    "short_label": "Notification",
+                    "kind": "notification",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Paper acceptance notification\\s+(?:[A-Za-z]+,\\s*)?(\\d{1,2}\\s+[A-Z][a-z]{2,8}\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "camera-ready",
+                    "label": "Camera-ready",
+                    "short_label": "Camera-ready",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Camera ready papers due\\s+(?:[A-Za-z]+,\\s*)?(\\d{1,2}\\s+[A-Z][a-z]{2,8}\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "PAKDD 2027"
+        },
+        {
+            "id": "aamas",
+            "name": "AAMAS",
+            "full_name": "International Conference on Autonomous Agents and Multiagent Systems",
+            "areas": [
+                "machine-learning",
+                "robotics"
+            ],
+            "official_url": "https://warwick.ac.uk/fac/sci/dcs/aamas2027/",
+            "cfp_url": "https://warwick.ac.uk/fac/sci/dcs/aamas2027/",
+            "status": "awaiting_cfp",
+            "event": {
+                "dates": "May 3-7, 2027",
+                "location": "Hanoi, Vietnam",
+                "venue": "JW Marriott Hotel",
+                "source_url": "https://warwick.ac.uk/fac/sci/dcs/aamas2027/",
+                "status": "official"
+            },
+            "milestones": [
+                {
+                    "id": "abstract",
+                    "label": "Abstract submission",
+                    "short_label": "Abstract",
+                    "kind": "abstract",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Main Track: Abstract submission:\\s*(?:[A-Za-z]+,\\s*)?(\\d{1,2}\\s+[A-Z][a-z]{2,8}\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Paper submission:\\s*(?:[A-Za-z]+,\\s*)?(\\d{1,2}\\s+[A-Z][a-z]{2,8}\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "rebuttal",
+                    "label": "Author rebuttal (period start)",
+                    "short_label": "Rebuttal",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Rebuttal period:\\s*(\\d{1,2})\\s*[-–]\\s*\\d{1,2}\\s+([A-Z][a-z]+\\s+\\d{4})",
+                        "timezone": "AoE",
+                        "compose": "$1 $2"
+                    }
+                },
+                {
+                    "id": "notification",
+                    "label": "Author notification",
+                    "short_label": "Notification",
+                    "kind": "notification",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Author notification:\\s*(?:[A-Za-z]+,\\s*)?(\\d{1,2}\\s+[A-Z][a-z]{2,8}\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "camera-ready",
+                    "label": "Camera-ready",
+                    "short_label": "Camera-ready",
+                    "kind": "paper",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "Camera-ready paper:\\s*(?:[A-Za-z]+,\\s*)?(\\d{1,2}\\s+[A-Z][a-z]{2,8}\\s+\\d{4})",
+                        "timezone": "AoE"
+                    }
+                }
+            ],
+            "source_evidence": "AAMAS 2027"
         }
     ]
 }

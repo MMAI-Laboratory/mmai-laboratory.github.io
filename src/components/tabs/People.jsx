@@ -98,14 +98,6 @@ function People() {
 
     return (
         <div data-reveal data-reveal-load-delay="60" className="people">
-            <div data-reveal className="tab-header page-head page-head--people">
-                <h1>Members</h1>
-                <p className="page-head__summary">
-                    The people and the research infrastructure behind ongoing
-                    MMAI Lab projects.
-                </p>
-            </div>
-
             <h2 className="people__group-title" id="human-members">
                 Human Members
             </h2>

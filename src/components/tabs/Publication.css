@@ -16,7 +16,10 @@
 }
 
 .publication__controls-grid {
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  /* Stack the research-area filter above the search box rather than side by
+     side, and tighten the vertical rhythm to keep the panel compact. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2);
   align-items: start;
 }
 

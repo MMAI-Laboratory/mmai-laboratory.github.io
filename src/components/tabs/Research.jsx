@@ -158,18 +158,6 @@ function Research({ selectedResearchTopic }) {
             data-reveal
             data-reveal-load-delay="60"
             className="research-wrapper">
-            <div
-                data-reveal
-                className="tab-header page-head page-head--research">
-                <h1>Research</h1>
-                <p className="page-head__summary">
-                    From foundational algorithms to real-world deployment,
-                    MMAI Lab builds vision and learning systems that connect core
-                    research, multimodal intelligence, robotics, and biomedical
-                    impact.
-                </p>
-            </div>
-
             <section
                 data-reveal
                 className="research__details page-panel"

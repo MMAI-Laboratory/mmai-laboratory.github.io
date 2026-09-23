@@ -1,16 +1,12 @@
 import "./Publication.css";
 import PublicationCard from "./Publication.Card";
 import { useEffect, useMemo, useState } from "react";
-import PublicationButton from "./Publication.Button";
 import {
     aggregatePublications,
     getPublicationCategories,
 } from "./home/homeData";
 import { useLocation } from "react-router-dom";
-import {
-    RESEARCH_CATEGORY_LABELS,
-    resolveResearchAreaKey,
-} from "../../utils/researchData";
+import { resolveResearchAreaKey } from "../../utils/researchData";
 
 const areaCategory = getPublicationCategories();
 const publications = aggregatePublications();
@@ -19,21 +15,12 @@ const SEARCH_SCOPES = [
     { key: "title-authors", label: "Title + Authors" },
     { key: "title-authors-venue", label: "Title + Authors + Venue" },
 ];
-const SEARCH_PLACEHOLDER_BY_SCOPE = {
-    title: "Search by title",
-    "title-authors": "Search by title or authors",
-    "title-authors-venue": "Search by title, authors, or venue",
-};
 
 function Publication() {
     const location = useLocation();
     const [selectedArea, setSelectedArea] = useState("all");
     const [searchQuery, setSearchQuery] = useState("");
-    const [searchScope, setSearchScope] = useState("title");
-
-    const handleSelectedArea = (area) => {
-        setSelectedArea(area);
-    };
+    const [searchScope, setSearchScope] = useState("title-authors-venue");
 
     useEffect(() => {
         const params = new URLSearchParams(location.search);
@@ -51,13 +38,7 @@ function Publication() {
         const hasValidArea = areaCategory.includes(normalizedAreaFromParams);
 
         setSearchQuery(queryFromParams);
-        setSearchScope(
-            hasValidScope
-                ? scopeFromParams
-                : queryFromParams
-                  ? "title-authors"
-                  : "title",
-        );
+        setSearchScope(hasValidScope ? scopeFromParams : "title-authors-venue");
         setSelectedArea(hasValidArea ? normalizedAreaFromParams : "all");
     }, [location.search]);
 
@@ -101,35 +82,18 @@ function Publication() {
 
     return (
         <div data-reveal data-reveal-load-delay="60" className="publication">
-            <div
-                data-reveal
-                className="tab-header page-head page-head--publication">
-                <h1>Publication</h1>
-                <p className="page-head__summary">
-                    Search and filter the publication archive by research area,
-                    title, authors, and venue.
-                </p>
-            </div>
-
+            {/* Filter and search — temporarily hidden.
             <div
                 data-reveal
                 className="publication__controls page-panel page-panel--compact page-panel--section-start page-controls">
                 <div className="publication__controls-intro page-controls__intro">
                     <h2 id="publication-controls-title">Filter and search</h2>
-                    <p>
-                        Combine category filters and text search to quickly find
-                        relevant publications.
-                    </p>
                 </div>
                 <div className="publication__controls-grid page-controls__grid">
                     <section className="publication__controls-group page-controls__group">
                         <div className="publication__controls-head">
                             <p className="publication__controls-label page-controls__label">
                                 Filter by research area
-                            </p>
-                            <p className="publication__controls-caption page-controls__caption">
-                                Categorical filtering narrows the archive by
-                                major research theme.
                             </p>
                         </div>
                         <div
@@ -157,10 +121,6 @@ function Publication() {
                                 htmlFor="publication-search">
                                 Search publications
                             </label>
-                            <p className="publication__controls-caption page-controls__caption">
-                                Text search runs on title, authors, and venue
-                                based on the selected scope.
-                            </p>
                         </div>
                         <div className="publication__search-layout">
                             <div className="publication__search-input-wrap">
@@ -179,34 +139,11 @@ function Publication() {
                                     }
                                 />
                             </div>
-                            <div className="publication__scope-wrap">
-                                <p className="publication__scope-label page-controls__label">
-                                    Search scope
-                                </p>
-                                <div
-                                    className="publication__scope page-controls__actions"
-                                    role="group"
-                                    aria-label="Publication search scope">
-                                    {SEARCH_SCOPES.map((scope) => (
-                                        <button
-                                            key={scope.key}
-                                            type="button"
-                                            className={`publication__scope-btn btn btn--secondary btn--sm interactive-button ${searchScope === scope.key ? "is-active" : ""}`}
-                                            onClick={() =>
-                                                setSearchScope(scope.key)
-                                            }
-                                            aria-pressed={
-                                                searchScope === scope.key
-                                            }>
-                                            {scope.label}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
                         </div>
                     </section>
                 </div>
             </div>
+            */}
 
             <section
                 data-reveal

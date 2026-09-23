@@ -191,8 +191,8 @@ function DeadlineCard({ venue, selectedMilestones, onSelectMilestone, now }) {
 }
 
 function Deadlines() {
-  const [selectedArea, setSelectedArea] = useState(ALL_AREAS);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedArea] = useState(ALL_AREAS);
+  const [searchQuery] = useState("");
   const [selectedMilestones, setSelectedMilestones] = useState({});
   const [now, setNow] = useState(null);
   const venues = useMemo(() => getAllVenues(), []);
@@ -229,14 +229,7 @@ function Deadlines() {
 
   return (
     <div data-reveal data-reveal-load-delay="60" className="deadlines">
-      <div data-reveal className="tab-header page-head page-head--deadlines">
-        <h1>Deadlines</h1>
-        <p className="page-head__summary">
-          Official conference submission schedules for the lab’s core research
-          areas. Countdown times are shown live in Korea Standard Time.
-        </p>
-      </div>
-
+      {/* Browse venues — temporarily hidden.
       <section
         data-reveal
         className="deadlines__controls page-panel page-panel--compact page-panel--section-start page-controls"
@@ -244,10 +237,6 @@ function Deadlines() {
       >
         <div className="deadlines__controls-intro page-controls__intro">
           <h2 id="deadlines-controls-title">Browse venues</h2>
-          <p>
-            Search by conference name, choose a research area, then switch
-            between milestones inside each venue.
-          </p>
         </div>
         <div className="deadlines__search-wrap">
           <label
@@ -265,32 +254,8 @@ function Deadlines() {
             onChange={(event) => setSearchQuery(event.target.value)}
           />
         </div>
-        <div
-          className="deadlines__filters page-controls__actions"
-          role="group"
-          aria-label="Filter conference deadlines by research area"
-        >
-          <button
-            type="button"
-            className={`deadlines__filter-btn btn btn--secondary btn--sm interactive-button ${selectedArea === ALL_AREAS ? "is-active" : ""}`}
-            aria-pressed={selectedArea === ALL_AREAS}
-            onClick={() => setSelectedArea(ALL_AREAS)}
-          >
-            All venues
-          </button>
-          {DEADLINE_AREAS.map((area) => (
-            <button
-              key={area.key}
-              type="button"
-              className={`deadlines__filter-btn btn btn--secondary btn--sm interactive-button ${selectedArea === area.key ? "is-active" : ""}`}
-              aria-pressed={selectedArea === area.key}
-              onClick={() => setSelectedArea(area.key)}
-            >
-              {area.label}
-            </button>
-          ))}
-        </div>
       </section>
+      */}
 
       <DeadlineCalendar venues={filteredVenues} now={now} />
 

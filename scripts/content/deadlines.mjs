@@ -274,17 +274,32 @@ const getTimezoneOffset = (date, timezone) => {
 const toDeadlineAt = (dateText, timezone) => {
   // Tolerate ordinal suffixes ("February 25th, 2026") alongside the plain
   // "Feb 25 '26" / "February 25, 2026" forms used by other venues.
-  const match = dateText
-    .trim()
-    .replace(/(\d{1,2})(?:st|nd|rd|th)\b/i, "$1")
-    .match(/^([A-Za-z]+)\.?\s+(\d{1,2})(?:,)?\s+'?(\d{2}|\d{4})$/);
-  if (!match) {
-    return null;
+  const cleaned = dateText.trim().replace(/(\d{1,2})(?:st|nd|rd|th)\b/i, "$1");
+
+  // Two orderings appear across venue pages: month-first ("February 25, 2026",
+  // US style) and day-first ("25 February 2026" / "1 Oct 2026", used by AAMAS
+  // and PAKDD). Try month-first, then fall back to day-first.
+  let monthName;
+  let dayText;
+  let yearText;
+  const monthFirst = cleaned.match(
+    /^([A-Za-z]+)\.?\s+(\d{1,2})(?:,)?\s+'?(\d{2}|\d{4})$/,
+  );
+  if (monthFirst) {
+    [, monthName, dayText, yearText] = monthFirst;
+  } else {
+    const dayFirst = cleaned.match(
+      /^(\d{1,2})\s+([A-Za-z]+)\.?,?\s+'?(\d{2}|\d{4})$/,
+    );
+    if (!dayFirst) {
+      return null;
+    }
+    [, dayText, monthName, yearText] = dayFirst;
   }
 
-  const month = MONTH_INDEX[match[1].toLowerCase()];
-  const day = String(Number(match[2])).padStart(2, "0");
-  const year = match[3].length === 2 ? `20${match[3]}` : match[3];
+  const month = MONTH_INDEX[monthName.toLowerCase()];
+  const day = String(Number(dayText)).padStart(2, "0");
+  const year = yearText.length === 2 ? `20${yearText}` : yearText;
   if (!month || Number(day) < 1 || Number(day) > 31) {
     return null;
   }
@@ -306,7 +321,18 @@ const extractMilestones = (venue, text) => {
     }
 
     const matched = new RegExp(milestone.source_parser.match, "i").exec(text);
-    const dateText = matched?.[1] ?? "";
+    // Rebuttal periods are published as ranges ("September 29-October 13, 2026")
+    // whose start day and year live in separate capture groups. `compose`
+    // stitches them back into a single parseable date via $1/$2 placeholders;
+    // without it the first capture group is used as-is.
+    const dateText = matched
+      ? milestone.source_parser.compose
+        ? milestone.source_parser.compose.replace(
+            /\$(\d)/g,
+            (_, index) => matched[Number(index)] ?? "",
+          )
+        : (matched[1] ?? "")
+      : "";
     const deadlineAt = toDeadlineAt(dateText, milestone.source_parser.timezone);
 
     if (!deadlineAt) {

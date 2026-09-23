@@ -49,6 +49,7 @@ const parsePublicationFile = async (filePath, publicationCategories) => {
     const category = normalizeText(data.category);
     const status = normalizeText(data.status || "published");
     const date = normalizeText(data.date);
+    const acceptedDate = normalizeText(data.accepted_date);
     const authors = normalizeText(data.authors);
     const venue = normalizeText(data.venue);
     const projectUrl = normalizeHttpUrl(
@@ -89,6 +90,11 @@ const parsePublicationFile = async (filePath, publicationCategories) => {
             `[publications] ${relativeFromRoot(filePath)}: "date" must be YYYY-MM-DD (received "${date}")`,
         );
     }
+    if (acceptedDate && !isIsoDate(acceptedDate)) {
+        throw new Error(
+            `[publications] ${relativeFromRoot(filePath)}: "accepted_date" must be YYYY-MM-DD (received "${acceptedDate}")`,
+        );
+    }
     if (!authors) {
         throw new Error(requiredError(filePath, "authors"));
     }
@@ -108,6 +114,7 @@ const parsePublicationFile = async (filePath, publicationCategories) => {
             author: authors,
             published_place: venue,
             published_date: date,
+            accepted_date: acceptedDate,
             keywords,
             pdf_link: pdfUrl,
             arxiv_link: arxivUrl,

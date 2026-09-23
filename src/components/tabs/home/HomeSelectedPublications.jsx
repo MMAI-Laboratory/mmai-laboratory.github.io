@@ -55,16 +55,16 @@ export default function HomeSelectedPublications() {
               />
               <div className="home-pubs__meta">
                 <div className="home-pubs__badges">
-                  <p
-                    className={`home-pubs__badge home-pubs__badge--${item.category}`}
-                  >
-                    {categoryLabel}
-                  </p>
                   {venueTag ? (
                     <p className="home-pubs__badge home-pubs__badge--venue">
                       {venueTag}
                     </p>
                   ) : null}
+                  <p
+                    className={`home-pubs__badge home-pubs__badge--${item.category}`}
+                  >
+                    {categoryLabel}
+                  </p>
                 </div>
                 <p className="home-pubs__title interactive-row__title">
                   <Link

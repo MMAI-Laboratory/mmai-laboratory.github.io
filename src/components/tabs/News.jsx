@@ -4,7 +4,6 @@ import {
     formatNewsDate,
     getAllNewsItems,
     getNewsTypeMeta,
-    getNewsTypes,
     isValidExternalUrl,
 } from "../../utils/newsData";
 import "./News.css";
@@ -47,7 +46,7 @@ const getPublicationSearchQuery = (item) => {
 };
 
 function News() {
-    const [selectedType, setSelectedType] = useState("all");
+    const [selectedType] = useState("all");
     const allNewsItems = useMemo(() => getAllNewsItems(), []);
 
     const filteredNewsItems = useMemo(() => {
@@ -77,23 +76,9 @@ function News() {
             items,
         }));
     }, [filteredNewsItems]);
-    const yearOptions = useMemo(
-        () => groupedByYear.map((group) => group.year),
-        [groupedByYear],
-    );
-
-    const typeOptions = useMemo(() => getNewsTypes(), []);
-
     return (
         <section data-reveal data-reveal-load-delay="60" className="news-page">
-            <div data-reveal className="tab-header page-head page-head--news">
-                <h1>News</h1>
-                <p className="page-head__summary">
-                    Archive of papers, seminars, member updates, infrastructure
-                    milestones, and collaboration activities.
-                </p>
-            </div>
-
+            {/* Filter and browse updates — temporarily hidden.
             <div
                 data-reveal
                 className="news-page__controls page-panel page-panel--compact page-panel--section-start page-controls">
@@ -173,6 +158,7 @@ function News() {
                     )}
                 </div>
             </div>
+            */}
 
             <div id="news-archive-title" className="news-page__archive">
                 {groupedByYear.map((group, groupIndex) => (

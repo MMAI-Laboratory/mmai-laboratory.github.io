@@ -224,15 +224,68 @@ export default function Nav() {
                     id="nav-links"
                     className={`nav__links animated-surface ${isMobileNav && !isMenuOpen ? "is-hidden" : ""}`}>
                     {tabs.map((tabItem, i) => (
-                        <div key={tabItem.key + i} className="nav__item">
+                        <div
+                            key={tabItem.key + i}
+                            className={`nav__item ${
+                                tabItem.key === "people"
+                                    ? "nav__item--has-submenu"
+                                    : ""
+                            }`}>
                             <NavButton
                                 tabKey={tabItem.key}
                                 isSelected={selectedTab === tabItem.key}
                                 onSelect={handleSelectTab}>
                                 {tabItem.label}
                             </NavButton>
+                            {tabItem.key === "people" ? (
+                                <div className="nav__submenu" role="menu">
+                                    <Link
+                                        to="/people"
+                                        state={{
+                                            scroll: {
+                                                mode: "selector",
+                                                selector: "#human-members",
+                                                block: "start",
+                                            },
+                                        }}
+                                        className="nav__submenu-link"
+                                        role="menuitem"
+                                        onClick={handleSelectTab}>
+                                        Human
+                                    </Link>
+                                    <Link
+                                        to="/people"
+                                        state={{
+                                            scroll: {
+                                                mode: "selector",
+                                                selector: "#non-human-members",
+                                                block: "start",
+                                            },
+                                        }}
+                                        className="nav__submenu-link"
+                                        role="menuitem"
+                                        onClick={handleSelectTab}>
+                                        Non-Human
+                                    </Link>
+                                </div>
+                            ) : null}
                         </div>
                     ))}
+                    <div className="nav__item">
+                        <a
+                            href="https://ajouaigroup.github.io/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="nav__button nav__button--aaig btn btn--sm interactive-button"
+                            onClick={handleSelectTab}>
+                            AAIG
+                            <span
+                                className="nav__external-icon"
+                                aria-hidden="true">
+                                ↗
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </>

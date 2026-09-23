@@ -99,6 +99,72 @@
     align-items: center;
 }
 
+/* Member reveals Human / Non-Human on hover. The submenu is anchored to the
+   item and kept in the layout (visibility, not display) so the pointer can
+   travel into it without a gap closing it. */
+.nav__submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 1300;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    margin-top: var(--space-1);
+    padding: var(--space-1);
+    border: 1px solid var(--outline-color);
+    border-radius: var(--radius-md);
+    background-color: var(--surface);
+    box-shadow: var(--shadow-elev-2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, calc(var(--space-1) * -1));
+    transition:
+        opacity var(--dur-fast) var(--ease-standard),
+        transform var(--dur-fast) var(--ease-standard),
+        visibility var(--dur-fast) var(--ease-standard);
+}
+
+/* Transparent bridge over the gap between the tab and the panel so moving the
+   pointer down onto the submenu never crosses a non-hover region. */
+.nav__submenu::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: var(--space-2);
+}
+
+.nav__item--has-submenu:hover .nav__submenu,
+.nav__item--has-submenu:focus-within .nav__submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.nav__submenu-link {
+    --nav-tab-tint: var(--tab-people-tint);
+    --nav-tab-accent: var(--tab-people-accent);
+    display: block;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: var(--action-label-size);
+    font-weight: 600;
+    line-height: var(--type-button-line-height);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: var(--transition-interactive);
+}
+
+.nav__submenu-link:hover,
+.nav__submenu-link:focus-visible {
+    color: var(--nav-tab-accent);
+    background-color: var(--nav-tab-tint);
+}
+
 @keyframes nav-return-rise {
     0% {
         opacity: 0;
@@ -262,6 +328,23 @@
     --nav-tab-accent: var(--tab-contact-accent);
 }
 
+/* AAIG is an external link to the parent group's site, so it carries the
+   deadlines tint and an outbound-arrow marker rather than a route identity. */
+.nav__button--aaig {
+    --nav-tab-tint: var(--tab-deadlines-tint);
+    --nav-tab-border: var(--tab-deadlines-border);
+    --nav-tab-accent: var(--tab-deadlines-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.nav__external-icon {
+    font-size: 0.85em;
+    line-height: 1;
+    opacity: 0.75;
+}
+
 .nav__button.is-active {
     color: var(--nav-tab-accent);
     background-color: var(--nav-tab-tint);
@@ -406,6 +489,34 @@
         min-height: var(--btn-height);
         justify-content: flex-start;
         padding: 0 var(--btn-pad-x);
+    }
+
+    /* No hover on touch: show the submenu inline, indented under Member. */
+    .nav__item--has-submenu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav__submenu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        min-width: 0;
+        margin: var(--space-0p5) 0 0;
+        padding: 0 0 0 var(--space-3);
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .nav__submenu::before {
+        content: none;
+    }
+
+    .nav__submenu-link {
+        text-align: left;
+        padding: var(--space-1) var(--btn-pad-x);
     }
 }
 

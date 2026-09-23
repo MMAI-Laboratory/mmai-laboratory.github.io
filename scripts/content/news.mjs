@@ -145,6 +145,12 @@ const createAutoPublicationNewsItem = (publicationItem) => {
     const publicationDate = normalizeText(
         publicationItem.research_meta?.published_date,
     );
+    // The acceptance announcement is dated when the paper was accepted, which
+    // differs from the venue date shown on the Publication page. Fall back to
+    // the venue date when no acceptance date is recorded.
+    const acceptedDate =
+        normalizeText(publicationItem.research_meta?.accepted_date) ||
+        publicationDate;
     const publicationVenue = normalizeText(
         publicationItem.research_meta?.published_place,
     );
@@ -163,8 +169,8 @@ const createAutoPublicationNewsItem = (publicationItem) => {
         type: PAPER_ACCEPTED_TYPE,
         title: publicationTitle,
         summary,
-        date: publicationDate,
-        year: toYear(publicationDate),
+        date: acceptedDate,
+        year: toYear(acceptedDate),
         related_person: publicationAuthors,
         venue: publicationVenue,
         external_url: "",

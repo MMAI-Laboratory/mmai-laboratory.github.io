@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.1",
-    "generated_at": "2026-09-17T04:56:38.217Z",
+    "generated_at": "2026-09-23T05:04:11.899Z",
     "source": "content/publications",
     "categories": [
       "computer_vision_and_learning_algorithms",
@@ -28,13 +28,14 @@
         "author": "Seungmin Oh, Seunghun Kang, Jongbin Ryu",
         "published_place": "British Machine Vision Conference (BMVC)",
         "published_date": "2026-11-23",
+        "accepted_date": "2026-08-21",
         "keywords": [
           "Vision-Language Models",
           "Contrastive Learning",
           "Prompt Conditioning"
         ],
         "pdf_link": "",
-        "arxiv_link": "",
+        "arxiv_link": "https://arxiv.org/abs/2609.06967",
         "github_link": "",
         "project_link": "",
         "source_code_link": "",
@@ -58,6 +59,7 @@
         "author": "Junhyeong Go, Mingyu Jung, Woobin Im, Jongbin Ryu",
         "published_place": "Conference on Robot Learning (CoRL)",
         "published_date": "2026-11-09",
+        "accepted_date": "2026-09-05",
         "keywords": [
           "Vision-Language-Action",
           "World Dynamics",
@@ -88,13 +90,14 @@
         "author": "EunJu Shin, Jongbin Ryu",
         "published_place": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
         "published_date": "2026-10-24",
+        "accepted_date": "2026-08-21",
         "keywords": [
           "Mixture-of-Expert",
           "Ensemble",
           "Quantization"
         ],
         "pdf_link": "",
-        "arxiv_link": "",
+        "arxiv_link": "https://arxiv.org/abs/2609.18131v1",
         "github_link": "",
         "project_link": "",
         "source_code_link": "",
@@ -118,13 +121,14 @@
         "author": "Donggeon Lee, Dooyeon Na, Seungmin Oh, Jongbin Ryu",
         "published_place": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
         "published_date": "2026-10-24",
+        "accepted_date": "2026-08-21",
         "keywords": [
           "Curriculum Learning",
           "LLM Compression",
           "Hardware Acceleration"
         ],
         "pdf_link": "",
-        "arxiv_link": "",
+        "arxiv_link": "https://arxiv.org/abs/2609.19213",
         "github_link": "",
         "project_link": "",
         "source_code_link": "",
@@ -148,13 +152,14 @@
         "author": "Seungmin Oh, Donggeon Lee, Jongbin Ryu",
         "published_place": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
         "published_date": "2026-10-24",
+        "accepted_date": "2026-08-21",
         "keywords": [
           "Structured LLM Pruning",
           "Overcomplete Re-parameterization",
           "Capacity-knowledge asymmetry"
         ],
         "pdf_link": "",
-        "arxiv_link": "",
+        "arxiv_link": "https://arxiv.org/abs/2609.06974",
         "github_link": "",
         "project_link": "",
         "source_code_link": "",
@@ -178,6 +183,7 @@
         "author": "Sungeun Kim, Mingyu Jung, Yuri Kim, Jin-Sung Park, Jongbin Ryu",
         "published_place": "Applied Energy",
         "published_date": "2026-09-24",
+        "accepted_date": "2026-09-04",
         "keywords": [
           "Battery Prognostics",
           "Remaining Useful Life",
@@ -186,9 +192,9 @@
         "pdf_link": "",
         "arxiv_link": "",
         "github_link": "",
-        "project_link": "",
+        "project_link": "https://www.sciencedirect.com/science/article/pii/S0306261926014546?dgcid=coauthor",
         "source_code_link": "",
-        "paper_link": ""
+        "paper_link": "https://www.sciencedirect.com/science/article/pii/S0306261926014546?dgcid=coauthor"
       },
       "content": {
         "problem": "",
@@ -208,6 +214,7 @@
         "author": "Hankyul Kang, Gregor Seifer, Donghyun Lee, Jongbin Ryu",
         "published_place": "Computer Vision and Pattern Recognition (CVPR)",
         "published_date": "2025-06-01",
+        "accepted_date": "",
         "keywords": [
           "Continual Learning",
           "Self-Supervised Learning",
@@ -235,9 +242,10 @@
       "summary": "",
       "featured": false,
       "research_meta": {
-        "author": "Junhyung Ko, Jongbin Ryu",
+        "author": "Junhyeong Go, Jongbin Ryu",
         "published_place": "Winter Conference on Applications of Computer Vision (WACV)",
         "published_date": "2025-01-01",
+        "accepted_date": "",
         "keywords": [
           "Vision Transformer",
           "Channel Propagation",
@@ -268,6 +276,7 @@
         "author": "Hankyul Kang, Jongbin Ryu",
         "published_place": "Winter Conference on Applications of Computer Vision (WACV)",
         "published_date": "2025-01-01",
+        "accepted_date": "",
         "keywords": [
           "Attention Pooling",
           "Local Patterns",
@@ -298,6 +307,7 @@
         "author": "Inhyuk Park, Won Hwa Kim, Jongbin Ryu",
         "published_place": "Biomedical Signal Processing and Control",
         "published_date": "2024-12-29",
+        "accepted_date": "",
         "keywords": [
           "Class Imbalance",
           "Knowledge Distillation",
@@ -328,6 +338,7 @@
         "author": "Inhyuk Park, Sungeun Kim, Jongbin Ryu",
         "published_place": "Asian Conference on Computer Vision (ACCV)",
         "published_date": "2024-12-01",
+        "accepted_date": "",
         "keywords": [
           "Generative Self-Supervised Learning",
           "Medical Image Classification",
@@ -358,6 +369,7 @@
         "author": "Seungmin Oh, Jongbin Ryu",
         "published_place": "Asian Conference on Computer Vision (ACCV)",
         "published_date": "2024-12-01",
+        "accepted_date": "",
         "keywords": [
           "Network Re-parameterization",
           "Branch-level Connectivity",
@@ -388,6 +400,7 @@
         "author": "Sungeun Kim, Jongbin Ryu",
         "published_place": "British Machine Vision Conference (BMVC)",
         "published_date": "2024-11-25",
+        "accepted_date": "",
         "keywords": [
           "Unsupervised Hashing",
           "Image Retrieval",
@@ -415,9 +428,10 @@
       "summary": "",
       "featured": false,
       "research_meta": {
-        "author": "Junhyung Go, Jonngbin Ryu",
+        "author": "Junhyeong Go, Jongbin Ryu",
         "published_place": "Expert Systems with applications",
         "published_date": "2024-10-04",
+        "accepted_date": "",
         "keywords": [
           "Non-local Networks",
           "Attention-free Vision",
@@ -448,6 +462,7 @@
         "author": "Hankyul Kang, Namkug Kim, Jongbin Ryu",
         "published_place": "Computer Methods and Programs in Biomedicine",
         "published_date": "2024-04-21",
+        "accepted_date": "",
         "keywords": [
           "Chest X-ray",
           "Attention Decoder",
@@ -478,6 +493,7 @@
         "author": "Seungmin Oh, Namkug Kim, Jongbin Ryu",
         "published_place": "Scientific Reports",
         "published_date": "2024-04-16",
+        "accepted_date": "",
         "keywords": [
           "Medical Imaging",
           "CNN and ViT Analysis",
@@ -508,6 +524,7 @@
         "author": "CVAMD participants including Jongbin Ryu",
         "published_place": "Medical Image Analysis (MedIA)",
         "published_date": "2024-01-01",
+        "accepted_date": "",
         "keywords": [
           "Long-tailed Learning",
           "Multi-label Classification",
@@ -538,6 +555,7 @@
         "author": "Wongi Park, Jongbin Ryu",
         "published_place": "Computers in Biology and Medicine",
         "published_date": "2024-01-01",
+        "accepted_date": "",
         "keywords": [
           "Fine-Grained Classification",
           "Self-Supervised Learning",
@@ -568,6 +586,7 @@
         "author": "Seungmin Oh, Jongbin Ryu, Ho-Jung Shin, Jeong Ho Song, Sang-Yong Son, Hoon Hur, Sang-Uk Han",
         "published_place": "International Journal of Surgery",
         "published_date": "2023-12-01",
+        "accepted_date": "",
         "keywords": [
           "CT Analysis",
           "Risk Prediction",
@@ -598,6 +617,7 @@
         "author": "Jongbin Ryu*, Dongyoon Han*, Jongwoo Lim (*co-first author)",
         "published_place": "International Conference on Computer Vision (ICCV)",
         "published_date": "2023-10-02",
+        "accepted_date": "",
         "keywords": [
           "Gramian Attention",
           "Head Classifier",
@@ -628,6 +648,7 @@
         "author": "Wongi Park, Inhyuk Park, Sungeun Kim, Jongbin Ryu",
         "published_place": "International Conference on Computer Vision Workshops (ICCVW)",
         "published_date": "2023-08-10",
+        "accepted_date": "",
         "keywords": [
           "Long-tailed Learning",
           "Multi-label Classification",
@@ -658,6 +679,7 @@
         "author": "Myeong Seong Yoon, Gitaek Kwon, Jaehoon Oh*, Jongbin Ryu*, Jongwoo Lim, Bo-kyeong Kang, Juncheol Lee, Dong-Kyoon Han (*corresponding author)",
         "published_place": "Journal of Digital Imaging",
         "published_date": "2023-01-25",
+        "accepted_date": "",
         "keywords": [
           "Chest Radiography",
           "Pneumothorax Detection",
@@ -688,6 +710,7 @@
         "author": "Dongjoo Yun, Jongbin Ryu*, Jongwoo Lim (*corresponding author)",
         "published_place": "Pattern Recognition Letters",
         "published_date": "2021-01-01",
+        "accepted_date": "",
         "keywords": [
           "Feature Pyramid Network",
           "Multi-Label Classification",
@@ -718,6 +741,7 @@
         "author": "Changhee Won, Jongbin Ryu, Jongwoo Lim",
         "published_place": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
         "published_date": "2021-01-01",
+        "accepted_date": "",
         "keywords": [
           "Omnidirectional Stereo",
           "Depth Estimation",
@@ -748,6 +772,7 @@
         "author": "Jongbin Ryu, Ming-Hsuan Yang, Jongwoo Lim",
         "published_place": "Neural Networks",
         "published_date": "2021-01-01",
+        "accepted_date": "",
         "keywords": [
           "Unsupervised Feature Learning",
           "Self-Tuning Networks",
@@ -778,6 +803,7 @@
         "author": "Gitaek Kwon*, Jongbin Ryu*, Jaehoon Oh, Jongwoo Lim, Bo-kyeong Kang, Chiwon Ahn, Junwon Bae, Dong Keon Lee (*co-first author)",
         "published_place": "Scientific Reports",
         "published_date": "2020-01-01",
+        "accepted_date": "",
         "keywords": [
           "Abdominal Radiography",
           "Intussusception Detection",

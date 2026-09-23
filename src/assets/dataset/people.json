@@ -78,7 +78,8 @@
                 },
                 "junhyeong_ko": {
                     "order": 1,
-                    "name": "Junhyeong Ko",
+                    "name": "Junhyeong Go",
+                    "image": "Junhyeong Ko",
                     "position": "Ph.D Student",
                     "email": "threegopark@ajou.ac.kr",
                     "homepage": null,
@@ -225,7 +226,8 @@
             "entries": {
                 "duyeon_na": {
                     "order": 0,
-                    "name": "Duyeon Na",
+                    "name": "Dooyeon Na",
+                    "image": "Duyeon Na",
                     "position": "M.S Student",
                     "email": "dooyeonna@ajou.ac.kr",
                     "homepage": null,
@@ -283,7 +285,9 @@
                     "position": "M.S Student",
                     "email": "minjae.kim@ajou.ac.kr",
                     "homepage": null,
-                    "research_interests": ["Medical AI"],
+                    "research_interests": [
+                        "Medical AI"
+                    ],
                     "current_position": [],
                     "links": {
                         "github": "https://github.com/meansash",
@@ -297,7 +301,10 @@
                     "position": "M.S Student",
                     "email": "byungjeehwang@ajou.ac.kr",
                     "homepage": null,
-                    "research_interests": ["Robot Learning", "VLA"],
+                    "research_interests": [
+                        "Robot Learning",
+                        "VLA"
+                    ],
                     "current_position": [],
                     "links": {
                         "github": null,
@@ -491,7 +498,9 @@
                     "email": "naskyrun@ajou.ac.kr",
                     "homepage": null,
                     "research_interests": [],
-                    "current_position": ["LG Energy Solution"],
+                    "current_position": [
+                        "LG Energy Solution"
+                    ],
                     "links": {
                         "github": null,
                         "linkedin": "https://www.linkedin.com/in/seokjin-jang/",
@@ -505,7 +514,9 @@
                     "email": "kimji6784@gmail.com",
                     "homepage": null,
                     "research_interests": [],
-                    "current_position": ["SNU hospital"],
+                    "current_position": [
+                        "SNU hospital"
+                    ],
                     "links": {
                         "github": null,
                         "linkedin": null,
@@ -519,7 +530,9 @@
                     "email": "qkrgustnq@gmail.com",
                     "homepage": null,
                     "research_interests": [],
-                    "current_position": ["Not listesd"],
+                    "current_position": [
+                        "Not listesd"
+                    ],
                     "links": {
                         "github": null,
                         "linkedin": null,
@@ -533,13 +546,14 @@
                     "email": "inhyuk@ajou.ac.kr",
                     "homepage": null,
                     "research_interests": [],
-                    "current_position": ["VUNO"],
+                    "current_position": [
+                        "VUNO"
+                    ],
                     "links": {
                         "github": null,
                         "linkedin": null,
                         "google_scholar": null
                     }
-                
                 },
                 "sunki_joo": {
                     "order": 4,
@@ -548,7 +562,9 @@
                     "email": "dollyin@ajou.ac.kr",
                     "homepage": null,
                     "research_interests": [],
-                    "current_position": ["무한정보통신"],
+                    "current_position": [
+                        "무한정보통신"
+                    ],
                     "links": {
                         "github": "https://github.com/sunkijoo",
                         "linkedin": null,
@@ -562,7 +578,9 @@
                     "email": "pyosh11@ajou.ac.kr",
                     "homepage": null,
                     "research_interests": [],
-                    "current_position": ["KIST"],
+                    "current_position": [
+                        "KIST"
+                    ],
                     "links": {
                         "github": null,
                         "linkedin": null,
@@ -576,7 +594,9 @@
                     "email": "gregorseifer@ajou.ac.kr",
                     "homepage": null,
                     "research_interests": [],
-                    "current_position": ["Neonto"],
+                    "current_position": [
+                        "Neonto"
+                    ],
                     "links": {
                         "github": null,
                         "linkedin": "https://www.linkedin.com/in/gregor-seifer/",
@@ -590,7 +610,9 @@
                     "email": "eaststst123@ajou.ac.kr",
                     "homepage": null,
                     "research_interests": [],
-                    "current_position": ["GNewSoft"],
+                    "current_position": [
+                        "GNewSoft"
+                    ],
                     "links": {
                         "github": null,
                         "linkedin": null,
@@ -604,7 +626,9 @@
                     "email": "euihakeg@ajou.ac.kr",
                     "homepage": null,
                     "research_interests": [],
-                    "current_position": ["Not listesd"],
+                    "current_position": [
+                        "Not listesd"
+                    ],
                     "links": {
                         "github": null,
                         "linkedin": null,
@@ -618,7 +642,9 @@
                     "email": "scott9601@ajou.ac.kr",
                     "homepage": null,
                     "research_interests": [],
-                    "current_position": ["Not listesd"],
+                    "current_position": [
+                        "Not listesd"
+                    ],
                     "links": {
                         "github": null,
                         "linkedin": null,

@@ -335,13 +335,6 @@ function Photo() {
 
   return (
     <div data-reveal data-reveal-load-delay="60" className="photo-wrapper">
-      <div data-reveal className="tab-header page-head page-head--photo">
-        <h1>Photo</h1>
-        <p className="page-head__summary">
-          Visual archive of lab activities, seminars, and research culture.
-        </p>
-      </div>
-
       <div data-reveal ref={galleryRef} className="photo-gallery page-panel page-panel--compact">
         <div className="photo-gallery__head section-start-head">
           <h2 id="photo-gallery-title">Gallery Archive</h2>
