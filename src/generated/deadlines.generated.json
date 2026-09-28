@@ -103,7 +103,7 @@
       ],
       "source_evidence": "CVPR 2027",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.682Z",
+        "checked_at": "2026-09-28T06:51:20.053Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "9d54646e12e653d8",
@@ -137,7 +137,7 @@
       "milestones": [],
       "source_evidence": "ICCV 2027",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.710Z",
+        "checked_at": "2026-09-28T06:51:20.079Z",
         "state": "needs_review",
         "http_status": 200,
         "content_fingerprint": "b2a5c2bf2af71cd9",
@@ -228,7 +228,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.712Z",
+        "checked_at": "2026-09-28T06:51:20.080Z",
         "state": "awaiting_cfp",
         "http_status": 200,
         "content_fingerprint": "173907855a2964a9",
@@ -310,7 +310,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.712Z",
+        "checked_at": "2026-09-28T06:51:20.081Z",
         "state": "needs_review",
         "http_status": 200,
         "content_fingerprint": "07421eaba1b2aaf6",
@@ -385,7 +385,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.713Z",
+        "checked_at": "2026-09-28T06:51:20.081Z",
         "state": "unavailable",
         "http_status": null,
         "content_fingerprint": null,
@@ -492,7 +492,7 @@
       ],
       "source_evidence": "ACCV 2026",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.713Z",
+        "checked_at": "2026-09-28T06:51:20.082Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "2b3a8e4648032846",
@@ -573,7 +573,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.714Z",
+        "checked_at": "2026-09-28T06:51:20.082Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "007e8f5424534fb7",
@@ -657,7 +657,7 @@
       ],
       "source_evidence": "MICCAI 2026",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.714Z",
+        "checked_at": "2026-09-28T06:51:20.083Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "3ef20ff229f115fc",
@@ -744,7 +744,7 @@
       ],
       "source_evidence": "NeurIPS 2026",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.715Z",
+        "checked_at": "2026-09-28T06:51:20.083Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "5cbe3167274a5a46",
@@ -843,7 +843,7 @@
       ],
       "source_evidence": "ICML 2026",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.715Z",
+        "checked_at": "2026-09-28T06:51:20.084Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "c679556f1a4109fa",
@@ -925,7 +925,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.716Z",
+        "checked_at": "2026-09-28T06:51:20.084Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "9d1abb3dbb268af7",
@@ -1017,7 +1017,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.716Z",
+        "checked_at": "2026-09-28T06:51:20.084Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "69c1ec0dd6b082a8",
@@ -1102,7 +1102,7 @@
       ],
       "source_evidence": "AISTATS 2027",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.716Z",
+        "checked_at": "2026-09-28T06:51:20.085Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "69a776be62520e9f",
@@ -1188,7 +1188,7 @@
       ],
       "source_evidence": "UAI",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.717Z",
+        "checked_at": "2026-09-28T06:51:20.085Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "8d174df270e92731",
@@ -1248,7 +1248,7 @@
       ],
       "source_evidence": "ACL 2026",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.717Z",
+        "checked_at": "2026-09-28T06:51:20.085Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "d2fcea258883f6ec",
@@ -1328,7 +1328,7 @@
       ],
       "source_evidence": "EMNLP 2026",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.717Z",
+        "checked_at": "2026-09-28T06:51:20.085Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "72ab6c13a88c666d",
@@ -1397,7 +1397,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.717Z",
+        "checked_at": "2026-09-28T06:51:20.086Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "5613bd3a9f5fa1f7",
@@ -1474,7 +1474,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.718Z",
+        "checked_at": "2026-09-28T06:51:20.086Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "9840d97764656a34",
@@ -1492,24 +1492,70 @@
       "areas": [
         "llm-nlp"
       ],
-      "official_url": "https://www.aaclweb.org/",
-      "cfp_url": "https://www.aaclweb.org/",
+      "official_url": "https://2026.aaclnet.org/",
+      "cfp_url": "https://2026.aaclnet.org/calls/main_conference_papers/",
       "status": "awaiting_cfp",
       "event": {
         "dates": "November 6-10, 2026",
         "location": "Hengqin, China",
-        "venue": "Venue TBA",
-        "source_url": "https://2026.aaclnet.org/",
+        "venue": "Hengqin",
+        "source_url": "https://2026.aaclnet.org/calls/main_conference_papers/",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "arr-submission",
+          "label": "ARR submission",
+          "short_label": "ARR submission",
+          "kind": "paper",
+          "deadline_at": "2026-05-25T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "closed"
+        },
+        {
+          "id": "rebuttal",
+          "label": "Author response period begins",
+          "short_label": "Rebuttal",
+          "kind": "review",
+          "deadline_at": "2026-07-07T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "closed"
+        },
+        {
+          "id": "reviews",
+          "label": "Meta review released",
+          "short_label": "Reviews",
+          "kind": "review",
+          "deadline_at": "2026-07-30T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "closed"
+        },
+        {
+          "id": "notification",
+          "label": "Notification of acceptance",
+          "short_label": "Notification",
+          "kind": "notification",
+          "deadline_at": "2026-09-07T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "closed"
+        },
+        {
+          "id": "camera-ready",
+          "label": "Camera-ready",
+          "short_label": "Camera-ready",
+          "kind": "paper",
+          "deadline_at": "2026-09-30T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "closed"
+        }
+      ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.718Z",
-        "state": "unavailable",
-        "http_status": null,
-        "content_fingerprint": null,
+        "checked_at": "2026-09-28T06:51:20.086Z",
+        "state": "awaiting_cfp",
+        "http_status": 200,
+        "content_fingerprint": "16e3ff358a0badd2",
         "extracted_milestones": {},
-        "message": "Official source could not be checked: fetch failed."
+        "message": "No parser configured yet: the official CFP for the next round is not published."
       }
     },
     {
@@ -1568,7 +1614,7 @@
       ],
       "source_evidence": "COLING 2027",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.718Z",
+        "checked_at": "2026-09-28T06:51:20.086Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "9f396f7c906cab87",
@@ -1586,19 +1632,47 @@
       "areas": [
         "llm-nlp"
       ],
-      "official_url": "https://www.conll.org/",
-      "cfp_url": "https://www.conll.org/",
+      "official_url": "https://conll.org/",
+      "cfp_url": "https://conll.org/2026",
       "status": "awaiting_cfp",
       "event": {
         "dates": "July 3-4, 2026",
         "location": "San Diego, California, USA",
-        "venue": "Co-located with ACL 2026",
-        "source_url": "https://www.conll.org/2026",
+        "venue": "San Diego",
+        "source_url": "https://conll.org/2026",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "paper",
+          "label": "Paper submission",
+          "short_label": "Paper",
+          "kind": "paper",
+          "deadline_at": "2026-02-19T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "closed"
+        },
+        {
+          "id": "notification",
+          "label": "Notification of acceptance",
+          "short_label": "Notification",
+          "kind": "notification",
+          "deadline_at": "2026-04-21T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "closed"
+        },
+        {
+          "id": "camera-ready",
+          "label": "Camera-ready",
+          "short_label": "Camera-ready",
+          "kind": "paper",
+          "deadline_at": "2026-05-12T23:59:00-12:00",
+          "timezone_label": "AoE",
+          "status": "closed"
+        }
+      ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.718Z",
+        "checked_at": "2026-09-28T06:51:20.087Z",
         "state": "awaiting_cfp",
         "http_status": 200,
         "content_fingerprint": "95348c1e4d2eb4e5",
@@ -1650,7 +1724,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.719Z",
+        "checked_at": "2026-09-28T06:51:20.087Z",
         "state": "needs_review",
         "http_status": 200,
         "content_fingerprint": "f49039b03655372c",
@@ -1692,7 +1766,7 @@
       ],
       "source_evidence": "IROS",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.719Z",
+        "checked_at": "2026-09-28T06:51:20.087Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "833a4e60618ba118",
@@ -1788,7 +1862,7 @@
       ],
       "source_evidence": "2027",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.719Z",
+        "checked_at": "2026-09-28T06:51:20.087Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "0c4e1a377b19e247",
@@ -1868,7 +1942,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.719Z",
+        "checked_at": "2026-09-28T06:51:20.088Z",
         "state": "awaiting_cfp",
         "http_status": 200,
         "content_fingerprint": "a29691938bf7e3ae",
@@ -1883,22 +1957,50 @@
       "areas": [
         "robotics"
       ],
-      "official_url": "https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/humanoids",
-      "cfp_url": "https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/humanoids",
+      "official_url": "https://2026.ieee-humanoids.org/",
+      "cfp_url": "https://2026.ieee-humanoids.org/call-for-papers/",
       "status": "awaiting_cfp",
       "event": {
-        "dates": "December 7-9, 2026",
+        "dates": "December 6-9, 2026",
         "location": "Santa Clara, California, USA",
-        "venue": "Santa Clara Convention Center",
-        "source_url": "https://www.ieee-ras.org/event/2026-ieee-ras-25th-international-conference-on-humanoid-robots-humanoids-68892/",
+        "venue": "Santa Clara",
+        "source_url": "https://2026.ieee-humanoids.org/call-for-papers/",
         "status": "official"
       },
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "paper",
+          "label": "Paper submission",
+          "short_label": "Paper",
+          "kind": "paper",
+          "deadline_at": "2026-07-24T23:59:00-08:00",
+          "timezone_label": "PT",
+          "status": "closed"
+        },
+        {
+          "id": "notification",
+          "label": "Author notification",
+          "short_label": "Notification",
+          "kind": "notification",
+          "deadline_at": "2026-10-06T23:59:00-08:00",
+          "timezone_label": "PT",
+          "status": "closed"
+        },
+        {
+          "id": "camera-ready",
+          "label": "Camera-ready",
+          "short_label": "Camera-ready",
+          "kind": "paper",
+          "deadline_at": "2026-10-26T23:59:00-08:00",
+          "timezone_label": "PT",
+          "status": "closed"
+        }
+      ],
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.720Z",
+        "checked_at": "2026-09-28T06:51:20.088Z",
         "state": "awaiting_cfp",
         "http_status": 200,
-        "content_fingerprint": "78784a1c4cb8684f",
+        "content_fingerprint": "2296ec690e5db296",
         "extracted_milestones": {},
         "message": "No parser configured yet: the official CFP for the next round is not published."
       }
@@ -1977,7 +2079,7 @@
       ],
       "source_evidence": "KDD 2027",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.720Z",
+        "checked_at": "2026-09-28T06:51:20.088Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "a0e821598e8ce142",
@@ -2050,7 +2152,7 @@
       ],
       "source_evidence": "PAKDD 2027",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.720Z",
+        "checked_at": "2026-09-28T06:51:20.088Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "e1d10457d569ccf4",
@@ -2150,7 +2252,7 @@
       ],
       "source_evidence": "AAMAS 2027",
       "source_check": {
-        "checked_at": "2026-09-28T06:18:59.720Z",
+        "checked_at": "2026-09-28T06:51:20.089Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "4caf1b6868c4fab4",

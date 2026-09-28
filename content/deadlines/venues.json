@@ -1311,17 +1311,63 @@
             "areas": [
                 "llm-nlp"
             ],
-            "official_url": "https://www.aaclweb.org/",
-            "cfp_url": "https://www.aaclweb.org/",
+            "official_url": "https://2026.aaclnet.org/",
+            "cfp_url": "https://2026.aaclnet.org/calls/main_conference_papers/",
             "status": "awaiting_cfp",
             "event": {
                 "dates": "November 6-10, 2026",
                 "location": "Hengqin, China",
-                "venue": "Venue TBA",
-                "source_url": "https://2026.aaclnet.org/",
+                "venue": "Hengqin",
+                "source_url": "https://2026.aaclnet.org/calls/main_conference_papers/",
                 "status": "official"
             },
-            "milestones": []
+            "milestones": [
+                {
+                    "id": "arr-submission",
+                    "label": "ARR submission",
+                    "short_label": "ARR submission",
+                    "kind": "paper",
+                    "deadline_at": "2026-05-25T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "closed"
+                },
+                {
+                    "id": "rebuttal",
+                    "label": "Author response period begins",
+                    "short_label": "Rebuttal",
+                    "kind": "review",
+                    "deadline_at": "2026-07-07T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "closed"
+                },
+                {
+                    "id": "reviews",
+                    "label": "Meta review released",
+                    "short_label": "Reviews",
+                    "kind": "review",
+                    "deadline_at": "2026-07-30T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "closed"
+                },
+                {
+                    "id": "notification",
+                    "label": "Notification of acceptance",
+                    "short_label": "Notification",
+                    "kind": "notification",
+                    "deadline_at": "2026-09-07T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "closed"
+                },
+                {
+                    "id": "camera-ready",
+                    "label": "Camera-ready",
+                    "short_label": "Camera-ready",
+                    "kind": "paper",
+                    "deadline_at": "2026-09-30T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "closed"
+                }
+            ]
         },
         {
             "id": "coling",
@@ -1386,17 +1432,45 @@
             "areas": [
                 "llm-nlp"
             ],
-            "official_url": "https://www.conll.org/",
-            "cfp_url": "https://www.conll.org/",
+            "official_url": "https://conll.org/",
+            "cfp_url": "https://conll.org/2026",
             "status": "awaiting_cfp",
             "event": {
                 "dates": "July 3-4, 2026",
                 "location": "San Diego, California, USA",
-                "venue": "Co-located with ACL 2026",
-                "source_url": "https://www.conll.org/2026",
+                "venue": "San Diego",
+                "source_url": "https://conll.org/2026",
                 "status": "official"
             },
-            "milestones": []
+            "milestones": [
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "2026-02-19T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "closed"
+                },
+                {
+                    "id": "notification",
+                    "label": "Notification of acceptance",
+                    "short_label": "Notification",
+                    "kind": "notification",
+                    "deadline_at": "2026-04-21T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "closed"
+                },
+                {
+                    "id": "camera-ready",
+                    "label": "Camera-ready",
+                    "short_label": "Camera-ready",
+                    "kind": "paper",
+                    "deadline_at": "2026-05-12T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "closed"
+                }
+            ]
         },
         {
             "id": "icra",
@@ -1635,17 +1709,45 @@
             "areas": [
                 "robotics"
             ],
-            "official_url": "https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/humanoids",
-            "cfp_url": "https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/humanoids",
+            "official_url": "https://2026.ieee-humanoids.org/",
+            "cfp_url": "https://2026.ieee-humanoids.org/call-for-papers/",
             "status": "awaiting_cfp",
             "event": {
-                "dates": "December 7-9, 2026",
+                "dates": "December 6-9, 2026",
                 "location": "Santa Clara, California, USA",
-                "venue": "Santa Clara Convention Center",
-                "source_url": "https://www.ieee-ras.org/event/2026-ieee-ras-25th-international-conference-on-humanoid-robots-humanoids-68892/",
+                "venue": "Santa Clara",
+                "source_url": "https://2026.ieee-humanoids.org/call-for-papers/",
                 "status": "official"
             },
-            "milestones": []
+            "milestones": [
+                {
+                    "id": "paper",
+                    "label": "Paper submission",
+                    "short_label": "Paper",
+                    "kind": "paper",
+                    "deadline_at": "2026-07-24T23:59:00-08:00",
+                    "timezone_label": "PT",
+                    "status": "closed"
+                },
+                {
+                    "id": "notification",
+                    "label": "Author notification",
+                    "short_label": "Notification",
+                    "kind": "notification",
+                    "deadline_at": "2026-10-06T23:59:00-08:00",
+                    "timezone_label": "PT",
+                    "status": "closed"
+                },
+                {
+                    "id": "camera-ready",
+                    "label": "Camera-ready",
+                    "short_label": "Camera-ready",
+                    "kind": "paper",
+                    "deadline_at": "2026-10-26T23:59:00-08:00",
+                    "timezone_label": "PT",
+                    "status": "closed"
+                }
+            ]
         },
         {
             "id": "kdd",
