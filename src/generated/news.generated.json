@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "4.0",
-    "generated_at": "2026-09-23T08:49:22.948Z",
+    "generated_at": "2026-09-28T06:18:38.396Z",
     "default_sort": "date_desc",
     "source": "content/news + publications(published)",
     "type_labels": {
@@ -18,6 +18,28 @@
     }
   },
   "items": [
+    {
+      "id": "publication-group-annual-conference-on-neural-information-processing-systems-neurips-2026-09-24",
+      "type": "paper_accepted",
+      "title": "Two papers have been accepted at NeurIPS 2026",
+      "summary": "Efficient Test-time Adaptation through Candidate Verification and Divergence Shifts\nDifferentiable Bit-Widths: Co-optimizing Pruning and Quantization via SVD for Ultra-Efficient LLM Compression",
+      "date": "2026-09-24",
+      "year": 2026,
+      "related_person": "Seungmin Oh, Seunghun Kang, Jongbin Ryu, Hankyul Kang",
+      "venue": "Annual Conference on Neural Information Processing Systems (NeurIPS)",
+      "external_url": "",
+      "internal_slug": "publication-group-annual-conference-on-neural-information-processing-systems-neurips-2026-09-24",
+      "is_external": false,
+      "featured": false,
+      "publication_id": "",
+      "publication_title": "",
+      "publication_query": "Annual Conference on Neural Information Processing Systems (NeurIPS)",
+      "generated_from": "publications-auto",
+      "grouped_publication_ids": [
+        "core-2026-efficient-ttc-candidate-verification",
+        "llm-2026-differentiable-bit-widths-svd"
+      ]
+    },
     {
       "id": "publication-robot-2026-flowvla-pluggable-3d-flow-learning",
       "type": "paper_accepted",

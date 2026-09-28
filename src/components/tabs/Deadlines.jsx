@@ -24,6 +24,29 @@ const getSelectedMilestone = (venue, selectedMilestones, now) => {
   );
 };
 
+/* Owns its own per-second clock so only the countdown text re-renders. Keeping
+   the ticking clock out of the parent avoids re-rendering the calendar and
+   venue cards every second, which was resetting their reveal animations. */
+function DeadlineCountdown({ deadlineAt }) {
+  const [now, setNow] = useState(null);
+
+  useEffect(() => {
+    const tick = () => setNow(new Date());
+    tick();
+    const intervalId = window.setInterval(tick, 1_000);
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  return (
+    <p
+      className="deadlines__countdown"
+      aria-label={`Time remaining: ${getCountdownLabel(deadlineAt, now)}`}
+    >
+      {getCountdownLabel(deadlineAt, now)}
+    </p>
+  );
+}
+
 function DeadlineCard({ venue, selectedMilestones, onSelectMilestone, now }) {
   const selectedMilestone = getSelectedMilestone(
     venue,
@@ -160,12 +183,7 @@ function DeadlineCard({ venue, selectedMilestones, onSelectMilestone, now }) {
                 Official deadline timezone: {selectedMilestone.timezone_label}
               </p>
             </div>
-            <p
-              className="deadlines__countdown"
-              aria-label={`Time remaining: ${getCountdownLabel(selectedMilestone.deadline_at, now)}`}
-            >
-              {getCountdownLabel(selectedMilestone.deadline_at, now)}
-            </p>
+            <DeadlineCountdown deadlineAt={selectedMilestone.deadline_at} />
           </div>
         </div>
       ) : (
@@ -195,30 +213,50 @@ function Deadlines() {
   const [selectedArea] = useState(ALL_AREAS);
   const [searchQuery] = useState("");
   const [selectedMilestones, setSelectedMilestones] = useState({});
+  // Resolved once on the client (null during prerender) purely to pick each
+  // venue's default milestone and highlight today. The live countdown has its
+  // own clock, so this never needs to tick — keeping it static prevents the
+  // calendar and cards from re-rendering (and re-revealing) every second.
   const [now, setNow] = useState(null);
   const venues = useMemo(() => getAllVenues(), []);
 
   useEffect(() => {
-    const tick = () => setNow(new Date());
-    tick();
-    const intervalId = window.setInterval(tick, 1_000);
-    return () => window.clearInterval(intervalId);
+    setNow(new Date());
   }, []);
 
   const normalizedQuery = searchQuery.trim().toLowerCase();
 
+  // Time until a venue's next upcoming deadline. Venues whose deadlines have
+  // all passed (or when `now` is not yet resolved, e.g. during prerender) sort
+  // to the end, keeping the incoming order between them.
+  const nextDeadlineValue = (venue) => {
+    if (!now) {
+      return Number.POSITIVE_INFINITY;
+    }
+    const nowMs = now.getTime();
+    const upcoming = (venue.milestones ?? [])
+      .map((milestone) => new Date(milestone.deadline_at).getTime())
+      .filter((time) => Number.isFinite(time) && time > nowMs);
+    return upcoming.length ? Math.min(...upcoming) : Number.POSITIVE_INFINITY;
+  };
+
   const filteredVenues = useMemo(
     () =>
-      venues.filter((venue) => {
-        const matchesArea =
-          selectedArea === ALL_AREAS || venue.areas.includes(selectedArea);
-        const matchesQuery =
-          !normalizedQuery ||
-          venue.name?.toLowerCase().includes(normalizedQuery) ||
-          venue.full_name?.toLowerCase().includes(normalizedQuery);
-        return matchesArea && matchesQuery;
-      }),
-    [selectedArea, normalizedQuery, venues],
+      venues
+        .filter((venue) => {
+          const matchesArea =
+            selectedArea === ALL_AREAS || venue.areas.includes(selectedArea);
+          const matchesQuery =
+            !normalizedQuery ||
+            venue.name?.toLowerCase().includes(normalizedQuery) ||
+            venue.full_name?.toLowerCase().includes(normalizedQuery);
+          return matchesArea && matchesQuery;
+        })
+        // Soonest upcoming deadline first; all-passed venues keep their order
+        // at the bottom.
+        .sort((a, b) => nextDeadlineValue(a) - nextDeadlineValue(b)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [selectedArea, normalizedQuery, venues, now],
   );
 
   const handleSelectVenue = (venueId) => {

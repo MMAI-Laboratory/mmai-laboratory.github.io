@@ -24,6 +24,8 @@ import INTUSSUSCEPTION_FIGURE_3 from "./figures/intussusception-figure-3.webp";
 import FLOWVLA_FIGURE_1 from "./figures/flowvla-figure-1.webp";
 import ONE_CYCLE_BATTERY_RUL_FIGURE_1 from "./figures/one-cycle-battery-rul-figure-1.webp";
 import GRAMIAN_ATTENTION_FIGURE_2 from "./figures/gramian-attention-figure-2.webp";
+import EFFICIENT_TTC_FIGURE_1 from "./figures/efficient-ttc-figure-1.webp";
+import DIFFERENTIABLE_BIT_WIDTHS_FIGURE_1 from "./figures/differentiable-bit-widths-figure-1.webp";
 
 const PUBLICATION_FIGURES = {
     "biomedical-bapub4-style-kd-class-imbalanced-medical-image": {
@@ -196,6 +198,18 @@ const PUBLICATION_FIGURES = {
         alt: "Figure 3 showing pairs of paediatric abdominal radiographs and their class activation maps, where the heatmap overlay highlights the region the model used to detect intussusception.",
         sourceUrl:
             "https://pmc.ncbi.nlm.nih.gov/articles/PMC7567788/figure/Fig3/",
+    },
+    "core-2026-efficient-ttc-candidate-verification": {
+        image: EFFICIENT_TTC_FIGURE_1,
+        figureLabel: "Figure 1",
+        alt: "Figure 1 from Efficient Test-time Adaptation illustrating candidate verification and divergence-shift based test-time adaptation.",
+        sourceUrl: "",
+    },
+    "llm-2026-differentiable-bit-widths-svd": {
+        image: DIFFERENTIABLE_BIT_WIDTHS_FIGURE_1,
+        figureLabel: "Figure 1",
+        alt: "Figure 1 from Differentiable Bit-Widths showing SVD-based co-optimization of pruning and quantization for ultra-efficient LLM compression.",
+        sourceUrl: "",
     },
 };
 

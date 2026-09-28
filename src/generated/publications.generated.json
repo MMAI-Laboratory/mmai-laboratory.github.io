@@ -1,12 +1,12 @@
 {
   "meta": {
     "schema_version": "1.1",
-    "generated_at": "2026-09-23T08:49:22.940Z",
+    "generated_at": "2026-09-28T06:18:38.388Z",
     "source": "content/publications",
     "categories": [
       "computer_vision_and_learning_algorithms",
-      "robot_learning",
       "efficient_learning_for_llms",
+      "robot_learning",
       "industrial_and_medical_ai"
     ],
     "statuses": [
@@ -16,6 +16,69 @@
     ]
   },
   "items": [
+    {
+      "id": "core-2026-efficient-ttc-candidate-verification",
+      "key": "core-2026-efficient-ttc-candidate-verification",
+      "category": "computer_vision_and_learning_algorithms",
+      "status": "published",
+      "title": "Efficient Test-time Adaptation through Candidate Verification and Divergence Shifts",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Seungmin Oh, Seunghun Kang, Jongbin Ryu",
+        "published_place": "Annual Conference on Neural Information Processing Systems (NeurIPS)",
+        "published_date": "2026-12-06",
+        "accepted_date": "2026-09-24",
+        "keywords": [
+          "Test-time Adaptation",
+          "Candidate Verification",
+          "Divergence Shift"
+        ],
+        "pdf_link": "",
+        "arxiv_link": "",
+        "github_link": "",
+        "project_link": "",
+        "source_code_link": "",
+        "paper_link": ""
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
+      "id": "llm-2026-differentiable-bit-widths-svd",
+      "key": "llm-2026-differentiable-bit-widths-svd",
+      "category": "efficient_learning_for_llms",
+      "status": "published",
+      "title": "Differentiable Bit-Widths: Co-optimizing Pruning and Quantization via SVD for Ultra-Efficient LLM Compression",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Hankyul Kang, Jongbin Ryu",
+        "published_place": "Annual Conference on Neural Information Processing Systems (NeurIPS)",
+        "published_date": "2026-12-06",
+        "accepted_date": "2026-09-24",
+        "keywords": [
+          "Pruning",
+          "Quantization",
+          "SVD",
+          "LLM Compression"
+        ],
+        "pdf_link": "",
+        "arxiv_link": "",
+        "github_link": "",
+        "project_link": "",
+        "source_code_link": "",
+        "paper_link": ""
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
     {
       "id": "core-2026-recalibrated-contrastive-loss-vlm",
       "key": "core-2026-recalibrated-contrastive-loss-vlm",
