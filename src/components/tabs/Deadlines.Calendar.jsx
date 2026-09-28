@@ -26,16 +26,28 @@ export default function DeadlineCalendar({ venues, now, onSelectVenue }) {
         [venues],
     );
 
-    // `now` is only filled in on the client, so fall back to render time; the
-    // month then follows the real clock once it arrives, unless the visitor has
-    // navigated away from it.
-    const todayKey = toDisplayDayKey(now ?? new Date());
-    const today = parseDayKey(todayKey);
+    // `now` is null during prerender and on the first client render. Deriving
+    // the month from `new Date()` there would differ between the build and the
+    // browser, breaking hydration; instead fall back to a deterministic month
+    // (the earliest tracked deadline) until the real clock arrives.
+    const todayKey = now ? toDisplayDayKey(now) : null;
+    const today = todayKey ? parseDayKey(todayKey) : null;
+
+    const fallbackMonth = useMemo(() => {
+        const keys = [...entriesByDay.keys()].sort();
+        if (keys.length) {
+            const { year, monthIndex } = parseDayKey(keys[0]);
+            return { year, monthIndex };
+        }
+        return { year: 1970, monthIndex: 0 };
+    }, [entriesByDay]);
+
     const [cursor, setCursor] = useState(null);
-    const activeCursor = cursor ?? {
-        year: today.year,
-        monthIndex: today.monthIndex,
-    };
+    const activeCursor =
+        cursor ??
+        (today
+            ? { year: today.year, monthIndex: today.monthIndex }
+            : fallbackMonth);
 
     const grid = useMemo(
         () => buildMonthGrid(activeCursor.year, activeCursor.monthIndex),
@@ -65,6 +77,7 @@ export default function DeadlineCalendar({ venues, now, onSelectVenue }) {
         });
 
     const isCurrentMonth =
+        today !== null &&
         activeCursor.year === today.year &&
         activeCursor.monthIndex === today.monthIndex;
 
