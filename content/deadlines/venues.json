@@ -909,6 +909,20 @@
                     "status": "verified"
                 },
                 {
+                    "id": "rebuttal",
+                    "label": "Author feedback window begins",
+                    "short_label": "Rebuttal",
+                    "kind": "review",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "([A-Z][a-z]+\\s+\\d{1,2})-\\d{1,2},\\s*(\\d{4})\\s+Author feedback window",
+                        "timezone": "AoE",
+                        "compose": "$1, $2"
+                    }
+                },
+                {
                     "id": "final-decision",
                     "label": "Final acceptance notification",
                     "short_label": "Final decision",
@@ -1571,7 +1585,7 @@
                 {
                     "id": "abstract",
                     "label": "Extended abstract submission",
-                    "short_label": "Abstract",
+                    "short_label": "Ext. Abstract",
                     "kind": "abstract",
                     "deadline_at": "1970-01-01T23:59:00-12:00",
                     "timezone_label": "AoE",
@@ -1583,14 +1597,27 @@
                 },
                 {
                     "id": "rebuttal",
-                    "label": "Rebuttal submission",
-                    "short_label": "Rebuttal",
+                    "label": "Stage 1 decision / rebuttal begins",
+                    "short_label": "Stage 1 Rebuttal",
                     "kind": "review",
                     "deadline_at": "1970-01-01T23:59:00-12:00",
                     "timezone_label": "AoE",
                     "status": "awaiting_cfp",
                     "source_parser": {
-                        "match": "([A-Z][a-z]{2,8}\\s+\\d{1,2},\\s*\\d{4})\\s+11:59pm AoE Rebuttal submission deadline",
+                        "match": "([A-Z][a-z]{2,8}\\s+\\d{1,2},\\s*\\d{4})\\s+11:59pm AoE Decision Stage 1",
+                        "timezone": "AoE"
+                    }
+                },
+                {
+                    "id": "stage2-decision",
+                    "label": "Stage 2 decision",
+                    "short_label": "Stage 2 Decision",
+                    "kind": "decision",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "([A-Z][a-z]{2,8}\\s+\\d{1,2},\\s*\\d{4})\\s+11:59pm AoE Decision Stage 2",
                         "timezone": "AoE"
                     }
                 },
@@ -1608,6 +1635,19 @@
                     }
                 },
                 {
+                    "id": "supplementary",
+                    "label": "Supplementary material submission",
+                    "short_label": "Supplementary",
+                    "kind": "supplementary",
+                    "deadline_at": "1970-01-01T23:59:00-12:00",
+                    "timezone_label": "AoE",
+                    "status": "awaiting_cfp",
+                    "source_parser": {
+                        "match": "([A-Z][a-z]{2,8}\\s+\\d{1,2},\\s*\\d{4})\\s+11:59pm AoE Supplementary material submission deadline",
+                        "timezone": "AoE"
+                    }
+                },
+                {
                     "id": "notification",
                     "label": "Paper acceptance notification",
                     "short_label": "Notification",
@@ -1617,19 +1657,6 @@
                     "status": "awaiting_cfp",
                     "source_parser": {
                         "match": "([A-Z][a-z]{2,8}\\s+\\d{1,2},\\s*\\d{4})\\s+11:59pm AoE Paper acceptance notification",
-                        "timezone": "AoE"
-                    }
-                },
-                {
-                    "id": "camera-ready",
-                    "label": "Camera-ready submission",
-                    "short_label": "Camera-ready",
-                    "kind": "paper",
-                    "deadline_at": "1970-01-01T23:59:00-12:00",
-                    "timezone_label": "AoE",
-                    "status": "awaiting_cfp",
-                    "source_parser": {
-                        "match": "([A-Z][a-z]{2,8}\\s+\\d{1,2},\\s*\\d{4})\\s+11:59pm AoE Camera-ready paper submission",
                         "timezone": "AoE"
                     }
                 }
