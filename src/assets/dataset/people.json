@@ -187,7 +187,8 @@
                 },
                 "donggun_lee": {
                     "order": 7,
-                    "name": "Donggun Lee",
+                    "name": "Donggeon Lee",
+                    "image": "Donggun Lee",
                     "position": "Ph.D Student",
                     "email": "donggeon_lee@ajou.ac.kr",
                     "homepage": null,
@@ -246,7 +247,8 @@
                 },
                 "mingyu_jeong": {
                     "order": 1,
-                    "name": "Mingyu Jeong",
+                    "name": "Mingyu Jung",
+                    "image": "Mingyu Jeong",
                     "position": "M.S Student",
                     "email": "mingyujung0730@ajou.ac.kr",
                     "homepage": null,

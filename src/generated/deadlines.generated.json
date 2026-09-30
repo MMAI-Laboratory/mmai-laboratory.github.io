@@ -103,7 +103,7 @@
       ],
       "source_evidence": "CVPR 2027",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.451Z",
+        "checked_at": "2026-09-30T06:19:52.548Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "9d54646e12e653d8",
@@ -137,7 +137,7 @@
       "milestones": [],
       "source_evidence": "ICCV 2027",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.491Z",
+        "checked_at": "2026-09-30T06:19:52.578Z",
         "state": "needs_review",
         "http_status": 200,
         "content_fingerprint": "b2a5c2bf2af71cd9",
@@ -228,7 +228,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.492Z",
+        "checked_at": "2026-09-30T06:19:52.579Z",
         "state": "awaiting_cfp",
         "http_status": 200,
         "content_fingerprint": "42f3db99d32ddd4d",
@@ -310,7 +310,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.493Z",
+        "checked_at": "2026-09-30T06:19:52.580Z",
         "state": "needs_review",
         "http_status": 200,
         "content_fingerprint": "07421eaba1b2aaf6",
@@ -385,7 +385,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.494Z",
+        "checked_at": "2026-09-30T06:19:52.580Z",
         "state": "unavailable",
         "http_status": null,
         "content_fingerprint": null,
@@ -492,7 +492,7 @@
       ],
       "source_evidence": "ACCV 2026",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.494Z",
+        "checked_at": "2026-09-30T06:19:52.581Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "2b3a8e4648032846",
@@ -573,7 +573,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.495Z",
+        "checked_at": "2026-09-30T06:19:52.581Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "007e8f5424534fb7",
@@ -657,7 +657,7 @@
       ],
       "source_evidence": "MICCAI 2026",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.495Z",
+        "checked_at": "2026-09-30T06:19:52.582Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "3ef20ff229f115fc",
@@ -744,7 +744,7 @@
       ],
       "source_evidence": "NeurIPS 2026",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.495Z",
+        "checked_at": "2026-09-30T06:19:52.582Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "5cbe3167274a5a46",
@@ -843,7 +843,7 @@
       ],
       "source_evidence": "ICML 2026",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.496Z",
+        "checked_at": "2026-09-30T06:19:52.583Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "c679556f1a4109fa",
@@ -925,7 +925,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.496Z",
+        "checked_at": "2026-09-30T06:19:52.583Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "d9c772a4b3555843",
@@ -1031,7 +1031,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.497Z",
+        "checked_at": "2026-09-30T06:19:52.583Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "69c1ec0dd6b082a8",
@@ -1117,7 +1117,7 @@
       ],
       "source_evidence": "AISTATS 2027",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.497Z",
+        "checked_at": "2026-09-30T06:19:52.584Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "08853b22ec67134e",
@@ -1203,7 +1203,7 @@
       ],
       "source_evidence": "UAI",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.497Z",
+        "checked_at": "2026-09-30T06:19:52.584Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "8d174df270e92731",
@@ -1263,7 +1263,7 @@
       ],
       "source_evidence": "ACL 2026",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.498Z",
+        "checked_at": "2026-09-30T06:19:52.584Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "d2fcea258883f6ec",
@@ -1343,7 +1343,7 @@
       ],
       "source_evidence": "EMNLP 2026",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.498Z",
+        "checked_at": "2026-09-30T06:19:52.585Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "72ab6c13a88c666d",
@@ -1412,7 +1412,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.498Z",
+        "checked_at": "2026-09-30T06:19:52.585Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "5613bd3a9f5fa1f7",
@@ -1489,7 +1489,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.498Z",
+        "checked_at": "2026-09-30T06:19:52.585Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "9840d97764656a34",
@@ -1565,7 +1565,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.499Z",
+        "checked_at": "2026-09-30T06:19:52.585Z",
         "state": "awaiting_cfp",
         "http_status": 200,
         "content_fingerprint": "16e3ff358a0badd2",
@@ -1629,7 +1629,7 @@
       ],
       "source_evidence": "COLING 2027",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.499Z",
+        "checked_at": "2026-09-30T06:19:52.586Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "9f396f7c906cab87",
@@ -1687,7 +1687,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.499Z",
+        "checked_at": "2026-09-30T06:19:52.586Z",
         "state": "awaiting_cfp",
         "http_status": 200,
         "content_fingerprint": "95348c1e4d2eb4e5",
@@ -1739,7 +1739,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.499Z",
+        "checked_at": "2026-09-30T06:19:52.586Z",
         "state": "needs_review",
         "http_status": 200,
         "content_fingerprint": "f49039b03655372c",
@@ -1781,7 +1781,7 @@
       ],
       "source_evidence": "IROS",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.500Z",
+        "checked_at": "2026-09-30T06:19:52.586Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "833a4e60618ba118",
@@ -1890,7 +1890,7 @@
       ],
       "source_evidence": "2027",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.500Z",
+        "checked_at": "2026-09-30T06:19:52.587Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "0c4e1a377b19e247",
@@ -1971,7 +1971,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.500Z",
+        "checked_at": "2026-09-30T06:19:52.587Z",
         "state": "awaiting_cfp",
         "http_status": 200,
         "content_fingerprint": "a29691938bf7e3ae",
@@ -2026,10 +2026,10 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.500Z",
+        "checked_at": "2026-09-30T06:19:52.587Z",
         "state": "awaiting_cfp",
         "http_status": 200,
-        "content_fingerprint": "c6ea261241974d0a",
+        "content_fingerprint": "63767438176d24ca",
         "extracted_milestones": {},
         "message": "No parser configured yet: the official CFP for the next round is not published."
       }
@@ -2108,7 +2108,7 @@
       ],
       "source_evidence": "KDD 2027",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.501Z",
+        "checked_at": "2026-09-30T06:19:52.587Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "a0e821598e8ce142",
@@ -2181,10 +2181,10 @@
       ],
       "source_evidence": "PAKDD 2027",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.501Z",
+        "checked_at": "2026-09-30T06:19:52.588Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "e1d10457d569ccf4",
+        "content_fingerprint": "ffc788b5bee68262",
         "extracted_milestones": {
           "paper": "2026-11-20T23:59:00-12:00",
           "notification": "2027-02-26T23:59:00-12:00",
@@ -2281,7 +2281,7 @@
       ],
       "source_evidence": "AAMAS 2027",
       "source_check": {
-        "checked_at": "2026-09-30T03:50:53.501Z",
+        "checked_at": "2026-09-30T06:19:52.588Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "30c702f792a89c09",
