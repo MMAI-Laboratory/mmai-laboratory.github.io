@@ -10,8 +10,8 @@ import {
 } from "../utils/themeMode";
 import { scrollWindowTo } from "../utils/scrollMotion";
 import "./Nav.css";
-import CVL_LAB_LOGO_LIGHT from "../assets/logo-light.svg";
-import CVL_LAB_LOGO_DARK from "../assets/logo-dark.svg";
+import MMAI_LOGO_LIGHT from "../assets/logo.webp";
+import MMAI_LOGO_DARK from "../assets/logo-dark.webp";
 
 const MOBILE_NAV_QUERY = "(max-width: 57rem)";
 
@@ -142,7 +142,8 @@ export default function Nav() {
     };
 
     const navLogoSrc =
-        themeMode === DARK_THEME ? CVL_LAB_LOGO_DARK : CVL_LAB_LOGO_LIGHT;
+        themeMode === DARK_THEME ? MMAI_LOGO_DARK : MMAI_LOGO_LIGHT;
+
 
     const tabs = [
         {

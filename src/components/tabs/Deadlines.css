@@ -414,6 +414,35 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-standard);
+}
+
+.deadlines__calendar-cell:hover {
+  background: color-mix(in srgb, var(--tab-deadlines-tint) 22%, var(--surface));
+}
+
+.deadlines__calendar-cell:focus-visible {
+  outline: 2px solid var(--tab-deadlines-accent);
+  outline-offset: -2px;
+}
+
+/* Selected day: a tinted background plus an inset ring. The ring is an inset
+   box-shadow (paints under the cell content), so unlike an outline it never
+   covers the multi-day conference bars that cross the cell edges. */
+.deadlines__calendar-cell.is-selected {
+  background: color-mix(in srgb, var(--tab-deadlines-tint) 92%, var(--surface));
+  box-shadow: inset 0 0 0 2px var(--tab-deadlines-accent);
+}
+
+.deadlines__calendar-cell.is-selected .deadlines__calendar-date {
+  color: var(--tab-deadlines-accent);
+  font-weight: 700;
+}
+
+/* Keep the today marker legible when its day is also selected. */
+.deadlines__calendar-cell.is-selected .deadlines__calendar-date.is-today {
+  color: var(--surface);
 }
 
 /* Days outside the visible month stay present but recede. */
@@ -447,24 +476,65 @@
   color: var(--surface);
 }
 
-/* Each entry links to its venue in the schedule below, so it is a full-width
-   button reset to look like the original card. */
+/* Submission milestones: a left-accented chip inside the day cell. The cell
+   itself is the click target (opens the day detail), so entries are static. */
 .deadlines__calendar-entry {
   display: block;
   width: 100%;
   padding: var(--space-0p5) var(--space-1);
-  border: none;
   border-left: 3px solid var(--tab-deadlines-accent);
   border-radius: var(--radius-sm);
   background: var(--surface-2);
   text-align: left;
-  cursor: pointer;
-  transition: var(--transition-interactive);
+  pointer-events: none;
 }
 
-.deadlines__calendar-entry:hover,
-.deadlines__calendar-entry:focus-visible {
-  background: var(--tab-deadlines-tint);
+/* Multi-day conference run bar. Adjacent days extend past the cell padding and
+   border (negative margins) so the segments meet into one continuous band. */
+.deadlines__calendar-span {
+  position: relative;
+  z-index: 1;
+  min-height: 1.15rem;
+  padding: 0.12rem var(--space-1);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--tab-deadlines-accent) 22%, var(--surface-2));
+  color: var(--text-primary);
+  font-size: var(--meta-text-size);
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.deadlines__calendar-span.is-open-right {
+  /* Reach across the right padding and the 1px cell border to the next day. */
+  margin-right: calc(-1 * var(--space-1) - 1px);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.deadlines__calendar-span.is-open-left {
+  margin-left: calc(-1 * var(--space-1));
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Empty lane placeholder: reserves the bar's row height so a run above/below
+   keeps a straight, unbroken line across days. */
+.deadlines__calendar-span-spacer {
+  min-height: 1.15rem;
+  pointer-events: none;
+}
+
+.deadlines__calendar-span-flag {
+  display: inline-block;
+  width: 1.05em;
+  height: auto;
+  margin-right: 0.25em;
+  vertical-align: -0.12em;
+  border-radius: 1.5px;
 }
 
 .deadlines__calendar-entry-venue {
@@ -474,6 +544,15 @@
   font-size: var(--meta-text-size);
   font-weight: 700;
   line-height: var(--type-meta-line-height);
+}
+
+.deadlines__calendar-entry-flag {
+  display: inline-block;
+  width: 1.1em;
+  height: auto;
+  margin-right: 0.3em;
+  vertical-align: -0.12em;
+  border-radius: 1.5px;
 }
 
 .deadlines__calendar-entry-label {
@@ -488,6 +567,82 @@
   margin: 0;
   color: var(--text-muted);
   font-size: var(--type-support-size);
+}
+
+/* ── Selected-day detail panel ───────────────────────────────────────────── */
+.deadlines__calendar-detail {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--tab-deadlines-border);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.deadlines__calendar-detail-date {
+  margin: 0;
+  font-size: var(--type-body-size);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.deadlines__calendar-detail-empty {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--type-support-size);
+}
+
+.deadlines__calendar-detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--outline-color);
+}
+
+.deadlines__calendar-detail-main {
+  min-width: 0;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.deadlines__calendar-detail-kind {
+  margin: 0;
+  font-size: var(--type-meta-size);
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.deadlines__calendar-detail-venue {
+  margin: 0;
+  font-size: var(--type-support-size);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.deadlines__calendar-detail-note {
+  margin: 0;
+  font-size: var(--type-support-size);
+  color: var(--text-secondary);
+}
+
+.deadlines__calendar-detail-meta {
+  text-align: right;
+  display: grid;
+  gap: 0.15rem;
+  align-content: start;
+}
+
+.deadlines__calendar-detail-meta p {
+  margin: 0;
+  font-size: var(--type-meta-size);
+  color: var(--text-muted);
+}
+
+.deadlines__calendar-detail-meta .deadlines__event-link {
+  justify-self: end;
 }
 
 @media (max-width: 52rem) {
@@ -522,9 +677,12 @@
   white-space: nowrap;
 }
 
+/* SVG flags render as small inline images so they show on every OS. */
 .deadlines__flag {
+  display: inline-block;
+  width: 1.15em;
+  height: auto;
   margin-right: 0.3em;
-  font-size: 1.05em;
-  line-height: 1;
-  vertical-align: -0.05em;
+  vertical-align: -0.15em;
+  border-radius: 1.5px;
 }

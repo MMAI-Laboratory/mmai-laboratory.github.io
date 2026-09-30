@@ -154,13 +154,20 @@ export const getDeadlineCalendarEntries = (venues = getAllVenues()) => {
       if (!byDay.has(dayKey)) {
         byDay.set(dayKey, []);
       }
+      const [firstSite] = getLocationSegments(venue.event?.location);
       byDay.get(dayKey).push({
         id: `${venue.id}-${milestone.id}`,
         venueId: venue.id,
         venueName: venue.name,
+        venueFullName: venue.full_name ?? "",
         label: milestone.short_label || milestone.label,
+        fullLabel: milestone.label || milestone.short_label,
         kind: milestone.kind,
         deadlineAt: milestone.deadline_at,
+        timezoneLabel: milestone.timezone_label ?? "",
+        cfpUrl: venue.cfp_url ?? "",
+        code: firstSite?.code ?? null,
+        country: firstSite?.country ?? null,
       });
     });
   });
@@ -170,6 +177,65 @@ export const getDeadlineCalendarEntries = (venues = getAllVenues()) => {
   );
 
   return byDay;
+};
+
+const monthNumberFromName = (name) => {
+  const parsed = Date.parse(`${name} 1, 2000`);
+  return Number.isNaN(parsed) ? null : new Date(parsed).getMonth();
+};
+
+const pad2 = (value) => String(value).padStart(2, "0");
+
+// Conference run dates ("September 27-October 1, 2026") shown as a spanning bar
+// on the calendar, distinct from the point-in-time submission milestones. Names
+// with only a month ("August 2027") yield no span.
+export const getConferenceSpans = (venues = getAllVenues()) => {
+  const spans = venues
+    .map((venue) => {
+      const dates = venue.event?.dates ?? "";
+      const match = dates.match(
+        /([A-Za-z]+)\s+(\d{1,2})\s*[-\u2013]\s*(?:([A-Za-z]+)\s+)?(\d{1,2}),\s*(\d{4})/,
+      );
+      if (!match) {
+        return null;
+      }
+      const [, monthA, day1, monthB, day2, year] = match;
+      const startMonth = monthNumberFromName(monthA);
+      const endMonth = monthNumberFromName(monthB || monthA);
+      if (startMonth === null || endMonth === null) {
+        return null;
+      }
+      const [firstSite] = getLocationSegments(venue.event?.location);
+      return {
+        venueId: venue.id,
+        name: venue.name,
+        fullName: venue.full_name ?? "",
+        code: firstSite?.code ?? null,
+        country: firstSite?.country ?? null,
+        dates: venue.event?.dates ?? "",
+        location: venue.event?.location ?? "",
+        officialUrl: venue.event?.source_url ?? venue.official_url ?? venue.cfp_url ?? "",
+        start: `${year}-${pad2(startMonth + 1)}-${pad2(Number(day1))}`,
+        end: `${year}-${pad2(endMonth + 1)}-${pad2(Number(day2))}`,
+      };
+    })
+    .filter(Boolean);
+  spans.sort(
+    (a, b) => a.start.localeCompare(b.start) || a.end.localeCompare(b.end),
+  );
+  // Stable vertical lane per run so overlapping conferences keep the same row
+  // across days (a lane is reused once its previous run has ended); this keeps
+  // each band continuous instead of jumping rows when a neighbour ends.
+  const laneEnds = [];
+  spans.forEach((span) => {
+    let lane = laneEnds.findIndex((end) => end < span.start);
+    if (lane === -1) {
+      lane = laneEnds.length;
+    }
+    laneEnds[lane] = span.end;
+    span.lane = lane;
+  });
+  return spans;
 };
 
 // Sunday-start grid sized to the weeks the month actually spans, so a month
@@ -245,6 +311,9 @@ export const getLocationSegments = (location) => {
       return {
         text: segment,
         country: code ? segment.split(",").pop().trim() : null,
+        // ISO alpha-2 (lowercase) for the bundled SVG flags; emoji stays as a
+        // convenience but is not used for rendering (no Windows glyphs).
+        code: code ? code.toLowerCase() : null,
         flag: code ? toFlagEmoji(code) : null,
       };
     });

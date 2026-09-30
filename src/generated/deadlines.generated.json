@@ -103,7 +103,7 @@
       ],
       "source_evidence": "CVPR 2027",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.657Z",
+        "checked_at": "2026-09-30T03:50:53.451Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "9d54646e12e653d8",
@@ -137,10 +137,10 @@
       "milestones": [],
       "source_evidence": "ICCV 2027",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.695Z",
+        "checked_at": "2026-09-30T03:50:53.491Z",
         "state": "needs_review",
         "http_status": 200,
-        "content_fingerprint": "2cdac0af17a988f2",
+        "content_fingerprint": "b2a5c2bf2af71cd9",
         "extracted_milestones": {},
         "message": "Official source needs review: Paper could not be extracted, Decision could not be extracted."
       }
@@ -228,10 +228,10 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.695Z",
+        "checked_at": "2026-09-30T03:50:53.492Z",
         "state": "awaiting_cfp",
         "http_status": 200,
-        "content_fingerprint": "173907855a2964a9",
+        "content_fingerprint": "42f3db99d32ddd4d",
         "extracted_milestones": {},
         "message": "No parser configured yet: the official CFP for the next round is not published."
       }
@@ -310,7 +310,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.696Z",
+        "checked_at": "2026-09-30T03:50:53.493Z",
         "state": "needs_review",
         "http_status": 200,
         "content_fingerprint": "07421eaba1b2aaf6",
@@ -385,7 +385,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.697Z",
+        "checked_at": "2026-09-30T03:50:53.494Z",
         "state": "unavailable",
         "http_status": null,
         "content_fingerprint": null,
@@ -492,7 +492,7 @@
       ],
       "source_evidence": "ACCV 2026",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.697Z",
+        "checked_at": "2026-09-30T03:50:53.494Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "2b3a8e4648032846",
@@ -573,7 +573,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.698Z",
+        "checked_at": "2026-09-30T03:50:53.495Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "007e8f5424534fb7",
@@ -657,7 +657,7 @@
       ],
       "source_evidence": "MICCAI 2026",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.698Z",
+        "checked_at": "2026-09-30T03:50:53.495Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "3ef20ff229f115fc",
@@ -744,7 +744,7 @@
       ],
       "source_evidence": "NeurIPS 2026",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.699Z",
+        "checked_at": "2026-09-30T03:50:53.495Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "5cbe3167274a5a46",
@@ -843,7 +843,7 @@
       ],
       "source_evidence": "ICML 2026",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.699Z",
+        "checked_at": "2026-09-30T03:50:53.496Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "c679556f1a4109fa",
@@ -925,10 +925,10 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.700Z",
+        "checked_at": "2026-09-30T03:50:53.496Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "9d1abb3dbb268af7",
+        "content_fingerprint": "d9c772a4b3555843",
         "extracted_milestones": {
           "abstract": "2026-09-18T23:59:00-12:00",
           "paper": "2026-09-25T23:59:00-12:00"
@@ -1031,7 +1031,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.700Z",
+        "checked_at": "2026-09-30T03:50:53.497Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "69c1ec0dd6b082a8",
@@ -1117,10 +1117,10 @@
       ],
       "source_evidence": "AISTATS 2027",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.700Z",
+        "checked_at": "2026-09-30T03:50:53.497Z",
         "state": "matched",
         "http_status": 200,
-        "content_fingerprint": "69a776be62520e9f",
+        "content_fingerprint": "08853b22ec67134e",
         "extracted_milestones": {
           "abstract": "2026-09-29T23:59:00-12:00",
           "paper": "2026-10-06T23:59:00-12:00",
@@ -1203,7 +1203,7 @@
       ],
       "source_evidence": "UAI",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.700Z",
+        "checked_at": "2026-09-30T03:50:53.497Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "8d174df270e92731",
@@ -1263,7 +1263,7 @@
       ],
       "source_evidence": "ACL 2026",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.701Z",
+        "checked_at": "2026-09-30T03:50:53.498Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "d2fcea258883f6ec",
@@ -1343,7 +1343,7 @@
       ],
       "source_evidence": "EMNLP 2026",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.701Z",
+        "checked_at": "2026-09-30T03:50:53.498Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "72ab6c13a88c666d",
@@ -1412,7 +1412,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.701Z",
+        "checked_at": "2026-09-30T03:50:53.498Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "5613bd3a9f5fa1f7",
@@ -1489,7 +1489,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.701Z",
+        "checked_at": "2026-09-30T03:50:53.498Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "9840d97764656a34",
@@ -1565,7 +1565,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.702Z",
+        "checked_at": "2026-09-30T03:50:53.499Z",
         "state": "awaiting_cfp",
         "http_status": 200,
         "content_fingerprint": "16e3ff358a0badd2",
@@ -1629,7 +1629,7 @@
       ],
       "source_evidence": "COLING 2027",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.702Z",
+        "checked_at": "2026-09-30T03:50:53.499Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "9f396f7c906cab87",
@@ -1687,7 +1687,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.702Z",
+        "checked_at": "2026-09-30T03:50:53.499Z",
         "state": "awaiting_cfp",
         "http_status": 200,
         "content_fingerprint": "95348c1e4d2eb4e5",
@@ -1739,7 +1739,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.702Z",
+        "checked_at": "2026-09-30T03:50:53.499Z",
         "state": "needs_review",
         "http_status": 200,
         "content_fingerprint": "f49039b03655372c",
@@ -1781,7 +1781,7 @@
       ],
       "source_evidence": "IROS",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.703Z",
+        "checked_at": "2026-09-30T03:50:53.500Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "833a4e60618ba118",
@@ -1890,7 +1890,7 @@
       ],
       "source_evidence": "2027",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.703Z",
+        "checked_at": "2026-09-30T03:50:53.500Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "0c4e1a377b19e247",
@@ -1971,7 +1971,7 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.703Z",
+        "checked_at": "2026-09-30T03:50:53.500Z",
         "state": "awaiting_cfp",
         "http_status": 200,
         "content_fingerprint": "a29691938bf7e3ae",
@@ -2026,10 +2026,10 @@
         }
       ],
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.703Z",
+        "checked_at": "2026-09-30T03:50:53.500Z",
         "state": "awaiting_cfp",
         "http_status": 200,
-        "content_fingerprint": "5e2ed7c5a9ece852",
+        "content_fingerprint": "c6ea261241974d0a",
         "extracted_milestones": {},
         "message": "No parser configured yet: the official CFP for the next round is not published."
       }
@@ -2108,7 +2108,7 @@
       ],
       "source_evidence": "KDD 2027",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.704Z",
+        "checked_at": "2026-09-30T03:50:53.501Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "a0e821598e8ce142",
@@ -2181,7 +2181,7 @@
       ],
       "source_evidence": "PAKDD 2027",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.704Z",
+        "checked_at": "2026-09-30T03:50:53.501Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "e1d10457d569ccf4",
@@ -2281,7 +2281,7 @@
       ],
       "source_evidence": "AAMAS 2027",
       "source_check": {
-        "checked_at": "2026-09-29T07:00:18.704Z",
+        "checked_at": "2026-09-30T03:50:53.501Z",
         "state": "matched",
         "http_status": 200,
         "content_fingerprint": "30c702f792a89c09",

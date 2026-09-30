@@ -11,6 +11,7 @@ import {
   getLocationSegments,
   getVenueStatusMeta,
 } from "../../utils/deadlineData";
+import { getFlagSvg } from "../../assets/flags/flag_index";
 import DeadlineCalendar from "./Deadlines.Calendar";
 import "./Deadlines.css";
 
@@ -111,14 +112,12 @@ function DeadlineCard({ venue, selectedMilestones, onSelectMilestone, now }) {
               {getLocationSegments(event.location).map(
                 (segment, index, segments) => (
                   <span key={segment.text} className="deadlines__location-site">
-                    {segment.flag ? (
-                      <span
+                    {getFlagSvg(segment.code) ? (
+                      <img
                         className="deadlines__flag"
-                        role="img"
-                        aria-label={segment.country}
-                      >
-                        {segment.flag}
-                      </span>
+                        src={getFlagSvg(segment.code)}
+                        alt={segment.country}
+                      />
                     ) : null}
                     {index < segments.length - 1
                       ? `${segment.text};`
@@ -259,15 +258,14 @@ function Deadlines() {
     [selectedArea, normalizedQuery, venues, now],
   );
 
-  const handleSelectVenue = (venueId) => {
-    if (typeof document === "undefined") {
-      return;
-    }
-    const target = document.getElementById(`venue-${venueId}`);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+  // Calendar entries no longer link to the schedule list; clicking a day now
+  // opens that day's detail inside the calendar itself.
+  // const handleSelectVenue = (venueId) => {
+  //   if (typeof document === "undefined") return;
+  //   document
+  //     .getElementById(`venue-${venueId}`)
+  //     ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  // };
 
   const handleSelectMilestone = (venueId, milestoneId) => {
     setSelectedMilestones((current) => ({
@@ -306,11 +304,7 @@ function Deadlines() {
       </section>
       */}
 
-      <DeadlineCalendar
-        venues={filteredVenues}
-        now={now}
-        onSelectVenue={handleSelectVenue}
-      />
+      <DeadlineCalendar venues={filteredVenues} now={now} />
 
       <section
         className="deadlines__list"
