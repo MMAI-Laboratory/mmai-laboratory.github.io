@@ -138,7 +138,9 @@
                     "email": "yurikim@ajou.ac.kr",
                     "homepage": null,
                     "research_interests": [
-                        "Material Science"
+                        "TimeSeries",
+                        "Agent",
+                        "Domain-Specific AI"
                     ],
                     "current_position": [],
                     "links": {
