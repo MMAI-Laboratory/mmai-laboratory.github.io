@@ -1,0 +1,6 @@
+{
+  "GHSA-vfj7-8cjw-p6xm": {
+    "active": true,
+    "notes": "braces DoS via deeply nested patterns. Transitive devDependency only (gh-pages -> globby -> fast-glob -> micromatch -> braces) with no upstream fix released yet. Not part of the production bundle, and CI deploys via peaceiris/actions-gh-pages (not the gh-pages npm package). Remove this exclusion once braces ships a patched release."
+  }
+}

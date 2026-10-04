@@ -15,7 +15,7 @@
         "deadlines:validate": "node scripts/content/deadlines.mjs --validate-only",
         "research:validate": "node scripts/content/research.mjs",
         "validate:content": "node scripts/content/validate.mjs",
-        "audit:dependencies": "better-npm-audit audit --level low --exclude GHSA-qwww-vcr4-c8h2",
+        "audit:dependencies": "better-npm-audit audit --level low",
         "operator:verify": "npm run audit:dependencies && npm run content:sync && npm run build",
         "prebuild": "npm run validate:content",
         "build": "vite build",
