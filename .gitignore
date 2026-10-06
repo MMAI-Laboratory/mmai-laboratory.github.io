@@ -25,3 +25,7 @@ color.sass
 *.njsproj
 *.sln
 *.sw?
+
+# Cloudflare Worker local secrets and cache
+.dev.vars
+.wrangler/

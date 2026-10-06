@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import ScrollProgress from "./components/ScrollProgress";
 import BackToTopButton from "./components/BackToTopButton";
 import RouteScrollManager from "./components/RouteScrollManager";
+import CloudflareAnalytics from "./components/CloudflareAnalytics";
 import AppRoutes from "./routes/AppRoutes";
 import { resolveTabFromPath } from "./routes/routeUtils";
 import "./App.css";
@@ -218,6 +219,7 @@ export function createAppShell(HeroComponent, RoutesComponent) {
 
         return (
             <div className={appClassName} data-rendered-route={location.pathname}>
+                <CloudflareAnalytics />
                 <InteractiveBackdrop />
                 <ScrollProgress />
                 <RouteScrollManager />

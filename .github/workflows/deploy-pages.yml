@@ -63,6 +63,14 @@ jobs:
 
       - name: Build Site
         run: npm run build:static
+        env:
+          # Public identifiers only (repository Variables, not Secrets). The
+          # Cloudflare API token and the operator allow list live solely in
+          # the admin Worker's secrets. Unset values simply disable the
+          # beacon or the /admin sign-in.
+          VITE_ADMIN_API_URL: ${{ vars.VITE_ADMIN_API_URL }}
+          VITE_GOOGLE_CLIENT_ID: ${{ vars.VITE_GOOGLE_CLIENT_ID }}
+          VITE_CLOUDFLARE_WEB_ANALYTICS_TOKEN: ${{ vars.VITE_CLOUDFLARE_WEB_ANALYTICS_TOKEN }}
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4

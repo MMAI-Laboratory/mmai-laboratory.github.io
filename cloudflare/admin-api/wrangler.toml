@@ -1,0 +1,37 @@
+name = "mmai-admin-api"
+main = "worker.js"
+compatibility_date = "2026-09-08"
+
+# Keeps the Worker log (which operator requested what) for auditing.
+[observability]
+enabled = true
+
+[vars]
+ADMIN_ORIGIN = "https://mmai-laboratory.github.io"
+# Public OAuth client id from Google Cloud Console. Empty disables Google
+# sign-in; the allow list itself is set with
+# `wrangler secret put ADMIN_ALLOWED_EMAILS`.
+GOOGLE_CLIENT_ID = "931877166529-oeare36foagnfisi9lp10n1ahd4celn2.apps.googleusercontent.com"
+
+# Failed sign-in attempts are limited per IP and path. The namespace ids are
+# distinct from the AAIG Worker so the two sites never share counters when
+# they live in the same Cloudflare account.
+[[ratelimits]]
+name = "ADMIN_RATE_LIMITER"
+namespace_id = "2001"
+
+[ratelimits.simple]
+limit = 10
+period = 60
+
+[env.dev.vars]
+ADMIN_ORIGIN = "https://mmai-laboratory.github.io,http://localhost:5173"
+GOOGLE_CLIENT_ID = "931877166529-oeare36foagnfisi9lp10n1ahd4celn2.apps.googleusercontent.com"
+
+[[env.dev.ratelimits]]
+name = "ADMIN_RATE_LIMITER"
+namespace_id = "2002"
+
+[env.dev.ratelimits.simple]
+limit = 10
+period = 60

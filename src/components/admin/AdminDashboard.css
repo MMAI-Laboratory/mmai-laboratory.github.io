@@ -1,0 +1,527 @@
+/* Private /admin workspace. Ported from the AAIG admin dashboard (analytics
+   and sign-in only) and adapted to the MMAI design tokens. */
+
+.admin-dashboard {
+    width: 100%;
+    display: grid;
+    gap: clamp(1.1rem, 2.5vw, 2rem);
+    color: var(--text-primary);
+}
+
+.admin-header, .admin-section {
+    border: 1px solid var(--outline-color);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+}
+
+.admin-header {
+    padding: clamp(1.25rem, 3vw, 2.2rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 1.5rem;
+    background:
+        linear-gradient(135deg, var(--accent-ui-100), transparent 66%),
+        var(--surface);
+}
+
+.admin-header__label, .admin-header h1, .admin-header p, .admin-section__head h2, .admin-section__head p, .admin-metric p, .admin-metric span {
+    margin: 0;
+}
+
+.admin-header__label {
+    color: var(--accent-ui-800);
+    font-size: var(--type-meta-size);
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.admin-header h1 {
+    margin-top: 0.3rem;
+    font-family: var(--font-base);
+    font-size: clamp(2rem, 4vw, 3.35rem);
+    letter-spacing: -0.055em;
+}
+
+.admin-header p:not(.admin-header__label) {
+    margin-top: 0.45rem;
+    color: var(--text-muted);
+}
+
+.admin-header__back, .admin-primary-link, .admin-lock {
+    width: fit-content;
+    min-height: 2.65rem;
+    padding: 0.65rem 0.9rem;
+    border-radius: var(--radius-md);
+    font-size: var(--type-button-size);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        transform var(--dur-fast) var(--ease-standard),
+        background var(--dur-fast) var(--ease-standard);
+}
+
+.admin-header__back {
+    border: 1px solid var(--line-strong);
+    color: var(--text-primary);
+    background: var(--surface);
+}
+
+.admin-primary-link {
+    color: var(--white);
+    background: var(--accent-ui-800);
+}
+
+.admin-section {
+    padding: clamp(1.15rem, 2.5vw, 1.8rem);
+}
+
+.admin-section__head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.admin-section__head h2 {
+    font-family: var(--font-base);
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    letter-spacing: -0.035em;
+}
+
+.admin-section__head p {
+    margin-top: 0.2rem;
+    color: var(--text-muted);
+    font-size: var(--type-support-size);
+}
+
+.admin-period {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.admin-period button, .admin-lock {
+    border: 1px solid var(--line-strong);
+    color: var(--text-primary);
+    background: var(--surface);
+    cursor: pointer;
+}
+
+.admin-period button {
+    min-height: 2.35rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: var(--radius-md);
+    font: inherit;
+    font-size: var(--type-support-size);
+    font-weight: 700;
+}
+
+.admin-period button.is-active {
+    border-color: var(--accent-ui-800);
+    color: var(--white);
+    background: var(--accent-ui-800);
+}
+
+.admin-period button:disabled {
+    cursor: wait;
+    opacity: 0.64;
+}
+
+.admin-metrics {
+    margin-top: 1.1rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.admin-metric {
+    min-width: 0;
+    padding: 1rem;
+    border-right: 1px solid var(--line);
+}
+
+.admin-metric:last-child {
+    border-right: 0;
+}
+
+.admin-metric p, .admin-metric span {
+    color: var(--text-muted);
+    font-size: var(--type-meta-size);
+}
+
+.admin-metric strong {
+    margin: 0.25rem 0;
+    display: block;
+    overflow: hidden;
+    color: var(--text-primary);
+    font-family: var(--font-base);
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-state, .admin-signin, .admin-analytics-skeleton {
+    margin-top: 1.1rem;
+    padding: 1.1rem;
+    border-radius: var(--radius-md);
+    background: var(--surface-2);
+}
+
+.admin-state--setup {
+    border-left: 3px solid var(--accent-ui-500);
+}
+
+.admin-state--error {
+    border-left: 3px solid var(--red-500);
+}
+
+.admin-state__actions {
+    margin-top: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.admin-state__actions button {
+    min-height: 2.4rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    background: var(--surface);
+    font: inherit;
+    font-size: var(--type-support-size);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.admin-state p, .admin-signin p {
+    margin: 0.25rem 0 0;
+    color: var(--text-muted);
+    font-size: var(--type-support-size);
+}
+
+.admin-signin {
+    display: grid;
+    gap: 0.85rem;
+    justify-items: start;
+}
+
+.admin-signin__intro strong {
+    display: block;
+    color: var(--text-primary);
+}
+
+.admin-signin__google {
+    display: grid;
+    gap: 0.5rem;
+    /* The button is rendered inside an iframe by Google, so it needs a
+       predictable box rather than shrinking to zero before it loads. */
+    min-height: 2.75rem;
+}
+
+.admin-signin__notice, .admin-signin__error {
+    margin: 0;
+    font-size: var(--type-support-size);
+}
+
+.admin-signin__notice {
+    color: var(--text-muted);
+}
+
+.admin-signin__error {
+    color: var(--red-800);
+}
+
+.admin-session {
+    margin-top: 1.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+}
+
+.admin-session p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: var(--type-support-size);
+}
+
+.admin-analytics-skeleton {
+    display: grid;
+    gap: 0.65rem;
+    color: var(--text-muted);
+}
+
+.admin-analytics-skeleton div {
+    height: 1.5rem;
+    border-radius: var(--radius-sm);
+    background: var(--surface-3);
+    animation: admin-skeleton 1.3s ease-in-out infinite alternate;
+}
+
+.admin-analytics-skeleton div:nth-child(3) {
+    width: 74%;
+}
+
+.admin-analytics-skeleton div:nth-child(4) {
+    width: 46%;
+}
+
+.admin-chart {
+    height: 13rem;
+    margin-top: 1rem;
+    padding: 1rem 0.75rem 0.55rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: end;
+    gap: clamp(0.15rem, 0.6vw, 0.5rem);
+    overflow: hidden;
+}
+
+.admin-chart__day {
+    min-width: 0;
+    height: 100%;
+    flex: 1;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: end;
+    gap: 0.35rem;
+}
+
+.admin-chart__bar {
+    width: 100%;
+    height: var(--bar-height);
+    min-height: 0.2rem;
+    border-radius: var(--radius-sm) var(--radius-sm) 2px 2px;
+    background: var(--accent-ui-500);
+}
+
+.admin-chart__day small {
+    overflow: hidden;
+    color: var(--text-muted);
+    font-size: 0.62rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.admin-series-table {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.admin-breakdowns {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.admin-breakdowns article {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+}
+
+.admin-breakdowns h3 {
+    font-family: var(--font-base);
+    font-size: var(--type-h3-size);
+}
+
+.admin-breakdown--countries {
+    grid-column: 1 / -1;
+}
+
+.admin-breakdown__description {
+    margin: 0.25rem 0 0;
+    color: var(--text-muted);
+    font-size: var(--type-meta-size);
+}
+
+.admin-breakdown--countries ol {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.admin-breakdown--countries li:nth-last-child(-n + 2) {
+    border-bottom: 0;
+}
+
+.admin-breakdown--countries strong {
+    font-variant-numeric: tabular-nums;
+}
+
+.admin-breakdown--countries strong small {
+    color: var(--text-muted);
+    font-size: var(--type-meta-size);
+    font-weight: 500;
+}
+
+.admin-breakdown__empty {
+    margin: 0.75rem 0 0;
+    padding: 0.75rem 0;
+    color: var(--text-muted);
+    font-size: var(--type-support-size);
+}
+
+.admin-breakdowns ol {
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.admin-breakdowns li {
+    padding: 0.52rem 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: var(--type-support-size);
+}
+
+.admin-breakdowns li:last-child {
+    border-bottom: 0;
+}
+
+.admin-breakdowns li span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-lock {
+    margin-top: 1rem;
+}
+
+.admin-dashboard :is(a {
+    outline: 2px solid var(--accent-ui-500);
+    outline-offset: 2px;
+}
+
+.admin-dashboard :is(a {
+    transform: translateY(1px);
+}
+
+@media (max-width: 48rem) {
+.admin-header, .admin-section__head {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+    }
+
+.admin-metrics, .admin-breakdowns {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+.admin-breakdown--countries {
+        grid-column: auto;
+    }
+
+.admin-metric {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+.admin-metric:last-child {
+        border-bottom: 0;
+    }
+
+.admin-chart {
+        overflow-x: auto;
+    }
+
+.admin-chart__day {
+        min-width: 1rem;
+    }
+}
+
+@media (max-width: 32rem) {
+.admin-chart__day small {
+        display: none;
+    }
+
+.admin-breakdown--countries ol {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+.admin-analytics-skeleton div {
+        animation: none;
+    }
+}
+
+/* ── Operations summary (MMAI) ─────────────────────────────────────────── */
+.admin-metrics--operations {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+
+.admin-attention {
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+}
+
+.admin-attention h3 {
+    margin: 0;
+    font-size: var(--type-support-size);
+    font-weight: 700;
+}
+
+.admin-attention ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-1);
+}
+
+.admin-attention li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2);
+    border: 1px solid var(--outline-color);
+    border-radius: var(--radius-md);
+    background: var(--surface-2);
+}
+
+.admin-attention li div {
+    display: grid;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.admin-attention li span {
+    color: var(--text-muted);
+    font-size: var(--type-meta-size);
+}
+
+.admin-attention a {
+    font-size: var(--type-meta-size);
+    font-weight: 650;
+}
+

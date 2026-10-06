@@ -8,6 +8,8 @@ export const TAB_KEYS = [
     "photo",
     "contact",
     "join",
+    // Private operator workspace; client-only and absent from the nav.
+    "admin",
 ];
 
 const TAB_KEY_SET = new Set(TAB_KEYS);
