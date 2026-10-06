@@ -98,9 +98,9 @@ function BreakdownList({ title, items, emptyLabel, fallbackLabel }) {
 
 function AdminDashboard() {
     const [days, setDays] = useState(30);
-    // The credential is kept in memory only. Closing or reloading the tab ends
-    // the session; Google re-issues it silently for an already-consented
-    // account, so nothing has to be stored to stay convenient.
+    // The credential is kept in memory only. A reload drops it, and the One
+    // Tap prompt below has Google re-issue it silently for an account that
+    // already consented, so nothing has to be stored to stay signed in.
     const [session, setSession] = useState(null);
     const [signInStatus, setSignInStatus] = useState("idle");
     const [analytics, setAnalytics] = useState(null);
@@ -114,6 +114,10 @@ function AdminDashboard() {
     const [isAuthorized, setIsAuthorized] = useState(false);
     const [retryRequest, setRetryRequest] = useState(0);
     const googleButtonRef = useRef(null);
+    // After an explicit sign-out the next sign-in waits for a click, so the
+    // operator can pick another account instead of being signed straight
+    // back in.
+    const signedOutRef = useRef(false);
 
     useEffect(() => {
         const previousTitle = document.title;
@@ -133,6 +137,7 @@ function AdminDashboard() {
         const credential = response?.credential;
         if (!credential) return;
 
+        signedOutRef.current = false;
         const claims = readIdentityClaims(credential);
         setAnalyticsError("");
         setSession({
@@ -159,6 +164,8 @@ function AdminDashboard() {
                     callback: handleCredential,
                     auto_select: true,
                     cancel_on_tap_outside: false,
+                    use_fedcm_for_prompt: true,
+                    itp_support: true,
                 });
                 identity.renderButton(googleButtonRef.current, {
                     theme: "outline",
@@ -168,6 +175,11 @@ function AdminDashboard() {
                     locale: "ko",
                 });
                 setSignInStatus("ready");
+                // auto_select only acts through the One Tap prompt: for an
+                // account that already consented, Google returns a fresh
+                // credential without a click. That is what keeps a reload,
+                // or the hourly token expiry, from asking to sign in again.
+                if (!signedOutRef.current) identity.prompt();
             })
             .catch(() => {
                 if (!cancelled) setSignInStatus("error");
@@ -175,6 +187,7 @@ function AdminDashboard() {
 
         return () => {
             cancelled = true;
+            window.google?.accounts?.id?.cancel();
         };
     }, [handleCredential, session]);
 
@@ -275,6 +288,7 @@ function AdminDashboard() {
         // Without this Google would silently sign the same account back in,
         // which makes "다른 계정으로 로그인" impossible.
         window.google?.accounts?.id?.disableAutoSelect();
+        signedOutRef.current = true;
         setSession(null);
         setIsAuthorized(false);
         setAnalytics(null);
