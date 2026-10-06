@@ -1,123 +1,74 @@
 import path from "node:path";
-import { promises as fs } from "node:fs";
 import {
-    PUBLICATIONS_CONTENT_DIR,
     PUBLICATIONS_GENERATED_FILE,
+    PUBLICATIONS_SHEET_SNAPSHOT_FILE,
     getNowIso,
-    isIsoDate,
-    listMarkdownFiles,
     normalizeHttpUrl,
-    normalizeSlug,
-    parseMarkdownFrontmatter,
     readJsonFile,
     relativeFromRoot,
     writeJsonFile,
 } from "./lib.mjs";
+import {
+    PUBLICATION_STATUSES,
+    publicationItemToSheetValues,
+    splitSheetList,
+    validatePublicationSheetRow,
+} from "../../src/utils/publicationSheetRules.js";
 
 const RESEARCH_AREAS_FILE = path.resolve(
     "src/assets/dataset/research_areas.json",
 );
-const PUBLICATION_STATUSES = new Set(["published", "working", "project"]);
 
 const normalizeText = (value) => String(value ?? "").trim();
-const normalizeStringList = (value) => {
-    if (Array.isArray(value)) {
-        return value.map((item) => normalizeText(item)).filter(Boolean);
-    }
 
-    const text = normalizeText(value);
-    if (!text) {
-        return [];
+export const getPublicationCategories = async () => {
+    const researchCatalog = await readJsonFile(RESEARCH_AREAS_FILE, {});
+    const categories = new Set(researchCatalog.meta?.area_order ?? []);
+    if (categories.size === 0) {
+        throw new Error(
+            `[publications] No research area categories found in ${relativeFromRoot(RESEARCH_AREAS_FILE)}.`,
+        );
     }
-
-    return text
-        .split(",")
-        .map((item) => item.trim())
-        .filter(Boolean);
+    return categories;
 };
 
-const requiredError = (filePath, fieldName, message = "is required") =>
-    `[publications] ${relativeFromRoot(filePath)}: "${fieldName}" ${message}`;
-
-const parsePublicationFile = async (filePath, publicationCategories) => {
-    const raw = await fs.readFile(filePath, "utf8");
-    const { data, body } = parseMarkdownFrontmatter(raw, filePath);
-
-    const id =
-        normalizeText(data.id) || normalizeSlug(path.basename(filePath, ".md"));
-    const title = normalizeText(data.title);
-    const category = normalizeText(data.category);
-    const status = normalizeText(data.status || "published");
-    const date = normalizeText(data.date);
-    const acceptedDate = normalizeText(data.accepted_date);
-    const authors = normalizeText(data.authors);
-    const venue = normalizeText(data.venue);
-    const projectUrl = normalizeHttpUrl(
-        data.project_url || data.paper_url || data.external_url,
+// Builds the generated publication shape from one sheet row ({ column:
+// text }). Throws with every problem in the row, phrased for operators.
+export const buildPublicationItem = (record, id, publicationCategories) => {
+    const errors = validatePublicationSheetRow(
+        { ...record, id },
+        { categories: publicationCategories },
     );
-    const pdfUrl = normalizeHttpUrl(data.pdf_url);
-    const arxivUrl = normalizeHttpUrl(data.arxiv_url);
-    const githubUrl = normalizeHttpUrl(data.github_url || data.source_code_url);
-    const keywords = normalizeStringList(data.keywords);
-    const featured = data.featured === true;
-    const summary =
-        normalizeText(data.summary) || body.split("\n")[0]?.trim() || "";
-
     if (!id) {
-        throw new Error(requiredError(filePath, "id"));
+        errors.push({ field: "id", message: "ID가 없습니다." });
     }
-    if (!title) {
-        throw new Error(requiredError(filePath, "title"));
-    }
-    if (!category) {
-        throw new Error(requiredError(filePath, "category"));
-    }
-    if (!publicationCategories.has(category)) {
+    if (errors.length > 0) {
         throw new Error(
-            `[publications] ${relativeFromRoot(filePath)}: unsupported category "${category}". Allowed: ${Array.from(publicationCategories).join(", ")}`,
+            errors
+                .map(({ field, message }) => `"${field}" ${message}`)
+                .join(" "),
         );
     }
-    if (!PUBLICATION_STATUSES.has(status)) {
-        throw new Error(
-            `[publications] ${relativeFromRoot(filePath)}: unsupported status "${status}". Allowed: ${Array.from(PUBLICATION_STATUSES).join(", ")}`,
-        );
-    }
-    if (!date) {
-        throw new Error(requiredError(filePath, "date"));
-    }
-    if (!isIsoDate(date)) {
-        throw new Error(
-            `[publications] ${relativeFromRoot(filePath)}: "date" must be YYYY-MM-DD (received "${date}")`,
-        );
-    }
-    if (acceptedDate && !isIsoDate(acceptedDate)) {
-        throw new Error(
-            `[publications] ${relativeFromRoot(filePath)}: "accepted_date" must be YYYY-MM-DD (received "${acceptedDate}")`,
-        );
-    }
-    if (!authors) {
-        throw new Error(requiredError(filePath, "authors"));
-    }
-    if (!venue) {
-        throw new Error(requiredError(filePath, "venue"));
-    }
+
+    const projectUrl = normalizeHttpUrl(record.project_url);
+    const githubUrl = normalizeHttpUrl(record.github_url);
 
     return {
         id,
         key: id,
-        category,
-        status,
-        title,
-        summary,
-        featured,
+        category: normalizeText(record.category),
+        status: normalizeText(record.status) || "published",
+        title: normalizeText(record.title),
+        summary: normalizeText(record.summary),
+        featured: normalizeText(record.featured).toLowerCase() === "true",
         research_meta: {
-            author: authors,
-            published_place: venue,
-            published_date: date,
-            accepted_date: acceptedDate,
-            keywords,
-            pdf_link: pdfUrl,
-            arxiv_link: arxivUrl,
+            author: normalizeText(record.authors),
+            published_place: normalizeText(record.venue),
+            published_date: normalizeText(record.date),
+            accepted_date: normalizeText(record.accepted_date),
+            keywords: splitSheetList(record.keywords),
+            pdf_link: normalizeHttpUrl(record.pdf_url),
+            arxiv_link: normalizeHttpUrl(record.arxiv_url),
             github_link: githubUrl,
             project_link: projectUrl,
             source_code_link: githubUrl,
@@ -131,54 +82,56 @@ const parsePublicationFile = async (filePath, publicationCategories) => {
     };
 };
 
-export const syncPublicationContent = async ({ validateOnly = false } = {}) => {
-    const researchCatalog = await readJsonFile(RESEARCH_AREAS_FILE, {});
-    const publicationCategories = new Set(
-        researchCatalog.meta?.area_order ?? [],
-    );
-
-    if (publicationCategories.size === 0) {
-        throw new Error(
-            `[publications] No research area categories found in ${relativeFromRoot(RESEARCH_AREAS_FILE)}.`,
+export const sortPublicationItems = (items) =>
+    items.sort((a, b) => {
+        const dateCompare = b.research_meta.published_date.localeCompare(
+            a.research_meta.published_date,
         );
-    }
+        return dateCompare || a.id.localeCompare(b.id);
+    });
 
-    const markdownFiles = (
-        await listMarkdownFiles(PUBLICATIONS_CONTENT_DIR)
-    ).filter((filePath) => !path.basename(filePath).startsWith("_"));
+// The snapshot is written by the sheet sync, but it is a committed file that
+// can also be edited by hand, so every item is validated again here.
+export const syncPublicationContent = async ({ validateOnly = false } = {}) => {
+    const publicationCategories = await getPublicationCategories();
+    const snapshot = await readJsonFile(PUBLICATIONS_SHEET_SNAPSHOT_FILE, null);
+    const snapshotItems = Array.isArray(snapshot?.items) ? snapshot.items : [];
 
-    if (markdownFiles.length === 0) {
+    if (snapshotItems.length === 0) {
         throw new Error(
-            `[publications] No markdown files found in ${relativeFromRoot(PUBLICATIONS_CONTENT_DIR)}. Add content before syncing.`,
+            `[publications] ${relativeFromRoot(PUBLICATIONS_SHEET_SNAPSHOT_FILE)} has no items. Run "npm run publications:pull".`,
         );
     }
 
     const items = [];
     const seenIds = new Set();
+    const errors = [];
 
-    for (const filePath of markdownFiles) {
-        const item = await parsePublicationFile(
-            filePath,
-            publicationCategories,
-        );
-        if (seenIds.has(item.id)) {
-            throw new Error(
-                `[publications] Duplicate id "${item.id}" in ${relativeFromRoot(filePath)}`,
+    snapshotItems.forEach((snapshotItem, index) => {
+        const id = normalizeText(snapshotItem?.id);
+        try {
+            const item = buildPublicationItem(
+                publicationItemToSheetValues(snapshotItem),
+                id,
+                publicationCategories,
+            );
+            if (seenIds.has(id)) {
+                throw new Error(`duplicate id "${id}"`);
+            }
+            seenIds.add(id);
+            items.push(item);
+        } catch (error) {
+            errors.push(
+                `[publications] snapshot item ${index + 1} (${id || "no id"}): ${error.message}`,
             );
         }
-        seenIds.add(item.id);
-        items.push(item);
+    });
+
+    if (errors.length > 0) {
+        throw new Error(errors.join("\n"));
     }
 
-    items.sort((a, b) => {
-        const dateCompare = b.research_meta.published_date.localeCompare(
-            a.research_meta.published_date,
-        );
-        if (dateCompare !== 0) {
-            return dateCompare;
-        }
-        return a.id.localeCompare(b.id);
-    });
+    sortPublicationItems(items);
 
     if (validateOnly) {
         console.log(`[publications] validated ${items.length} entries`);
@@ -191,9 +144,9 @@ export const syncPublicationContent = async ({ validateOnly = false } = {}) => {
         meta: {
             schema_version: "1.1",
             generated_at: getNowIso(),
-            source: "content/publications",
+            source: relativeFromRoot(PUBLICATIONS_SHEET_SNAPSHOT_FILE),
             categories,
-            statuses: Array.from(PUBLICATION_STATUSES),
+            statuses: PUBLICATION_STATUSES,
         },
         items,
     });

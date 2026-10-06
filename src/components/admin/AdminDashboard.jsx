@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { getAllPublications } from "../../utils/publicationData";
-import { getAllNewsItems } from "../../utils/newsData";
-import { getAllVenues } from "../../utils/deadlineData";
 import { loadGoogleIdentity, readIdentityClaims } from "./googleIdentity";
+import PublicationManager from "./PublicationManager";
 import "./AdminDashboard.css";
 
 const ADMIN_API_URL = (import.meta.env.VITE_ADMIN_API_URL ?? "").replace(
@@ -14,6 +12,9 @@ const ADMIN_API_URL = (import.meta.env.VITE_ADMIN_API_URL ?? "").replace(
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID ?? "";
 const REPOSITORY_URL =
     "https://github.com/MMAI-Laboratory/mmai-laboratory.github.io";
+// Link to the mmai_publications tab of the publication sheet; without it the section links
+// to the synced snapshot on GitHub instead.
+const PUBLICATIONS_SHEET_URL = import.meta.env.VITE_PUBLICATIONS_SHEET_URL ?? "";
 
 const numberFormatter = new Intl.NumberFormat("ko-KR");
 const formatNumber = (value) => numberFormatter.format(Number(value) || 0);
@@ -52,68 +53,6 @@ const normalizeAnalyticsPayload = (payload) => {
         countries: Array.isArray(payload.countries) ? payload.countries : [],
         devices: Array.isArray(payload.devices) ? payload.devices : [],
     };
-};
-
-// Read-only snapshot of the repository content behind the site. MMAI keeps
-// publications and news as Markdown and conference schedules in venues.json,
-// so editing happens through commits; this panel only reports their state.
-const summarizeOperations = () => {
-    const publications = getAllPublications();
-    const news = getAllNewsItems();
-    const venues = getAllVenues();
-    const now = Date.now();
-
-    const stateCounts = {};
-    const needsAttention = [];
-    let upcoming = 0;
-
-    venues.forEach((venue) => {
-        const state = venue.source_check?.state ?? "unchecked";
-        stateCounts[state] = (stateCounts[state] ?? 0) + 1;
-        if (state !== "matched" && state !== "awaiting_cfp") {
-            needsAttention.push({
-                id: venue.id,
-                name: venue.name,
-                state,
-                message: venue.source_check?.message ?? "",
-                url: venue.cfp_url,
-            });
-        }
-        if (
-            (venue.milestones ?? []).some(
-                (milestone) => Date.parse(milestone.deadline_at) > now,
-            )
-        ) {
-            upcoming += 1;
-        }
-    });
-
-    const latestCheck = venues
-        .map((venue) => venue.source_check?.checked_at)
-        .filter(Boolean)
-        .sort()
-        .at(-1);
-
-    return {
-        publications: publications.length,
-        news: news.length,
-        venues: venues.length,
-        upcoming,
-        matched: stateCounts.matched ?? 0,
-        needsAttention,
-        latestCheck,
-    };
-};
-
-const dateTimeFormatter = new Intl.DateTimeFormat("ko-KR", {
-    dateStyle: "medium",
-    timeStyle: "short",
-    timeZone: "Asia/Seoul",
-});
-
-const formatDateTime = (value) => {
-    const date = new Date(value);
-    return Number.isNaN(date.getTime()) ? "" : dateTimeFormatter.format(date);
 };
 
 function AdminMetric({ label, value, detail }) {
@@ -158,7 +97,6 @@ function BreakdownList({ title, items, emptyLabel, fallbackLabel }) {
 }
 
 function AdminDashboard() {
-    const operations = useMemo(summarizeOperations, []);
     const [days, setDays] = useState(30);
     // The credential is kept in memory only. Closing or reloading the tab ends
     // the session; Google re-issues it silently for an already-consented
@@ -343,6 +281,17 @@ function AdminDashboard() {
         setAnalyticsError("");
         setAnalyticsStatus("signed-out");
     };
+
+    // A save that comes back 401 means the credential expired between the
+    // timer check and the request; signing in again resumes from there.
+    const handleSessionExpired = useCallback(() => {
+        window.google?.accounts?.id?.disableAutoSelect();
+        setSession(null);
+        setIsAuthorized(false);
+        setAnalytics(null);
+        setAnalyticsStatus("signed-out");
+        setAnalyticsError("로그인이 만료되었습니다. 다시 로그인해주세요.");
+    }, []);
 
     const handleRetry = () => {
         setRetryRequest((requestNumber) => requestNumber + 1);
@@ -592,89 +541,43 @@ function AdminDashboard() {
 
             <section
                 className="admin-section"
-                aria-labelledby="operations-title">
+                aria-labelledby="publication-admin-title">
                 <div className="admin-section__head">
                     <div>
-                        <h2 id="operations-title">콘텐츠 운영 현황</h2>
+                        <h2 id="publication-admin-title">Publication 관리</h2>
                         <p>
                             {isAuthorized
-                                ? "현재 배포된 데이터 기준입니다. 수정은 저장소의 콘텐츠 파일을 통해 반영됩니다."
+                                ? "Google Sheet(mmai_publications 탭)에 저장하면 동기화 후 검토 PR이 만들어지고, 병합하면 홈페이지에 반영됩니다."
                                 : "운영자로 로그인하면 열립니다."}
                         </p>
                     </div>
                     {isAuthorized ? (
                         <a
                             className="admin-primary-link"
-                            href={`${REPOSITORY_URL}/actions`}
+                            href={
+                                PUBLICATIONS_SHEET_URL ||
+                                `${REPOSITORY_URL}/blob/main/content/publications/sheet.snapshot.json`
+                            }
                             target="_blank"
                             rel="noreferrer">
-                            GitHub Actions 열기
+                            {PUBLICATIONS_SHEET_URL
+                                ? "Google Sheet 열기"
+                                : "GitHub에서 보기"}
                         </a>
                     ) : null}
                 </div>
 
-                {isAuthorized ? (
-                    <>
-                        <div className="admin-metrics admin-metrics--operations">
-                            <AdminMetric
-                                label="Publication"
-                                value={formatNumber(operations.publications)}
-                                detail="content/publications"
-                            />
-                            <AdminMetric
-                                label="News"
-                                value={formatNumber(operations.news)}
-                                detail="content/news"
-                            />
-                            <AdminMetric
-                                label="추적 학회"
-                                value={`${formatNumber(operations.upcoming)} / ${formatNumber(operations.venues)}`}
-                                detail="다가오는 마감이 있는 학회"
-                            />
-                            <AdminMetric
-                                label="CFP 자동 확인"
-                                value={formatNumber(operations.matched)}
-                                detail={
-                                    operations.latestCheck
-                                        ? `최근 확인 ${formatDateTime(operations.latestCheck)}`
-                                        : "확인 기록 없음"
-                                }
-                            />
-                        </div>
-
-                        <div className="admin-attention">
-                            <h3>확인이 필요한 학회 일정</h3>
-                            {operations.needsAttention.length > 0 ? (
-                                <ul>
-                                    {operations.needsAttention.map((venue) => (
-                                        <li key={venue.id}>
-                                            <div>
-                                                <strong>{venue.name}</strong>
-                                                <span>{venue.message}</span>
-                                            </div>
-                                            {venue.url ? (
-                                                <a
-                                                    href={venue.url}
-                                                    target="_blank"
-                                                    rel="noreferrer">
-                                                    공식 페이지
-                                                </a>
-                                            ) : null}
-                                        </li>
-                                    ))}
-                                </ul>
-                            ) : (
-                                <p className="admin-breakdown__empty">
-                                    모든 학회 일정이 공식 페이지와 일치합니다.
-                                </p>
-                            )}
-                        </div>
-                    </>
+                {isAuthorized && session ? (
+                    <PublicationManager
+                        apiUrl={ADMIN_API_URL}
+                        session={session}
+                        onSessionExpired={handleSessionExpired}
+                    />
                 ) : (
                     <div className="admin-state">
                         <strong>운영자 확인이 필요합니다.</strong>
                         <p>
-                            위에서 로그인하면 콘텐츠 운영 현황이 함께
+                            위에서 로그인하면 Publication 추가·수정이 함께
                             열립니다.
                         </p>
                     </div>

@@ -71,6 +71,7 @@ jobs:
           VITE_ADMIN_API_URL: ${{ vars.VITE_ADMIN_API_URL }}
           VITE_GOOGLE_CLIENT_ID: ${{ vars.VITE_GOOGLE_CLIENT_ID }}
           VITE_CLOUDFLARE_WEB_ANALYTICS_TOKEN: ${{ vars.VITE_CLOUDFLARE_WEB_ANALYTICS_TOKEN }}
+          VITE_PUBLICATIONS_SHEET_URL: ${{ vars.PUBLICATIONS_SHEET_URL }}
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4

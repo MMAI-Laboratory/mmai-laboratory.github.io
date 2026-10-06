@@ -16,6 +16,12 @@ export const PUBLICATIONS_CONTENT_DIR = path.resolve(
     CONTENT_DIR,
     "publications",
 );
+// Publications are edited in the mmai_publications tab of the shared Google Sheet; the
+// sync workflow stores the validated rows here (see publications-sheet.mjs).
+export const PUBLICATIONS_SHEET_SNAPSHOT_FILE = path.resolve(
+    PUBLICATIONS_CONTENT_DIR,
+    "sheet.snapshot.json",
+);
 export const PHOTOS_CONTENT_DIR = path.resolve(CONTENT_DIR, "photos");
 export const PHOTOS_RAW_DIR = path.resolve(PHOTOS_CONTENT_DIR, "raw");
 export const PHOTOS_METADATA_FILE = path.resolve(

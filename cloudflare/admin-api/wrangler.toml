@@ -7,11 +7,27 @@ compatibility_date = "2026-09-08"
 enabled = true
 
 [vars]
-ADMIN_ORIGIN = "https://mmai-laboratory.github.io"
+# localhost:5173 lets an operator check /admin from `npm run dev`. Requests
+# still need an allow-listed Google sign-in; drop it to lock the API to the
+# public site only.
+ADMIN_ORIGIN = "https://mmai-laboratory.github.io,http://localhost:5173"
 # Public OAuth client id from Google Cloud Console. Empty disables Google
 # sign-in; the allow list itself is set with
 # `wrangler secret put ADMIN_ALLOWED_EMAILS`.
 GOOGLE_CLIENT_ID = "931877166529-oeare36foagnfisi9lp10n1ahd4celn2.apps.googleusercontent.com"
+
+# Publication editing writes to the mmai_publications tab of the shared AAIG publication
+# sheet (the tab name is fixed in worker.js) through a service account whose
+# JSON key is set with `wrangler secret put GOOGLE_SERVICE_ACCOUNT_KEY`.
+PUBLICATIONS_SHEET_ID = "1PRm4WZoLHfLwasA2GI3XbuZhO-Qnm8HNAfeRhdZzwCE"
+# After a save the Worker dispatches this workflow, which opens a review pull
+# request. Its token is `wrangler secret put GITHUB_ACTIONS_TOKEN`
+# (fine-grained, this repository only, Actions: Read and write, Pull
+# requests: Read).
+GITHUB_OWNER = "MMAI-Laboratory"
+GITHUB_REPO = "mmai-laboratory.github.io"
+GITHUB_REF = "main"
+GITHUB_WORKFLOW_ID = "publications-sheet-sync.yml"
 
 # Failed sign-in attempts are limited per IP and path. The namespace ids are
 # distinct from the AAIG Worker so the two sites never share counters when
@@ -26,6 +42,11 @@ period = 60
 
 [env.dev.vars]
 ADMIN_ORIGIN = "https://mmai-laboratory.github.io,http://localhost:5173"
+PUBLICATIONS_SHEET_ID = "1PRm4WZoLHfLwasA2GI3XbuZhO-Qnm8HNAfeRhdZzwCE"
+GITHUB_OWNER = "MMAI-Laboratory"
+GITHUB_REPO = "mmai-laboratory.github.io"
+GITHUB_REF = "main"
+GITHUB_WORKFLOW_ID = "publications-sheet-sync.yml"
 GOOGLE_CLIENT_ID = "931877166529-oeare36foagnfisi9lp10n1ahd4celn2.apps.googleusercontent.com"
 
 [[env.dev.ratelimits]]

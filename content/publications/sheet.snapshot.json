@@ -1,19 +1,9 @@
 {
   "meta": {
-    "schema_version": "1.1",
-    "generated_at": "2026-10-06T09:31:41.818Z",
-    "source": "content/publications/sheet.snapshot.json",
-    "categories": [
-      "computer_vision_and_learning_algorithms",
-      "efficient_learning_for_llms",
-      "robot_learning",
-      "industrial_and_medical_ai"
-    ],
-    "statuses": [
-      "published",
-      "working",
-      "project"
-    ]
+    "schema_version": "1.0",
+    "source": "google-sheets",
+    "source_url": "",
+    "synced_at": "2026-10-06T08:55:16.924Z"
   },
   "items": [
     {
