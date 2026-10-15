@@ -24,6 +24,20 @@
     height: 0.95rem;
 }
 
+.publication-link-icons__item svg.publication-link-icons__wordmark {
+    /* Same square box as the other icons; the wordmark keeps its 47:17 ratio. */
+    width: 1.65rem;
+    height: calc(1.65rem * 17 / 47);
+}
+
+.publication-link-icons__item.is-active .publication-link-icons__wordmark-accent {
+    stroke: var(--arxiv-red, #b31b1b);
+}
+
+:root[data-theme="dark"] .publication-link-icons {
+    --arxiv-red: #e0565b;
+}
+
 .publication-link-icons__item.is-active {
     color: var(--text-primary);
     border-color: var(--line-strong);

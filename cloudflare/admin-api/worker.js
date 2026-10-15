@@ -850,6 +850,50 @@ const writeSheetRow = async (env, header, rowNumber, cells) => {
     return Number.isFinite(appendedRow) ? appendedRow : null;
 };
 
+const ARXIV_API = "https://export.arxiv.org/api/query";
+const ARXIV_LOOKUP_TIMEOUT_MS = 6000;
+
+const normalizeTitle = (value) =>
+    String(value ?? "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim();
+
+// Finds the arXiv abstract page whose title is exactly the paper's title
+// (ignoring case and punctuation). Anything less certain is left for the
+// operator, since a near match is often a different paper. A slow or failed
+// lookup never blocks the save.
+const findArxivUrl = async (title) => {
+    const target = normalizeTitle(title);
+    const words = target.split(" ");
+    if (words.length < 3) return "";
+
+    const phrase = words.slice(0, 6).join(" ");
+    try {
+        const response = await fetch(
+            `${ARXIV_API}?search_query=ti:%22${encodeURIComponent(phrase)}%22&max_results=10`,
+            {
+                headers: { "User-Agent": "MMAI-Admin-Worker" },
+                signal: AbortSignal.timeout(ARXIV_LOOKUP_TIMEOUT_MS),
+            },
+        );
+        if (!response.ok) return "";
+        const xml = await response.text();
+        for (const [, entry] of xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)) {
+            const entryTitle = /<title>([\s\S]*?)<\/title>/.exec(entry)?.[1];
+            const arxivId = /<id>https?:\/\/arxiv\.org\/abs\/([^<]+?)(?:v\d+)?<\/id>/.exec(
+                entry,
+            )?.[1];
+            if (arxivId && normalizeTitle(entryTitle) === target) {
+                return `https://arxiv.org/abs/${arxivId}`;
+            }
+        }
+    } catch {
+        // Timeouts and network errors fall through to "not found".
+    }
+    return "";
+};
+
 // Google's error text is English and technical, so the common setup mistakes
 // are translated into the step an operator has to fix.
 const describeSheetError = (message) => {
@@ -950,6 +994,18 @@ const handlePublicationRows = async (request, env, url) => {
             );
         }
 
+        // An empty arXiv cell is filled in when arXiv has a paper with the
+        // same title. A link the operator removed on purpose is not put back.
+        let arxivFound = false;
+        if (
+            !values.arxiv_url &&
+            !target?.values.arxiv_url.trim() &&
+            values.title
+        ) {
+            values.arxiv_url = await findArxivUrl(values.title);
+            arxivFound = Boolean(values.arxiv_url);
+        }
+
         const fieldErrors = validateSheetRowForSave(values, {
             categories: PUBLICATION_CATEGORIES,
         });
@@ -1008,6 +1064,7 @@ const handlePublicationRows = async (request, env, url) => {
             env,
             {
                 row: { rowNumber, values: pickRowValues(sheet.header, cells) },
+                arxivFound,
                 sync: await startSyncAfterEdit(env),
             },
             isUpdate ? 200 : 201,

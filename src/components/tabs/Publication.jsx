@@ -151,9 +151,7 @@ function Publication() {
                 aria-labelledby="publication-archive-title">
                 <div className="publication__section-head">
                     <div>
-                        <h2 id="publication-archive-title">
-                            Publication Archive
-                        </h2>
+                        <h2 id="publication-archive-title">Publication</h2>
                         <p>
                             {filteredPublications.length} result
                             {filteredPublications.length === 1 ? "" : "s"} in

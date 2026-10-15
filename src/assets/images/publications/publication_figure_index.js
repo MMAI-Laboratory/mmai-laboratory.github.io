@@ -26,6 +26,11 @@ import ONE_CYCLE_BATTERY_RUL_FIGURE_1 from "./figures/one-cycle-battery-rul-figu
 import GRAMIAN_ATTENTION_FIGURE_2 from "./figures/gramian-attention-figure-2.webp";
 import EFFICIENT_TTC_FIGURE_1 from "./figures/efficient-ttc-figure-1.webp";
 import DIFFERENTIABLE_BIT_WIDTHS_FIGURE_1 from "./figures/differentiable-bit-widths-figure-1.webp";
+import OMNIMVS_FIGURE_1 from "./figures/omnimvs-figure-1.webp";
+import SWEEPNET_FIGURE_4 from "./figures/sweepnet-figure-4.webp";
+import DFT_POOLING_FIGURE_1 from "./figures/dft-pooling-figure-1.webp";
+import GCFN_FIGURE_OVERVIEW from "./figures/gcfn-figure-overview.webp";
+import FACE_DOMAIN_TRANSFER_FIGURE_OVERVIEW from "./figures/face-domain-transfer-figure-overview.webp";
 
 const PUBLICATION_FIGURES = {
     "biomedical-bapub4-style-kd-class-imbalanced-medical-image": {
@@ -210,6 +215,38 @@ const PUBLICATION_FIGURES = {
         figureLabel: "Figure 1",
         alt: "Figure 1 from Differentiable Bit-Widths showing SVD-based co-optimization of pruning and quantization for ultra-efficient LLM compression.",
         sourceUrl: "",
+    },
+    "core-2019-omnimvs-omnidirectional-stereo-matching": {
+        image: OMNIMVS_FIGURE_1,
+        figureLabel: "Figure 1",
+        alt: "Figure 1 from OmniMVS: four fisheye input images pass through a shared 2D CNN, the unary features are warped onto spheres by spherical sweeping, and a 3D encoder-decoder with softargmin turns the cost volume into an omnidirectional depth map.",
+        sourceUrl:
+            "https://openaccess.thecvf.com/content_ICCV_2019/papers/Won_OmniMVS_End-to-End_Learning_for_Omnidirectional_Stereo_Matching_ICCV_2019_paper.pdf",
+    },
+    "core-2019-sweepnet-omnidirectional-depth-estimation": {
+        image: SWEEPNET_FIGURE_4,
+        figureLabel: "Figure 4",
+        alt: "Figure 4 from SweepNet: pairs of fisheye images are warped onto each virtual sphere, SweepNet computes pairwise matching costs, and the averaged cost volume is refined by cost aggregation before the depth is taken by argmin.",
+        sourceUrl: "https://arxiv.org/pdf/1902.10904",
+    },
+    "core-2018-dft-transformation-invariant-pooling": {
+        image: DFT_POOLING_FIGURE_1,
+        figureLabel: "Figure 1",
+        alt: "Figure 1 from the DFT pooling paper comparing feature maps at the last CNN layers: conventional layouts without and with average pooling, and the proposed DFT magnitude pooling that keeps low-frequency DFT coefficients.",
+        sourceUrl:
+            "https://openaccess.thecvf.com/content_ECCV_2018/papers/Jongbin_Ryu_DFT-based_Transformation_Invariant_ECCV_2018_paper.pdf",
+    },
+    "core-2020-generalized-convolutional-forest-networks": {
+        image: GCFN_FIGURE_OVERVIEW,
+        figureLabel: "Overview",
+        alt: "Overview of Generalized Convolutional Forest Networks: CNN features feed random forests, whose probability mass function guides triplet sampling of anchor, positive and negative examples, and the triplet loss updates the CNN.",
+        sourceUrl: "https://openreview.net/pdf?id=H1lxVyStPH",
+    },
+    "core-2020-unsupervised-face-domain-transfer": {
+        image: FACE_DOMAIN_TRANSFER_FIGURE_OVERVIEW,
+        figureLabel: "Overview",
+        alt: "Overview of unsupervised face domain transfer: generative face augmentation adds high-to-low resolution samples across poses, and spatial resolution adaptation then clusters high- and low-resolution faces of the same identity together.",
+        sourceUrl: "https://ieeexplore.ieee.org/document/8945345",
     },
 };
 

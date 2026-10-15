@@ -274,7 +274,10 @@ function PublicationRowForm({
                     wide: true,
                     hint: "여러 개는 | 로 구분합니다. 비워도 됩니다.",
                 })}
-                {textField("arxiv_url", "arXiv 주소", { type: "url" })}
+                {textField("arxiv_url", "arXiv 주소", {
+                    type: "url",
+                    hint: "비워 두면 저장할 때 같은 제목의 arXiv 논문을 찾아 채웁니다.",
+                })}
                 {textField("pdf_url", "PDF 주소", { type: "url" })}
                 {textField("github_url", "GitHub 주소", { type: "url" })}
                 {textField("project_url", "프로젝트·논문 페이지", {
@@ -697,9 +700,16 @@ function PublicationManager({ apiUrl, session, onSessionExpired }) {
             setEditing(null);
             setNotice({
                 tone: "success",
-                text: payload.sync?.started
-                    ? `Sheet ${payload.row.rowNumber ?? ""}행에 저장하고 동기화를 시작했습니다. 검토 PR이 만들어지면 병합해야 홈페이지에 반영됩니다.`
-                    : `Sheet에 저장했습니다. ${payload.sync?.message ?? ""}`,
+                text: [
+                    payload.sync?.started
+                        ? `Sheet ${payload.row.rowNumber ?? ""}행에 저장하고 동기화를 시작했습니다. 검토 PR이 만들어지면 병합해야 홈페이지에 반영됩니다.`
+                        : `Sheet에 저장했습니다. ${payload.sync?.message ?? ""}`,
+                    payload.arxivFound
+                        ? `arXiv에서 같은 제목의 논문을 찾아 링크를 함께 저장했습니다: ${payload.row.values.arxiv_url}`
+                        : "",
+                ]
+                    .filter(Boolean)
+                    .join(" "),
             });
             if (payload.sync?.started) {
                 setSyncPolls(0);
