@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.1",
-    "generated_at": "2026-10-06T12:17:44.761Z",
+    "generated_at": "2026-10-12T10:39:28.987Z",
     "source": "content/publications/sheet.snapshot.json",
     "categories": [
       "computer_vision_and_learning_algorithms",
@@ -35,10 +35,10 @@
           "Divergence Shift"
         ],
         "pdf_link": "",
-        "arxiv_link": "",
-        "github_link": "",
+        "arxiv_link": "https://arxiv.org/abs/2610.06147",
+        "github_link": "https://github.com/MMAI-Laboratory/TTC",
         "project_link": "",
-        "source_code_link": "",
+        "source_code_link": "https://github.com/MMAI-Laboratory/TTC",
         "paper_link": ""
       },
       "content": {
@@ -67,10 +67,10 @@
           "LLM Compression"
         ],
         "pdf_link": "",
-        "arxiv_link": "",
-        "github_link": "",
+        "arxiv_link": "https://arxiv.org/abs/2610.06026",
+        "github_link": "https://github.com/MMAI-Laboratory/DBW",
         "project_link": "",
-        "source_code_link": "",
+        "source_code_link": "https://github.com/MMAI-Laboratory/DBW",
         "paper_link": ""
       },
       "content": {
@@ -99,9 +99,9 @@
         ],
         "pdf_link": "",
         "arxiv_link": "https://arxiv.org/abs/2609.06967",
-        "github_link": "",
+        "github_link": "https://github.com/SoongE/ReCalCon",
         "project_link": "",
-        "source_code_link": "",
+        "source_code_link": "https://github.com/SoongE/ReCalCon",
         "paper_link": ""
       },
       "content": {
@@ -130,9 +130,9 @@
         ],
         "pdf_link": "",
         "arxiv_link": "",
-        "github_link": "",
+        "github_link": "https://mmai-laboratory.github.io/flowvla/",
         "project_link": "",
-        "source_code_link": "",
+        "source_code_link": "https://mmai-laboratory.github.io/flowvla/",
         "paper_link": ""
       },
       "content": {
@@ -161,9 +161,9 @@
         ],
         "pdf_link": "",
         "arxiv_link": "https://arxiv.org/abs/2609.18131v1",
-        "github_link": "",
+        "github_link": "https://github.com/MMAI-Laboratory/Colla_Q",
         "project_link": "",
-        "source_code_link": "",
+        "source_code_link": "https://github.com/MMAI-Laboratory/Colla_Q",
         "paper_link": ""
       },
       "content": {
@@ -192,9 +192,9 @@
         ],
         "pdf_link": "",
         "arxiv_link": "https://arxiv.org/abs/2609.19213",
-        "github_link": "",
+        "github_link": "https://github.com/MMAI-Laboratory/layer_wise_curriculum",
         "project_link": "",
-        "source_code_link": "",
+        "source_code_link": "https://github.com/MMAI-Laboratory/layer_wise_curriculum",
         "paper_link": ""
       },
       "content": {
@@ -223,9 +223,9 @@
         ],
         "pdf_link": "",
         "arxiv_link": "https://arxiv.org/abs/2609.06974",
-        "github_link": "",
+        "github_link": "https://github.com/MMAI-Laboratory/OverRep",
         "project_link": "",
-        "source_code_link": "",
+        "source_code_link": "https://github.com/MMAI-Laboratory/OverRep",
         "paper_link": ""
       },
       "content": {
@@ -252,7 +252,7 @@
           "Remaining Useful Life",
           "Continuous Wavelet Transform"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://www.sciencedirect.com/science/article/pii/S0306261926014546/pdfft?isDTMRedir=true&download=false",
         "arxiv_link": "",
         "github_link": "",
         "project_link": "https://www.sciencedirect.com/science/article/pii/S0306261926014546?dgcid=coauthor",
@@ -283,8 +283,8 @@
           "Self-Supervised Learning",
           "Replay Methods"
         ],
-        "pdf_link": "",
-        "arxiv_link": "",
+        "pdf_link": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kang_Do_Your_Best_and_Get_Enough_Rest_for_Continual_Learning_CVPR_2025_paper.pdf",
+        "arxiv_link": "https://arxiv.org/abs/2503.18371",
         "github_link": "https://github.com/hankyul2/ViewBatchModel",
         "project_link": "https://openaccess.thecvf.com/content/CVPR2025/html/Kang_Do_Your_Best_and_Get_Enough_Rest_for_Continual_Learning_CVPR_2025_paper.html",
         "source_code_link": "https://github.com/hankyul2/ViewBatchModel",
@@ -314,12 +314,12 @@
           "Channel Propagation",
           "Over-smoothing"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://openaccess.thecvf.com/content/WACV2025/papers/Go_Channel_Propagation_Networks_for_Refreshable_Vision_Transformer_WACV_2025_paper.pdf",
         "arxiv_link": "",
         "github_link": "",
-        "project_link": "https://openaccess.thecvf.com/content/WACV2025/papers/Go_Channel_Propagation_Networks_for_Refreshable_Vision_Transformer_WACV_2025_paper.pdf",
+        "project_link": "https://openaccess.thecvf.com/content/WACV2025/html/Go_Channel_Propagation_Networks_for_Refreshable_Vision_Transformer_WACV_2025_paper.html",
         "source_code_link": "",
-        "paper_link": "https://openaccess.thecvf.com/content/WACV2025/papers/Go_Channel_Propagation_Networks_for_Refreshable_Vision_Transformer_WACV_2025_paper.pdf"
+        "paper_link": "https://openaccess.thecvf.com/content/WACV2025/html/Go_Channel_Propagation_Networks_for_Refreshable_Vision_Transformer_WACV_2025_paper.html"
       },
       "content": {
         "problem": "",
@@ -345,12 +345,12 @@
           "Local Patterns",
           "Feature Representation"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://openaccess.thecvf.com/content/WACV2025/papers/Kang_Enriching_Local_Patterns_with_Multi-Token_Attention_for_Broad-Sight_Neural_Networks_WACV_2025_paper.pdf",
         "arxiv_link": "",
         "github_link": "https://github.com/hankyul2/MAP",
-        "project_link": "https://openaccess.thecvf.com/content/WACV2025/papers/Kang_Enriching_Local_Patterns_with_Multi-Token_Attention_for_Broad-Sight_Neural_Networks_WACV_2025_paper.pdf",
+        "project_link": "https://openaccess.thecvf.com/content/WACV2025/html/Kang_Enriching_Local_Patterns_with_Multi-Token_Attention_for_Broad-Sight_Neural_Networks_WACV_2025_paper.html",
         "source_code_link": "https://github.com/hankyul2/MAP",
-        "paper_link": "https://openaccess.thecvf.com/content/WACV2025/papers/Kang_Enriching_Local_Patterns_with_Multi-Token_Attention_for_Broad-Sight_Neural_Networks_WACV_2025_paper.pdf"
+        "paper_link": "https://openaccess.thecvf.com/content/WACV2025/html/Kang_Enriching_Local_Patterns_with_Multi-Token_Attention_for_Broad-Sight_Neural_Networks_WACV_2025_paper.html"
       },
       "content": {
         "problem": "",
@@ -376,7 +376,7 @@
           "Knowledge Distillation",
           "Medical Image Classification"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://www.sciencedirect.com/science/article/pii/S1746809423013617/pdfft?isDTMRedir=true&download=false",
         "arxiv_link": "",
         "github_link": "",
         "project_link": "https://www.sciencedirect.com/science/article/pii/S1746809423013617",
@@ -407,7 +407,7 @@
           "Medical Image Classification",
           "Diffusion Model"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://openaccess.thecvf.com/content/ACCV2024/papers/Park_Generative_Self-Supervised_Learning_for_Medical_Image_Classification_ACCV_2024_paper.pdf",
         "arxiv_link": "",
         "github_link": "https://github.com/inhyukpark2/gen-ssl",
         "project_link": "https://openaccess.thecvf.com/content/ACCV2024/html/Park_Generative_Self-Supervised_Learning_for_Medical_Image_Classification_ACCV_2024_paper.html",
@@ -438,12 +438,12 @@
           "Branch-level Connectivity",
           "Model Efficiency"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://openaccess.thecvf.com/content/ACCV2024/papers/Oh_Neural_Substitution_for_Branch-level_Network_Re-parameterization_ACCV_2024_paper.pdf",
         "arxiv_link": "",
-        "github_link": "",
-        "project_link": "https://openaccess.thecvf.com/content/ACCV2024/papers/Oh_Neural_Substitution_for_Branch-level_Network_Re-parameterization_ACCV_2024_paper.pdf",
-        "source_code_link": "",
-        "paper_link": "https://openaccess.thecvf.com/content/ACCV2024/papers/Oh_Neural_Substitution_for_Branch-level_Network_Re-parameterization_ACCV_2024_paper.pdf"
+        "github_link": "https://github.com/SoongE/neural_substitution",
+        "project_link": "https://openaccess.thecvf.com/content/ACCV2024/html/Oh_Neural_Substitution_for_Branch-level_Network_Re-parameterization_ACCV_2024_paper.html",
+        "source_code_link": "https://github.com/SoongE/neural_substitution",
+        "paper_link": "https://openaccess.thecvf.com/content/ACCV2024/html/Oh_Neural_Substitution_for_Branch-level_Network_Re-parameterization_ACCV_2024_paper.html"
       },
       "content": {
         "problem": "",
@@ -469,12 +469,12 @@
           "Image Retrieval",
           "Quantization"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://bmva-archive.org.uk/bmvc/2024/papers/Paper_482/paper.pdf",
         "arxiv_link": "",
-        "github_link": "https://github.com/Lab-LVM/HQT",
-        "project_link": "https://bmva-archive.org.uk/bmvc/2024/papers/Paper_482/paper.pdf",
-        "source_code_link": "https://github.com/Lab-LVM/HQT",
-        "paper_link": "https://bmva-archive.org.uk/bmvc/2024/papers/Paper_482/paper.pdf"
+        "github_link": "https://github.com/MMAI-Laboratory/HQT",
+        "project_link": "https://bmvc2024.org/proceedings/482/",
+        "source_code_link": "https://github.com/MMAI-Laboratory/HQT",
+        "paper_link": "https://bmvc2024.org/proceedings/482/"
       },
       "content": {
         "problem": "",
@@ -500,8 +500,8 @@
           "Attention-free Vision",
           "Spatial Bias"
         ],
-        "pdf_link": "",
-        "arxiv_link": "",
+        "pdf_link": "https://www.sciencedirect.com/science/article/pii/S0957417423025551/pdfft?isDTMRedir=true&download=false",
+        "arxiv_link": "https://arxiv.org/abs/2302.12505",
         "github_link": "",
         "project_link": "https://www.sciencedirect.com/science/article/pii/S0957417423025551",
         "source_code_link": "",
@@ -531,11 +531,11 @@
           "Attention Decoder",
           "High-resolution Features"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://www.sciencedirect.com/science/article/pii/S0169260724001949/pdfft?isDTMRedir=true&download=false",
         "arxiv_link": "",
-        "github_link": "https://github.com/CVL-Lab/ADNet",
+        "github_link": "https://github.com/MMAI-Laboratory/ADNet",
         "project_link": "https://www.sciencedirect.com/science/article/pii/S0169260724001949",
-        "source_code_link": "https://github.com/CVL-Lab/ADNet",
+        "source_code_link": "https://github.com/MMAI-Laboratory/ADNet",
         "paper_link": "https://www.sciencedirect.com/science/article/pii/S0169260724001949"
       },
       "content": {
@@ -562,7 +562,7 @@
           "CNN and ViT Analysis",
           "Model Interpretability"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://www.nature.com/articles/s41598-024-58382-3.pdf",
         "arxiv_link": "",
         "github_link": "",
         "project_link": "https://www.nature.com/articles/s41598-024-58382-3",
@@ -593,8 +593,8 @@
           "Multi-label Classification",
           "Chest X-ray"
         ],
-        "pdf_link": "",
-        "arxiv_link": "",
+        "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11365790/pdf/nihms-2001119.pdf",
+        "arxiv_link": "https://arxiv.org/abs/2310.16112",
         "github_link": "",
         "project_link": "https://www.sciencedirect.com/science/article/abs/pii/S136184152400149X",
         "source_code_link": "",
@@ -624,11 +624,11 @@
           "Self-Supervised Learning",
           "Jigsaw Puzzle"
         ],
-        "pdf_link": "",
-        "arxiv_link": "",
-        "github_link": "https://github.com/kalelpark/FG-SSL",
+        "pdf_link": "https://www.sciencedirect.com/science/article/pii/S0010482524005444/pdfft?isDTMRedir=true&download=false",
+        "arxiv_link": "https://arxiv.org/abs/2308.05770",
+        "github_link": "https://github.com/WongiPark0628/FG-SSL",
         "project_link": "https://www.sciencedirect.com/science/article/abs/pii/S0010482524005444",
-        "source_code_link": "https://github.com/kalelpark/FG-SSL",
+        "source_code_link": "https://github.com/WongiPark0628/FG-SSL",
         "paper_link": "https://www.sciencedirect.com/science/article/abs/pii/S0010482524005444"
       },
       "content": {
@@ -655,11 +655,11 @@
           "Risk Prediction",
           "Clinical AI"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10720875/pdf/js9-109-4091.pdf",
         "arxiv_link": "",
-        "github_link": "",
+        "github_link": "https://github.com/SoongE/DBADRP_Classifier",
         "project_link": "https://journals.lww.com/international-journal-of-surgery/fulltext/2023/12000/deep_learning_using_computed_tomography_to.39.aspx",
-        "source_code_link": "",
+        "source_code_link": "https://github.com/SoongE/DBADRP_Classifier",
         "paper_link": "https://journals.lww.com/international-journal-of-surgery/fulltext/2023/12000/deep_learning_using_computed_tomography_to.39.aspx"
       },
       "content": {
@@ -717,11 +717,11 @@
           "Multi-label Classification",
           "Robust Loss"
         ],
-        "pdf_link": "",
-        "arxiv_link": "",
-        "github_link": "https://github.com/kalelpark/RAL",
+        "pdf_link": "https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/papers/Park_Robust_Asymmetric_Loss_for_Multi-Label_Long-Tailed_Learning_ICCVW_2023_paper.pdf",
+        "arxiv_link": "https://arxiv.org/abs/2308.05542",
+        "github_link": "https://github.com/WongiPark0628/RAL",
         "project_link": "https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/html/Park_Robust_Asymmetric_Loss_for_Multi-Label_Long-Tailed_Learning_ICCVW_2023_paper.html",
-        "source_code_link": "https://github.com/kalelpark/RAL",
+        "source_code_link": "https://github.com/WongiPark0628/RAL",
         "paper_link": "https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/html/Park_Robust_Asymmetric_Loss_for_Multi-Label_Long-Tailed_Learning_ICCVW_2023_paper.html"
       },
       "content": {
@@ -779,7 +779,7 @@
           "Multi-Label Classification",
           "Feature Aggregation"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://www.sciencedirect.com/science/article/pii/S016786552100026X/pdfft?isDTMRedir=true&download=false",
         "arxiv_link": "",
         "github_link": "",
         "project_link": "https://www.sciencedirect.com/science/article/abs/pii/S016786552100026X",
@@ -810,7 +810,7 @@
           "Depth Estimation",
           "Uncertainty Estimation"
         ],
-        "pdf_link": "",
+        "pdf_link": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9086445",
         "arxiv_link": "",
         "github_link": "https://github.com/hyu-cvlab/omnimvs-pytorch",
         "project_link": "https://ieeexplore.ieee.org/document/9086445",
@@ -855,6 +855,37 @@
       }
     },
     {
+      "id": "core-2020-generalized-convolutional-forest-networks",
+      "key": "core-2020-generalized-convolutional-forest-networks",
+      "category": "computer_vision_and_learning_algorithms",
+      "status": "published",
+      "title": "Generalized Convolutional Forest Networks for Domain Generalization and Visual Recognition",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Jongbin Ryu, Gitaek Kwon, Ming-Hsuan Yang, Jongwoo Lim",
+        "published_place": "International Conference on Learning Representations (ICLR)",
+        "published_date": "2020-04-26",
+        "accepted_date": "",
+        "keywords": [
+          "Domain Generalization",
+          "Convolutional Forest",
+          "Visual Recognition"
+        ],
+        "pdf_link": "https://openreview.net/pdf?id=H1lxVyStPH",
+        "arxiv_link": "",
+        "github_link": "",
+        "project_link": "https://openreview.net/forum?id=H1lxVyStPH",
+        "source_code_link": "",
+        "paper_link": "https://openreview.net/forum?id=H1lxVyStPH"
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
       "id": "biomedical-2020-intussusception-detection-radiography",
       "key": "biomedical-2020-intussusception-detection-radiography",
       "category": "industrial_and_medical_ai",
@@ -878,6 +909,130 @@
         "project_link": "https://www.nature.com/articles/s41598-020-74653-1",
         "source_code_link": "",
         "paper_link": "https://www.nature.com/articles/s41598-020-74653-1"
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
+      "id": "core-2020-unsupervised-face-domain-transfer",
+      "key": "core-2020-unsupervised-face-domain-transfer",
+      "category": "computer_vision_and_learning_algorithms",
+      "status": "published",
+      "title": "Unsupervised Face Domain Transfer for Low-Resolution Face Recognition",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Sungeun Hong, Jongbin Ryu* (*corresponding author)",
+        "published_place": "IEEE Signal Processing Letters (SPL)",
+        "published_date": "2020-01-01",
+        "accepted_date": "",
+        "keywords": [
+          "Face Recognition",
+          "Low-Resolution",
+          "Domain Transfer"
+        ],
+        "pdf_link": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8945345",
+        "arxiv_link": "",
+        "github_link": "",
+        "project_link": "https://ieeexplore.ieee.org/document/8945345",
+        "source_code_link": "",
+        "paper_link": "https://ieeexplore.ieee.org/document/8945345"
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
+      "id": "core-2019-omnimvs-omnidirectional-stereo-matching",
+      "key": "core-2019-omnimvs-omnidirectional-stereo-matching",
+      "category": "computer_vision_and_learning_algorithms",
+      "status": "published",
+      "title": "OmniMVS: End-to-End Learning for Omnidirectional Stereo Matching",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Changhee Won, Jongbin Ryu, Jongwoo Lim",
+        "published_place": "International Conference on Computer Vision (ICCV)",
+        "published_date": "2019-10-27",
+        "accepted_date": "",
+        "keywords": [
+          "Omnidirectional Stereo",
+          "Multi-view Stereo",
+          "Depth Estimation"
+        ],
+        "pdf_link": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Won_OmniMVS_End-to-End_Learning_for_Omnidirectional_Stereo_Matching_ICCV_2019_paper.pdf",
+        "arxiv_link": "https://arxiv.org/abs/1908.06257",
+        "github_link": "https://github.com/hyu-cvlab/omnimvs-pytorch",
+        "project_link": "https://openaccess.thecvf.com/content_ICCV_2019/html/Won_OmniMVS_End-to-End_Learning_for_Omnidirectional_Stereo_Matching_ICCV_2019_paper.html",
+        "source_code_link": "https://github.com/hyu-cvlab/omnimvs-pytorch",
+        "paper_link": "https://openaccess.thecvf.com/content_ICCV_2019/html/Won_OmniMVS_End-to-End_Learning_for_Omnidirectional_Stereo_Matching_ICCV_2019_paper.html"
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
+      "id": "core-2019-sweepnet-omnidirectional-depth-estimation",
+      "key": "core-2019-sweepnet-omnidirectional-depth-estimation",
+      "category": "computer_vision_and_learning_algorithms",
+      "status": "published",
+      "title": "SweepNet: Wide-baseline Omnidirectional Depth Estimation",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Changhee Won, Jongbin Ryu, Jongwoo Lim",
+        "published_place": "IEEE International Conference on Robotics and Automation (ICRA)",
+        "published_date": "2019-05-20",
+        "accepted_date": "",
+        "keywords": [
+          "Omnidirectional Depth",
+          "Wide-baseline Stereo",
+          "Robot Perception"
+        ],
+        "pdf_link": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8793823",
+        "arxiv_link": "https://arxiv.org/abs/1902.10904",
+        "github_link": "https://github.com/hyu-cvlab/sweepnet",
+        "project_link": "https://ieeexplore.ieee.org/document/8793823",
+        "source_code_link": "https://github.com/hyu-cvlab/sweepnet",
+        "paper_link": "https://ieeexplore.ieee.org/document/8793823"
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
+      "id": "core-2018-dft-transformation-invariant-pooling",
+      "key": "core-2018-dft-transformation-invariant-pooling",
+      "category": "computer_vision_and_learning_algorithms",
+      "status": "published",
+      "title": "DFT-based Transformation Invariant Pooling Layer for Visual Classification",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Jongbin Ryu, Ming-Hsuan Yang, Jongwoo Lim",
+        "published_place": "European Conference on Computer Vision (ECCV)",
+        "published_date": "2018-09-08",
+        "accepted_date": "",
+        "keywords": [
+          "Transformation Invariance",
+          "DFT Pooling",
+          "Visual Classification"
+        ],
+        "pdf_link": "https://openaccess.thecvf.com/content_ECCV_2018/papers/Jongbin_Ryu_DFT-based_Transformation_Invariant_ECCV_2018_paper.pdf",
+        "arxiv_link": "",
+        "github_link": "",
+        "project_link": "https://openaccess.thecvf.com/content_ECCV_2018/html/Jongbin_Ryu_DFT-based_Transformation_Invariant_ECCV_2018_paper.html",
+        "source_code_link": "",
+        "paper_link": "https://openaccess.thecvf.com/content_ECCV_2018/html/Jongbin_Ryu_DFT-based_Transformation_Invariant_ECCV_2018_paper.html"
       },
       "content": {
         "problem": "",
