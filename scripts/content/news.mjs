@@ -419,9 +419,12 @@ const applyHomeVisibility = async (items, publicationItems) => {
     );
     const knownIds = new Set(publicationItems.map((item) => item.id));
     const unknownIds = [...hiddenIds].filter((id) => !knownIds.has(id));
+    // Sheet data can arrive after this setting (it is imported and synced
+    // separately), so an id that is not published yet must not fail the
+    // build; it is reported and takes effect once the paper is present.
     if (unknownIds.length > 0) {
-        throw new Error(
-            `[news] ${relativeFromRoot(HOME_SETTINGS_FILE)}: unknown publication id(s) ${unknownIds.join(", ")}`,
+        console.warn(
+            `[news] ${relativeFromRoot(HOME_SETTINGS_FILE)}: no publication with id(s) ${unknownIds.join(", ")} yet; ignored until it is published.`,
         );
     }
 
