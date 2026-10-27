@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "4.0",
-    "generated_at": "2026-10-12T10:39:29.079Z",
+    "generated_at": "2026-10-27T05:27:15.973Z",
     "default_sort": "date_desc",
     "source": "content/news + publications(published)",
     "type_labels": {
@@ -18,6 +18,24 @@
     }
   },
   "items": [
+    {
+      "id": "publication-biomedical-2026-alzheimers-robust-rank-pooling",
+      "type": "paper_accepted",
+      "title": "A paper has been accepted at Scientific Reports",
+      "summary": "Efficient Alzheimer’s disease classification with robust rank pooling",
+      "date": "2026-10-07",
+      "year": 2026,
+      "related_person": "Seunghun Kang, Sungeun Kim, Hyun Woong Roh, Chang Hyung Hong, Sang Joon Son, Jongbin Ryu",
+      "venue": "Scientific Reports",
+      "external_url": "",
+      "internal_slug": "publication-biomedical-2026-alzheimers-robust-rank-pooling",
+      "is_external": false,
+      "featured": false,
+      "publication_id": "biomedical-2026-alzheimers-robust-rank-pooling",
+      "publication_title": "Efficient Alzheimer’s disease classification with robust rank pooling",
+      "publication_query": "Efficient Alzheimer’s disease classification with robust rank pooling",
+      "generated_from": "publications-auto"
+    },
     {
       "id": "publication-group-annual-conference-on-neural-information-processing-systems-neurips-2026-09-24",
       "type": "paper_accepted",
