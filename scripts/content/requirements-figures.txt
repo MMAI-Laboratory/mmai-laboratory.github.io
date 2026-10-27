@@ -1,0 +1,3 @@
+# Used by scripts/content/publication_figures.py (publication sheet sync).
+pymupdf>=1.24,<3
+pillow>=10,<14

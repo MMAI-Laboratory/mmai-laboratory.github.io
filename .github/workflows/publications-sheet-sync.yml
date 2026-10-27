@@ -46,12 +46,27 @@ jobs:
           PUBLICATIONS_SHEET_URL: ${{ vars.PUBLICATIONS_SHEET_URL }}
           ALLOW_LARGE_PUBLICATION_DELETION: ${{ inputs.allow_large_deletion || 'false' }}
 
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      # Papers without a figure get Figure 1 from an openly available source
+      # (arXiv, open PDFs, Nature/Springer pages). A failure here never blocks
+      # the data sync; those papers are listed in the pull request instead.
+      - name: Fetch missing publication figures
+        continue-on-error: true
+        run: |
+          python -m pip install --quiet -r scripts/content/requirements-figures.txt
+          python scripts/content/publication_figures.py --report "$RUNNER_TEMP/figures-report.md"
+
       # Generated files carry a timestamp, so they would always differ; only a
-      # changed snapshot is worth a pull request.
+      # changed snapshot or new figures are worth a pull request.
       - name: Detect sheet changes
         id: changes
         run: |
-          if git diff --quiet -- content/publications/sheet.snapshot.json; then
+          if git diff --quiet -- content/publications/sheet.snapshot.json \
+            && [ -z "$(git status --porcelain -- src/assets/images/publications/figures/auto)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No publication changes in the sheet."
           else
@@ -69,23 +84,35 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         run: npm run validate:content
 
+      - name: Write pull request body
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          {
+            echo "Google Sheets(mmai_publications 탭) Publication 데이터의 검증된 동기화 결과입니다."
+            echo
+            echo "- Sheet 행 형식과 필수값 검증"
+            echo "- Publication 및 자동 News 재생성"
+            echo "- 대표 그림이 없는 논문은 공개 원문에서 Figure 1 자동 추출"
+            echo "- 전체 콘텐츠 검증 완료 (빌드는 병합 후 배포 워크플로가 수행)"
+            echo
+            if [ -s "$RUNNER_TEMP/figures-report.md" ]; then
+              cat "$RUNNER_TEMP/figures-report.md"
+              echo
+            fi
+            echo "변경 내용을 확인한 뒤 병합하면 홈페이지에 배포됩니다."
+          } > "$RUNNER_TEMP/pr-body.md"
+
       - name: Create review pull request
         if: steps.changes.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "content: sync publications from Google Sheets"
           title: "content: sync publications from Google Sheets"
-          body: |
-            Google Sheets(mmai_publications 탭) Publication 데이터의 검증된 동기화 결과입니다.
-
-            - Sheet 행 형식과 필수값 검증
-            - Publication 및 자동 News 재생성
-            - 전체 콘텐츠 검증 완료 (빌드는 병합 후 배포 워크플로가 수행)
-
-            변경 내용을 확인한 뒤 병합하면 홈페이지에 배포됩니다.
+          body-path: ${{ runner.temp }}/pr-body.md
           branch: automation/publications-sheet-sync
           delete-branch: true
           add-paths: |
             content/publications/sheet.snapshot.json
             src/generated/publications.generated.json
             src/generated/news.generated.json
+            src/assets/images/publications/figures/auto

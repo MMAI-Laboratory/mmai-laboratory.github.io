@@ -168,6 +168,13 @@ Worker 코드는 `mmai_publications` 탭만 다루지만, 더 막으려면 AAIG 
 
 편집 규칙:
 
+- **대표 그림**: 동기화할 때 그림이 없는 논문은 공개 원문에서 Figure 1을 자동으로
+  가져와 검토 PR에 함께 넣습니다(arXiv HTML → arXiv PDF → 논문 PDF → Nature/Springer
+  페이지 순). 구독 논문이나 접근이 막힌 곳은 건너뛰고 PR 본문에 "가져오지 못한 논문"으로
+  적습니다. 자동 그림은 `src/assets/images/publications/figures/auto/`에 저장되며,
+  `publication_figure_index.js`에 직접 넣은 그림이 있으면 그쪽이 우선입니다. 링크가
+  바뀌면 다시 시도하고, 로컬에서는 `pip install -r scripts/content/requirements-figures.txt`
+  후 `npm run publications:figures`로 실행합니다.
 - **홈 화면 Latest News**: 최근 소식 4개가 날짜순으로 나옵니다. 특정 논문의 게재
   소식을 홈에서 빼려면 `content/news/home.json`의 `hide_publication_ids`에 논문 ID를
   추가합니다. News 페이지에는 그대로 남습니다.

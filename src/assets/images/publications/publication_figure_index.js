@@ -1,3 +1,4 @@
+import AUTO_FIGURE_INDEX from "./figures/auto/index.json";
 import STYLE_KD_FIGURE_1 from "./figures/style-kd-figure-1.webp";
 import SPATIAL_BIAS_FIGURE_1 from "./figures/spatial-bias-figure-1.webp";
 import ADNET_FIGURE_2 from "./figures/adnet-figure-2.webp";
@@ -214,8 +215,8 @@ const PUBLICATION_FIGURES = {
     "llm-2026-differentiable-bit-widths-svd": {
         image: DIFFERENTIABLE_BIT_WIDTHS_FIGURE_1,
         figureLabel: "Figure 1",
-        alt: "Figure 1 from Differentiable Bit-Widths showing SVD-based co-optimization of pruning and quantization for ultra-efficient LLM compression.",
-        sourceUrl: "",
+        alt: "Figure 1 from Differentiable Bit-Widths: (a) sequential optimization prunes FP16 weights and then quantizes them, while (b) DBW co-optimizes both in one step by learning per-component bit-widths.",
+        sourceUrl: "https://arxiv.org/abs/2610.06026",
     },
     "core-2019-omnimvs-omnidirectional-stereo-matching": {
         image: OMNIMVS_FIGURE_1,
@@ -257,7 +258,29 @@ const PUBLICATION_FIGURES = {
     },
 };
 
+// Figures fetched by the publication sheet sync for papers that have no
+// hand-picked one above (scripts/content/publication_figures.py). A
+// hand-picked entry always wins.
+const AUTO_FIGURE_IMAGES = import.meta.glob("./figures/auto/*.webp", {
+    eager: true,
+    import: "default",
+});
+
+const getAutoFigure = (publicationId) => {
+    const entry = AUTO_FIGURE_INDEX[publicationId];
+    const image = AUTO_FIGURE_IMAGES[`./figures/auto/${publicationId}.webp`];
+    if (entry?.status !== "ok" || !image) {
+        return null;
+    }
+    return {
+        image,
+        figureLabel: entry.figureLabel || "Figure 1",
+        alt: entry.alt || "Figure 1",
+        sourceUrl: entry.sourceUrl || "",
+    };
+};
+
 export const getPublicationFigure = (publicationId = "") =>
-    PUBLICATION_FIGURES[publicationId] ?? null;
+    PUBLICATION_FIGURES[publicationId] ?? getAutoFigure(publicationId);
 
 export default PUBLICATION_FIGURES;

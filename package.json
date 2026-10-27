@@ -9,6 +9,7 @@
         "content:sync": "node scripts/content/sync.mjs",
         "publications:sync": "node scripts/content/publications.mjs && node scripts/content/news.mjs",
         "publications:pull": "node scripts/content/publications-sheet.mjs",
+        "publications:figures": "python3 scripts/content/publication_figures.py",
         "publications:sheet:bootstrap": "node scripts/content/publications-sheet.mjs --bootstrap",
         "publications:sheet:check": "node scripts/content/publications-sheet.mjs --validate docs/admin/publications-sheet-import.csv",
         "photos:sync": "node scripts/content/photos.mjs",

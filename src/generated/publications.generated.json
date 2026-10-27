@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.1",
-    "generated_at": "2026-10-27T05:27:15.902Z",
+    "generated_at": "2026-10-27T06:10:22.367Z",
     "source": "content/publications/sheet.snapshot.json",
     "categories": [
       "computer_vision_and_learning_algorithms",
@@ -129,7 +129,7 @@
           "3D Flow Learning"
         ],
         "pdf_link": "",
-        "arxiv_link": "",
+        "arxiv_link": "https://arxiv.org/abs/2610.16160",
         "github_link": "https://mmai-laboratory.github.io/flowvla/",
         "project_link": "",
         "source_code_link": "https://mmai-laboratory.github.io/flowvla/",

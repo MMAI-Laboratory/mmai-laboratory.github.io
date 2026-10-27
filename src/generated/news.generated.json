@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "4.0",
-    "generated_at": "2026-10-27T05:27:15.973Z",
+    "generated_at": "2026-10-27T06:10:22.452Z",
     "default_sort": "date_desc",
     "source": "content/news + publications(published)",
     "type_labels": {
@@ -34,7 +34,8 @@
       "publication_id": "biomedical-2026-alzheimers-robust-rank-pooling",
       "publication_title": "Efficient Alzheimer’s disease classification with robust rank pooling",
       "publication_query": "Efficient Alzheimer’s disease classification with robust rank pooling",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": false
     },
     {
       "id": "publication-group-annual-conference-on-neural-information-processing-systems-neurips-2026-09-24",
@@ -56,7 +57,8 @@
       "grouped_publication_ids": [
         "core-2026-efficient-ttc-candidate-verification",
         "llm-2026-differentiable-bit-widths-svd"
-      ]
+      ],
+      "show_on_home": true
     },
     {
       "id": "publication-robot-2026-flowvla-pluggable-3d-flow-learning",
@@ -74,7 +76,8 @@
       "publication_id": "robot-2026-flowvla-pluggable-3d-flow-learning",
       "publication_title": "FlowVLA: Enabling World Dynamics Understanding through Pluggable 3D Flow Learning",
       "publication_query": "FlowVLA: Enabling World Dynamics Understanding through Pluggable 3D Flow Learning",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-biomedical-2026-one-cycle-battery-rul-prediction",
@@ -92,7 +95,8 @@
       "publication_id": "biomedical-2026-one-cycle-battery-rul-prediction",
       "publication_title": "One-Cycle Based Battery Remaining Useful Life Prediction by Continuous Wavelet Scale Compression with Deep Neural Networks",
       "publication_query": "One-Cycle Based Battery Remaining Useful Life Prediction by Continuous Wavelet Scale Compression with Deep Neural Networks",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-core-2026-recalibrated-contrastive-loss-vlm",
@@ -110,7 +114,8 @@
       "publication_id": "core-2026-recalibrated-contrastive-loss-vlm",
       "publication_title": "Re-calibrated Contrastive Loss for Transformation-Aware Prompt Conditioning in Vision-Language Models",
       "publication_query": "Re-calibrated Contrastive Loss for Transformation-Aware Prompt Conditioning in Vision-Language Models",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-group-conference-on-empirical-methods-in-natural-language-processing-emnlp-2026-08-21",
@@ -133,7 +138,8 @@
         "llm-2026-colla-q-moe-quantization",
         "llm-2026-layer-wise-curriculum-learning",
         "llm-2026-train-overcomplete-deploy-compact"
-      ]
+      ],
+      "show_on_home": true
     },
     {
       "id": "2026-new-member-july",
@@ -148,6 +154,7 @@
       "internal_slug": "new-interns-2026-july",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -166,6 +173,7 @@
       "internal_slug": "new-interns-2026-march",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -184,6 +192,7 @@
       "internal_slug": "graduation-2026-february",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -202,6 +211,7 @@
       "internal_slug": "paper-accepted-wacv-2026",
       "is_external": false,
       "featured": true,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "robust visual representation learning",
@@ -220,6 +230,7 @@
       "internal_slug": "seminar-efficient-vision-learning-models",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -238,6 +249,7 @@
       "internal_slug": "new-gpu-workstation-2025",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -256,6 +268,7 @@
       "internal_slug": "new-interns-2025-october",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -274,6 +287,7 @@
       "internal_slug": "industry-collaboration-visit-2025",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -292,6 +306,7 @@
       "internal_slug": "biomedical-workshop-2025",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -310,6 +325,7 @@
       "internal_slug": "graduation-2025-august",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -331,7 +347,8 @@
       "publication_id": "core-capub1-do-your-best-and-get-enough-rest-for-continual",
       "publication_title": "Do Your Best and Get Enough Rest for Continual Learning",
       "publication_query": "Do Your Best and Get Enough Rest for Continual Learning",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "2025-paper-media",
@@ -346,6 +363,7 @@
       "internal_slug": "paper-accepted-media-2025",
       "is_external": false,
       "featured": true,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "medical image analysis",
@@ -364,6 +382,7 @@
       "internal_slug": "graduation-2025-february",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -389,7 +408,8 @@
       "grouped_publication_ids": [
         "core-capub2-channel-propagation-networks-for-refreshable",
         "core-capub3-enriching-local-patterns-with-multi-token"
-      ]
+      ],
+      "show_on_home": true
     },
     {
       "id": "publication-biomedical-bapub4-style-kd-class-imbalanced-medical-image",
@@ -407,7 +427,8 @@
       "publication_id": "biomedical-bapub4-style-kd-class-imbalanced-medical-image",
       "publication_title": "Style-KD : Class-Imbalanced Medical Image Classification via Style Knowledge Distillation",
       "publication_query": "Style-KD : Class-Imbalanced Medical Image Classification via Style Knowledge Distillation",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-group-asian-conference-on-computer-vision-accv-2024-12-01",
@@ -429,7 +450,8 @@
       "grouped_publication_ids": [
         "biomedical-bapub5-generative-self-supervised-learning-for",
         "core-capub4-neural-substitution-for-branch-level-network"
-      ]
+      ],
+      "show_on_home": true
     },
     {
       "id": "publication-core-capub5-unsupervised-hashing-network-with-hyper",
@@ -447,7 +469,8 @@
       "publication_id": "core-capub5-unsupervised-hashing-network-with-hyper",
       "publication_title": "Unsupervised Hashing Network with Hyper Quantization Tree",
       "publication_query": "Unsupervised Hashing Network with Hyper Quantization Tree",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "2024-general-openhouse",
@@ -462,6 +485,7 @@
       "internal_slug": "open-house-2024",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -483,7 +507,8 @@
       "publication_id": "core-capub0-spatial-bias-for-attention-free-non-local",
       "publication_title": "Spatial Bias for Attention-free Non-local Neural Networks",
       "publication_query": "Spatial Bias for Attention-free Non-local Neural Networks",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-biomedical-bapub2-attentional-decoder-networks-for-chest-x-r",
@@ -501,7 +526,8 @@
       "publication_id": "biomedical-bapub2-attentional-decoder-networks-for-chest-x-r",
       "publication_title": "Attentional Decoder Networks for Chest X-ray Image Recognition on High-resolution Features",
       "publication_query": "Attentional Decoder Networks for Chest X-ray Image Recognition on High-resolution Features",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-biomedical-bapub3-analyzing-to-discover-origins-of-cnns-and",
@@ -519,7 +545,8 @@
       "publication_id": "biomedical-bapub3-analyzing-to-discover-origins-of-cnns-and",
       "publication_title": "Analyzing to Discover Origins of CNNs and ViT Architectures in Medical Images",
       "publication_query": "Analyzing to Discover Origins of CNNs and ViT Architectures in Medical Images",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-biomedical-bapub6-towards-long-tailed-multi-label-disease",
@@ -537,7 +564,8 @@
       "publication_id": "biomedical-bapub6-towards-long-tailed-multi-label-disease",
       "publication_title": "Towards long-tailed, multi-label disease classification from chest X-ray: Overview of the CXR-LT challenge",
       "publication_query": "Towards long-tailed, multi-label disease classification from chest X-ray: Overview of the CXR-LT challenge",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-biomedical-bapub7-fine-grained-self-supervised-learning-with",
@@ -555,7 +583,8 @@
       "publication_id": "biomedical-bapub7-fine-grained-self-supervised-learning-with",
       "publication_title": "Fine-Grained Self-Supervised Learning with Jigsaw puzzles for medical image classification",
       "publication_query": "Fine-Grained Self-Supervised Learning with Jigsaw puzzles for medical image classification",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-biomedical-bapub0-deep-learning-using-computed-tomography-to",
@@ -573,7 +602,8 @@
       "publication_id": "biomedical-bapub0-deep-learning-using-computed-tomography-to",
       "publication_title": "Deep Learning Using Computed Tomography to Identify High-Risk Patients for Acute Small Bowel Obstruction: Development and Validation of a Prediction Model: A Retrospective Cohort Study",
       "publication_query": "Deep Learning Using Computed Tomography to Identify High-Risk Patients for Acute Small Bowel Obstruction: Development and Validation of a Prediction Model: A Retrospective Cohort Study",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-core-2023-gramian-attention-heads",
@@ -591,7 +621,8 @@
       "publication_id": "core-2023-gramian-attention-heads",
       "publication_title": "Gramian Attention Heads are Strong yet Efficient Vision Learners",
       "publication_query": "Gramian Attention Heads are Strong yet Efficient Vision Learners",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "2023-graduation-august",
@@ -606,6 +637,7 @@
       "internal_slug": "graduation-2023-august",
       "is_external": false,
       "featured": false,
+      "show_on_home": true,
       "publication_id": "",
       "publication_title": "",
       "publication_query": "",
@@ -627,7 +659,8 @@
       "publication_id": "biomedical-bapub1-robust-asymmetric-loss-for-multi-label-lon",
       "publication_title": "Robust Asymmetric Loss for Multi-Label Long-Tailed Learning",
       "publication_query": "Robust Asymmetric Loss for Multi-Label Long-Tailed Learning",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-biomedical-2023-contrast-level-pneumothorax-detection",
@@ -645,7 +678,8 @@
       "publication_id": "biomedical-2023-contrast-level-pneumothorax-detection",
       "publication_title": "Effect of Contrast Level and Image Format on a Deep Learning Algorithm for the Detection of Pneumothorax with Chest Radiography",
       "publication_query": "Effect of Contrast Level and Image Format on a Deep Learning Algorithm for the Detection of Pneumothorax with Chest Radiography",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-core-2021-dual-aggregated-feature-pyramid-network",
@@ -663,7 +697,8 @@
       "publication_id": "core-2021-dual-aggregated-feature-pyramid-network",
       "publication_title": "Dual Aggregated Feature Pyramid Network for Multi Label Classification",
       "publication_query": "Dual Aggregated Feature Pyramid Network for Multi Label Classification",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-core-2021-omnidirectional-stereo-matching",
@@ -681,7 +716,8 @@
       "publication_id": "core-2021-omnidirectional-stereo-matching",
       "publication_title": "End-to-End Learning for Omnidirectional Stereo Matching with Uncertainty Prior",
       "publication_query": "End-to-End Learning for Omnidirectional Stereo Matching with Uncertainty Prior",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-core-2021-unsupervised-feature-learning-self-tuning",
@@ -699,7 +735,8 @@
       "publication_id": "core-2021-unsupervised-feature-learning-self-tuning",
       "publication_title": "Unsupervised Feature Learning for Self-Tuning Neural Networks",
       "publication_query": "Unsupervised Feature Learning for Self-Tuning Neural Networks",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-core-2020-generalized-convolutional-forest-networks",
@@ -717,7 +754,8 @@
       "publication_id": "core-2020-generalized-convolutional-forest-networks",
       "publication_title": "Generalized Convolutional Forest Networks for Domain Generalization and Visual Recognition",
       "publication_query": "Generalized Convolutional Forest Networks for Domain Generalization and Visual Recognition",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-biomedical-2020-intussusception-detection-radiography",
@@ -735,7 +773,8 @@
       "publication_id": "biomedical-2020-intussusception-detection-radiography",
       "publication_title": "Deep Learning Algorithms for Detecting and Visualising Intussusception on Plain Abdominal Radiography in Children: A Retrospective Multicenter Study",
       "publication_query": "Deep Learning Algorithms for Detecting and Visualising Intussusception on Plain Abdominal Radiography in Children: A Retrospective Multicenter Study",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-core-2020-unsupervised-face-domain-transfer",
@@ -753,7 +792,8 @@
       "publication_id": "core-2020-unsupervised-face-domain-transfer",
       "publication_title": "Unsupervised Face Domain Transfer for Low-Resolution Face Recognition",
       "publication_query": "Unsupervised Face Domain Transfer for Low-Resolution Face Recognition",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-core-2019-omnimvs-omnidirectional-stereo-matching",
@@ -771,7 +811,8 @@
       "publication_id": "core-2019-omnimvs-omnidirectional-stereo-matching",
       "publication_title": "OmniMVS: End-to-End Learning for Omnidirectional Stereo Matching",
       "publication_query": "OmniMVS: End-to-End Learning for Omnidirectional Stereo Matching",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-core-2019-sweepnet-omnidirectional-depth-estimation",
@@ -789,7 +830,8 @@
       "publication_id": "core-2019-sweepnet-omnidirectional-depth-estimation",
       "publication_title": "SweepNet: Wide-baseline Omnidirectional Depth Estimation",
       "publication_query": "SweepNet: Wide-baseline Omnidirectional Depth Estimation",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-core-2018-dft-transformation-invariant-pooling",
@@ -807,7 +849,8 @@
       "publication_id": "core-2018-dft-transformation-invariant-pooling",
       "publication_title": "DFT-based Transformation Invariant Pooling Layer for Visual Classification",
       "publication_query": "DFT-based Transformation Invariant Pooling Layer for Visual Classification",
-      "generated_from": "publications-auto"
+      "generated_from": "publications-auto",
+      "show_on_home": true
     }
   ]
 }
