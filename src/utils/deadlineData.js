@@ -9,8 +9,65 @@ export const DEADLINE_AREAS = (DEADLINE_DATA.meta?.area_order ?? []).map(
   }),
 );
 
+// Timezone used for the prerendered page and the first client render, so the
+// build and the browser produce the same markup. After hydration the page
+// switches to the viewer's own timezone (see getViewerTimeZone).
 export const DEADLINE_DISPLAY_TIMEZONE =
   DEADLINE_DATA.meta?.display_timezone ?? "Asia/Seoul";
+
+const isValidTimeZone = (timeZone) => {
+  try {
+    new Intl.DateTimeFormat("en-US", { timeZone });
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+// The viewer's IANA timezone as the browser reports it (it follows the
+// device's location settings), or the default when it cannot be read.
+export const getViewerTimeZone = () => {
+  try {
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return timeZone && isValidTimeZone(timeZone)
+      ? timeZone
+      : DEADLINE_DISPLAY_TIMEZONE;
+  } catch {
+    return DEADLINE_DISPLAY_TIMEZONE;
+  }
+};
+
+// en-US has no abbreviation for these zones and would print "GMT+9".
+const ZONE_ABBREVIATIONS = {
+  "Asia/Seoul": "KST",
+  "Asia/Tokyo": "JST",
+};
+
+// Short zone name for labels, e.g. "KST", "PDT" or "GMT+5:30" when the
+// locale has no abbreviation for it.
+export const getTimeZoneShortName = (
+  timeZone = DEADLINE_DISPLAY_TIMEZONE,
+  date = new Date(),
+) => {
+  if (ZONE_ABBREVIATIONS[timeZone]) {
+    return ZONE_ABBREVIATIONS[timeZone];
+  }
+  try {
+    const part = new Intl.DateTimeFormat("en-US", {
+      timeZone,
+      timeZoneName: "short",
+    })
+      .formatToParts(date)
+      .find((item) => item.type === "timeZoneName");
+    return part?.value ?? timeZone;
+  } catch {
+    return timeZone;
+  }
+};
+
+// "Asia/Seoul" -> "Seoul", "America/Los_Angeles" -> "Los Angeles".
+export const getTimeZoneCityName = (timeZone = DEADLINE_DISPLAY_TIMEZONE) =>
+  String(timeZone).split("/").pop().replace(/_/g, " ");
 
 export const DEADLINE_STATUS_META = {
   verified: { label: "Official CFP verified", tone: "verified" },
@@ -77,20 +134,29 @@ export const getDefaultMilestoneId = (venue, now = new Date()) => {
   return nextMilestone?.id ?? venue.milestones?.[0]?.id ?? null;
 };
 
-export const formatDeadlineInDisplayTimezone = (deadlineAt) => {
+// Deadline in the given timezone with its zone name, e.g.
+// "Nov 14, 2026, 9:00 PM KST" or "Nov 14, 2026, 4:00 AM PST".
+export const formatDeadlineInDisplayTimezone = (
+  deadlineAt,
+  timeZone = DEADLINE_DISPLAY_TIMEZONE,
+) => {
   const date = asDate(deadlineAt);
   if (!date) {
     return "Date unavailable";
   }
 
-  return new Intl.DateTimeFormat("en-US", {
+  const formatted = new Intl.DateTimeFormat("en-US", {
     dateStyle: "medium",
     timeStyle: "short",
-    timeZone: DEADLINE_DISPLAY_TIMEZONE,
+    timeZone,
   }).format(date);
+  return `${formatted} ${getTimeZoneShortName(timeZone, date)}`;
 };
 
-export const formatSourceCheckedAt = (checkedAt) => {
+export const formatSourceCheckedAt = (
+  checkedAt,
+  timeZone = DEADLINE_DISPLAY_TIMEZONE,
+) => {
   const date = asDate(checkedAt);
   if (!date) {
     return "Not checked yet";
@@ -100,7 +166,7 @@ export const formatSourceCheckedAt = (checkedAt) => {
     month: "short",
     day: "numeric",
     year: "numeric",
-    timeZone: DEADLINE_DISPLAY_TIMEZONE,
+    timeZone,
   }).format(date);
 };
 
@@ -126,28 +192,41 @@ export const getCountdownLabel = (deadlineAt, now) => {
 
 // ── Calendar helpers ────────────────────────────────────────────────────────
 // Deadlines carry their own offsets (often AoE), so bucket them by the calendar
-// day they land on in the display timezone rather than the viewer's local one.
-const DAY_KEY_FORMATTER = new Intl.DateTimeFormat("en-CA", {
-  timeZone: DEADLINE_DISPLAY_TIMEZONE,
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-});
+// day they land on in the display timezone: an AoE deadline can fall on the
+// next day in Seoul and on the same day in California.
+const dayKeyFormatters = new Map();
+const getDayKeyFormatter = (timeZone) => {
+  if (!dayKeyFormatters.has(timeZone)) {
+    dayKeyFormatters.set(
+      timeZone,
+      new Intl.DateTimeFormat("en-CA", {
+        timeZone,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }),
+    );
+  }
+  return dayKeyFormatters.get(timeZone);
+};
 
-export const toDisplayDayKey = (value) => {
+export const toDisplayDayKey = (value, timeZone = DEADLINE_DISPLAY_TIMEZONE) => {
   const parsed = value instanceof Date ? value : new Date(value);
   if (Number.isNaN(parsed.getTime())) {
     return "";
   }
-  return DAY_KEY_FORMATTER.format(parsed);
+  return getDayKeyFormatter(timeZone).format(parsed);
 };
 
-export const getDeadlineCalendarEntries = (venues = getAllVenues()) => {
+export const getDeadlineCalendarEntries = (
+  venues = getAllVenues(),
+  timeZone = DEADLINE_DISPLAY_TIMEZONE,
+) => {
   const byDay = new Map();
 
   venues.forEach((venue) => {
     (venue.milestones ?? []).forEach((milestone) => {
-      const dayKey = toDisplayDayKey(milestone.deadline_at);
+      const dayKey = toDisplayDayKey(milestone.deadline_at, timeZone);
       if (!dayKey) {
         return;
       }

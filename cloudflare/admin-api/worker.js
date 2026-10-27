@@ -814,6 +814,21 @@ const readJsonBody = async (request) => {
     }
 };
 
+// Inserting a row needs the tab's numeric id rather than its name.
+const getMmaiSheetId = async (env) => {
+    const payload = await sheetsRequest(
+        env,
+        "?fields=sheets.properties(sheetId,title)",
+    );
+    const sheet = (payload.sheets ?? []).find(
+        (item) => item.properties?.title === MMAI_SHEET_TAB,
+    );
+    if (!sheet) {
+        throw new Error(`Unable to parse range: ${MMAI_SHEET_TAB}`);
+    }
+    return sheet.properties.sheetId;
+};
+
 // Values are written RAW so dates stay text and nothing an operator types is
 // ever evaluated as a spreadsheet formula.
 const writeSheetRow = async (env, header, rowNumber, cells) => {
@@ -836,18 +851,27 @@ const writeSheetRow = async (env, header, rowNumber, cells) => {
         return rowNumber;
     }
 
-    const payload = await sheetsRequest(
-        env,
-        `/values/${encodeURIComponent(sheetRange(`A1:${lastColumn}1`))}:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`,
-        {
-            method: "POST",
-            body: JSON.stringify({ majorDimension: "ROWS", values: [cells] }),
-        },
-    );
-    const appendedRow = Number(
-        /![A-Z]+(\d+)/.exec(payload.updates?.updatedRange || "")?.[1],
-    );
-    return Number.isFinite(appendedRow) ? appendedRow : null;
+    // Row order is the order the site shows, so a new paper goes in right
+    // under the header, at the top of the list; the operator can move it.
+    await sheetsRequest(env, ":batchUpdate", {
+        method: "POST",
+        body: JSON.stringify({
+            requests: [
+                {
+                    insertDimension: {
+                        range: {
+                            sheetId: await getMmaiSheetId(env),
+                            dimension: "ROWS",
+                            startIndex: 1,
+                            endIndex: 2,
+                        },
+                        inheritFromBefore: false,
+                    },
+                },
+            ],
+        }),
+    });
+    return writeSheetRow(env, header, 2, cells);
 };
 
 const ARXIV_API = "https://export.arxiv.org/api/query";

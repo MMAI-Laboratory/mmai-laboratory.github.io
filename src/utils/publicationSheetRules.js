@@ -311,3 +311,19 @@ export const findPendingSheetChanges = (rows, siteItems) => {
 
     return changes;
 };
+
+// True when the sheet lists the papers that are on the site in a different
+// order. Only papers on both sides count, so additions and removals (already
+// listed as changes) do not also read as a reorder.
+export const hasPendingSheetOrderChange = (rows, siteItems) => {
+    const siteIds = siteItems.map((item) => item.id);
+    const siteIdSet = new Set(siteIds);
+    const sheetIds = [...rows]
+        .sort((a, b) => a.rowNumber - b.rowNumber)
+        .filter((row) => isSheetRowEnabled(row.values))
+        .map((row) => row.values.id.trim())
+        .filter((id) => siteIdSet.has(id));
+    const sheetIdSet = new Set(sheetIds);
+    const siteOrder = siteIds.filter((id) => sheetIdSet.has(id));
+    return sheetIds.some((id, index) => id !== siteOrder[index]);
+};

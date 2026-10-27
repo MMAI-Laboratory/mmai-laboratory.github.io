@@ -4,7 +4,10 @@
 // it has not reached the site yet. The site side is the publication data this
 // page was built with, i.e. exactly what is deployed.
 import { useMemo } from "react";
-import { findPendingSheetChanges } from "../../utils/publicationSheetRules";
+import {
+    findPendingSheetChanges,
+    hasPendingSheetOrderChange,
+} from "../../utils/publicationSheetRules";
 import { formatDateTime } from "./adminApi";
 
 const CHANGE_LABELS = {
@@ -28,17 +31,24 @@ function SheetCollection({
                 : [],
         [rowsState.rows, rowsState.status, siteItems],
     );
+    const orderChanged = useMemo(
+        () =>
+            rowsState.status === "ready" &&
+            hasPendingSheetOrderChange(rowsState.rows, siteItems),
+        [rowsState.rows, rowsState.status, siteItems],
+    );
+    const pendingCount = changes.length + (orderChanged ? 1 : 0);
     const collecting = rowsState.status === "loading";
     const syncIsActive = sync.run && sync.run.status !== "completed";
 
     const summary = (() => {
         if (collecting) return "Google Sheet를 읽는 중입니다.";
         if (rowsState.status !== "ready") return "";
-        return `마지막 수집 ${formatDateTime(rowsState.readAt)} · Sheet ${rowsState.rows.length}행 · 홈페이지에 아직 없는 변경 ${changes.length}건`;
+        return `마지막 수집 ${formatDateTime(rowsState.readAt)} · Sheet ${rowsState.rows.length}행 · 홈페이지에 아직 없는 변경 ${pendingCount}건${orderChanged ? " (순서 변경 포함)" : ""}`;
     })();
 
     const nextStep = (() => {
-        if (changes.length === 0) return "";
+        if (pendingCount === 0) return "";
         if (syncIsActive)
             return "동기화가 진행 중입니다. 끝나면 검토 PR이 만들어집니다.";
         if (sync.pullRequest) {
@@ -115,7 +125,14 @@ function SheetCollection({
                 </ul>
             ) : null}
 
-            {rowsState.status === "ready" && changes.length === 0 ? (
+            {orderChanged ? (
+                <p className="admin-sync__note">
+                    Sheet의 행 순서가 홈페이지와 다릅니다. 동기화하면 Sheet
+                    순서대로 바뀝니다.
+                </p>
+            ) : null}
+
+            {rowsState.status === "ready" && pendingCount === 0 ? (
                 <p className="admin-sync__note">
                     Sheet의 Publication이 모두 홈페이지에 반영되어 있습니다.
                 </p>

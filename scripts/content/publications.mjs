@@ -82,16 +82,10 @@ export const buildPublicationItem = (record, id, publicationCategories) => {
     };
 };
 
-export const sortPublicationItems = (items) =>
-    items.sort((a, b) => {
-        const dateCompare = b.research_meta.published_date.localeCompare(
-            a.research_meta.published_date,
-        );
-        return dateCompare || a.id.localeCompare(b.id);
-    });
-
 // The snapshot is written by the sheet sync, but it is a committed file that
-// can also be edited by hand, so every item is validated again here.
+// can also be edited by hand, so every item is validated again here. Items
+// keep the snapshot order, which is the sheet's row order: that order is what
+// the site shows.
 export const syncPublicationContent = async ({ validateOnly = false } = {}) => {
     const publicationCategories = await getPublicationCategories();
     const snapshot = await readJsonFile(PUBLICATIONS_SHEET_SNAPSHOT_FILE, null);
@@ -130,8 +124,6 @@ export const syncPublicationContent = async ({ validateOnly = false } = {}) => {
     if (errors.length > 0) {
         throw new Error(errors.join("\n"));
     }
-
-    sortPublicationItems(items);
 
     if (validateOnly) {
         console.log(`[publications] validated ${items.length} entries`);

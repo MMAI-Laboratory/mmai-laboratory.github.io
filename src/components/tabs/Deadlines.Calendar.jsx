@@ -6,6 +6,8 @@ import {
     formatDeadlineInDisplayTimezone,
     getConferenceSpans,
     getDeadlineCalendarEntries,
+    getTimeZoneCityName,
+    getTimeZoneShortName,
     toDisplayDayKey,
 } from "../../utils/deadlineData";
 import { getFlagSvg } from "../../assets/flags/flag_index";
@@ -48,10 +50,14 @@ const FlagImg = ({ code, country, className }) =>
         <img className={className} src={getFlagSvg(code)} alt={country ?? ""} />
     ) : null;
 
-export default function DeadlineCalendar({ venues, now }) {
+export default function DeadlineCalendar({
+    venues,
+    now,
+    timeZone = DEADLINE_DISPLAY_TIMEZONE,
+}) {
     const entriesByDay = useMemo(
-        () => getDeadlineCalendarEntries(venues),
-        [venues],
+        () => getDeadlineCalendarEntries(venues, timeZone),
+        [venues, timeZone],
     );
     const spans = useMemo(() => getConferenceSpans(venues), [venues]);
 
@@ -59,7 +65,7 @@ export default function DeadlineCalendar({ venues, now }) {
     // the month from `new Date()` there would differ between the build and the
     // browser, breaking hydration; instead fall back to a deterministic month
     // (the earliest tracked deadline) until the real clock arrives.
-    const todayKey = now ? toDisplayDayKey(now) : null;
+    const todayKey = now ? toDisplayDayKey(now, timeZone) : null;
     const today = todayKey ? parseDayKey(todayKey) : null;
 
     const fallbackMonth = useMemo(() => {
@@ -141,7 +147,8 @@ export default function DeadlineCalendar({ venues, now }) {
                     <p>
                         {monthDeadlineCount} deadline
                         {monthDeadlineCount === 1 ? "" : "s"} in {monthLabel} ·
-                        Times shown in {DEADLINE_DISPLAY_TIMEZONE}
+                        Times shown in {getTimeZoneCityName(timeZone)} time (
+                        {getTimeZoneShortName(timeZone, now ?? undefined)})
                     </p>
                 </div>
                 <div className="deadlines__calendar-nav">
@@ -379,6 +386,7 @@ export default function DeadlineCalendar({ venues, now }) {
                                 <p>
                                     {formatDeadlineInDisplayTimezone(
                                         entry.deadlineAt,
+                                        timeZone,
                                     )}
                                 </p>
                                 {entry.timezoneLabel ? (

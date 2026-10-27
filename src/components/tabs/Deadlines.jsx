@@ -4,6 +4,9 @@ import {
   DEADLINE_AREAS,
   DEADLINE_DISPLAY_TIMEZONE,
   formatDeadlineInDisplayTimezone,
+  getTimeZoneCityName,
+  getTimeZoneShortName,
+  getViewerTimeZone,
   formatSourceCheckedAt,
   getAllVenues,
   getCountdownLabel,
@@ -48,7 +51,13 @@ function DeadlineCountdown({ deadlineAt }) {
   );
 }
 
-function DeadlineCard({ venue, selectedMilestones, onSelectMilestone, now }) {
+function DeadlineCard({
+  venue,
+  selectedMilestones,
+  onSelectMilestone,
+  now,
+  timeZone,
+}) {
   const selectedMilestone = getSelectedMilestone(
     venue,
     selectedMilestones,
@@ -175,8 +184,10 @@ function DeadlineCard({ venue, selectedMilestones, onSelectMilestone, now }) {
                 {selectedMilestone.label}
               </p>
               <p className="deadlines__date">
-                {formatDeadlineInDisplayTimezone(selectedMilestone.deadline_at)}{" "}
-                KST
+                {formatDeadlineInDisplayTimezone(
+                  selectedMilestone.deadline_at,
+                  timeZone,
+                )}
               </p>
               <p className="deadlines__timezone-note">
                 Official deadline timezone: {selectedMilestone.timezone_label}
@@ -197,7 +208,7 @@ function DeadlineCard({ venue, selectedMilestones, onSelectMilestone, now }) {
       <div className="deadlines__source-meta">
         <span>
           {venue.source_checked_at
-            ? `Verified ${formatSourceCheckedAt(venue.source_checked_at)}`
+            ? `Verified ${formatSourceCheckedAt(venue.source_checked_at, timeZone)}`
             : "Official CFP will be monitored when the current cycle opens."}
         </span>
         {sourceCheck && sourceCheck.state !== "matched" ? (
@@ -217,10 +228,14 @@ function Deadlines() {
   // own clock, so this never needs to tick — keeping it static prevents the
   // calendar and cards from re-rendering (and re-revealing) every second.
   const [now, setNow] = useState(null);
+  // Prerender and the first client render use the default timezone so the
+  // markup matches; the viewer's own timezone takes over right after.
+  const [timeZone, setTimeZone] = useState(DEADLINE_DISPLAY_TIMEZONE);
   const venues = useMemo(() => getAllVenues(), []);
 
   useEffect(() => {
     setNow(new Date());
+    setTimeZone(getViewerTimeZone());
   }, []);
 
   const normalizedQuery = searchQuery.trim().toLowerCase();
@@ -304,7 +319,11 @@ function Deadlines() {
       </section>
       */}
 
-      <DeadlineCalendar venues={filteredVenues} now={now} />
+      <DeadlineCalendar
+        venues={filteredVenues}
+        now={now}
+        timeZone={timeZone}
+      />
 
       <section
         className="deadlines__list"
@@ -315,7 +334,8 @@ function Deadlines() {
             <h2 id="deadlines-list-title">Conference schedule</h2>
             <p>
               {filteredVenues.length} venues · Times displayed in{" "}
-              {DEADLINE_DISPLAY_TIMEZONE}
+              {getTimeZoneCityName(timeZone)} time (
+              {getTimeZoneShortName(timeZone, now ?? undefined)})
             </p>
           </div>
         </div>
@@ -326,6 +346,7 @@ function Deadlines() {
             selectedMilestones={selectedMilestones}
             onSelectMilestone={handleSelectMilestone}
             now={now}
+            timeZone={timeZone}
           />
         ))}
       </section>

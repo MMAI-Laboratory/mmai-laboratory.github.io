@@ -9,6 +9,7 @@ import {
     normalizeHttpUrl,
     normalizeSlug,
     parseMarkdownFrontmatter,
+    readJsonFile,
     relativeFromRoot,
     toYear,
     writeJsonFile,
@@ -85,6 +86,9 @@ const parseNewsFile = async (filePath) => {
         normalizeText(data.internal_slug) || normalizeSlug(id || title);
     const isExternal = data.is_external === true || Boolean(externalUrl);
     const featured = data.featured === true;
+    // Set `show_on_home: false` to keep an item off the home page's Latest
+    // News; it still appears on the News page.
+    const showOnHome = data.show_on_home !== false;
     const publicationId = normalizeText(data.publication_id);
     const publicationTitle = normalizeText(data.publication_title);
     const publicationQueryInput = normalizeText(data.publication_query);
@@ -131,6 +135,7 @@ const parseNewsFile = async (filePath) => {
         internal_slug: internalSlug,
         is_external: isExternal,
         featured,
+        show_on_home: showOnHome,
         publication_id: publicationId,
         publication_title: publicationTitle,
         publication_query: publicationQuery,
@@ -402,6 +407,37 @@ const mergePublicationNewsItems = (manualItems, publicationItems) => {
     return mergedItems;
 };
 
+const HOME_SETTINGS_FILE = path.resolve(NEWS_CONTENT_DIR, "home.json");
+
+// Applies content/news/home.json: announcements for the listed papers stay
+// off the home page. A grouped announcement ("Two papers have been accepted
+// at ...") is hidden only when every paper in it is listed.
+const applyHomeVisibility = async (items, publicationItems) => {
+    const settings = await readJsonFile(HOME_SETTINGS_FILE, {});
+    const hiddenIds = new Set(
+        (settings.hide_publication_ids ?? []).map((id) => normalizeText(id)),
+    );
+    const knownIds = new Set(publicationItems.map((item) => item.id));
+    const unknownIds = [...hiddenIds].filter((id) => !knownIds.has(id));
+    if (unknownIds.length > 0) {
+        throw new Error(
+            `[news] ${relativeFromRoot(HOME_SETTINGS_FILE)}: unknown publication id(s) ${unknownIds.join(", ")}`,
+        );
+    }
+
+    return items.map((item) => {
+        const paperIds = item.grouped_publication_ids?.length
+            ? item.grouped_publication_ids
+            : [item.publication_id].filter(Boolean);
+        const hiddenPaper =
+            paperIds.length > 0 && paperIds.every((id) => hiddenIds.has(id));
+        return {
+            ...item,
+            show_on_home: item.show_on_home !== false && !hiddenPaper,
+        };
+    });
+};
+
 export const syncNewsContent = async ({
     validateOnly = false,
     publicationItems = null,
@@ -434,15 +470,18 @@ export const syncNewsContent = async ({
         ? publicationItems
         : await syncPublicationContent({ validateOnly: true });
 
-    const mergedItems = formatPaperAcceptedItems(
-        mergePublicationNewsItems(items, resolvedPublicationItems).sort(
-            (a, b) => {
-                if (a.date === b.date) {
-                    return a.id.localeCompare(b.id);
-                }
-                return b.date.localeCompare(a.date);
-            },
+    const mergedItems = await applyHomeVisibility(
+        formatPaperAcceptedItems(
+            mergePublicationNewsItems(items, resolvedPublicationItems).sort(
+                (a, b) => {
+                    if (a.date === b.date) {
+                        return a.id.localeCompare(b.id);
+                    }
+                    return b.date.localeCompare(a.date);
+                },
+            ),
         ),
+        resolvedPublicationItems,
     );
 
     if (validateOnly) {

@@ -126,6 +126,8 @@ const normalizeStructuredNewsItems = (items) =>
             is_external:
                 normalizeBoolean(item?.is_external) && Boolean(externalUrl),
             featured: normalizeBoolean(item?.featured),
+            // Missing means shown, so older generated data keeps working.
+            show_on_home: item?.show_on_home !== false,
             publication_id: normalizeText(item?.publication_id),
             publication_title: normalizeText(item?.publication_title),
             publication_query: normalizeText(item?.publication_query),
@@ -189,8 +191,11 @@ export const getAllNewsItems = () =>
             return normalizedItem;
         });
 
+// Home page Latest News: newest items, skipping those marked to stay off home.
 export const getLatestNewsItems = (limit = 5) =>
-    getAllNewsItems().slice(0, limit);
+    getAllNewsItems()
+        .filter((item) => item.show_on_home !== false)
+        .slice(0, limit);
 
 export const getNewsTypes = () => {
     return ["all", ...NEWS_TYPE_ORDER];

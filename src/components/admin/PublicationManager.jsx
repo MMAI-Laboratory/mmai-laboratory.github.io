@@ -513,14 +513,9 @@ function PublicationManager({ apiUrl, session, onSessionExpired }) {
         [rowsState.rows],
     );
 
+    // Sheet row order is the order the site shows, so the list follows it.
     const sortedRows = useMemo(
-        () =>
-            [...rowsState.rows].sort(
-                (a, b) =>
-                    String(b.values.date).localeCompare(
-                        String(a.values.date),
-                    ) || a.rowNumber - b.rowNumber,
-            ),
+        () => [...rowsState.rows].sort((a, b) => a.rowNumber - b.rowNumber),
         [rowsState.rows],
     );
 
@@ -687,15 +682,13 @@ function PublicationManager({ apiUrl, session, onSessionExpired }) {
                               ? payload.row
                               : row,
                       )
-                    : payload.row.rowNumber
-                      ? [...current.rows, payload.row]
-                      : current.rows,
+                    : current.rows,
             }));
+            // A new row is inserted at the top of the sheet, which shifts the
+            // row number of every row below it, so the list is read again.
             if (!isUpdate) {
                 returnFocusRef.current = "admin-publication-add";
-                if (!payload.row.rowNumber) {
-                    setReloadRequest((count) => count + 1);
-                }
+                setReloadRequest((count) => count + 1);
             }
             setEditing(null);
             setNotice({

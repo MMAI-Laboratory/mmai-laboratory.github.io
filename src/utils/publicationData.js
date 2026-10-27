@@ -1,18 +1,5 @@
 import PUBLICATION_DATA from "../generated/publications.generated.json";
 
-const parseDateSafe = (value) => {
-    const text = typeof value === "string" ? value.trim() : "";
-    if (!text) {
-        return new Date("1970-01-01T00:00:00");
-    }
-
-    const parsed = new Date(`${text}T00:00:00`);
-    if (Number.isNaN(parsed.getTime())) {
-        return new Date("1970-01-01T00:00:00");
-    }
-    return parsed;
-};
-
 const normalizeText = (value) =>
     typeof value === "string" ? value.trim() : "";
 const normalizeStringList = (value) => {
@@ -30,6 +17,8 @@ const normalizeStringList = (value) => {
     return value.map((item) => normalizeText(item)).filter(Boolean);
 };
 
+// Items keep the generated order, which is the row order of the publication
+// sheet: moving a row there moves the paper on the site.
 export const getAllPublications = () =>
     (PUBLICATION_DATA?.items ?? [])
         .map((item, index) => {
@@ -72,14 +61,7 @@ export const getAllPublications = () =>
                         researchMeta?.paper_link || researchMeta?.project_link,
                     ),
                 },
-                _parsedDate: parseDateSafe(publishedDate),
             };
-        })
-        .sort((a, b) => b._parsedDate - a._parsedDate)
-        .map((item) => {
-            const normalizedItem = { ...item };
-            delete normalizedItem._parsedDate;
-            return normalizedItem;
         });
 
 export const getPublicationCategories = () => {

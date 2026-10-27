@@ -1,0 +1,6 @@
+{
+    "notes": "Papers whose acceptance news should stay off the home page's Latest News. The news still appears on the News page. Use publication ids from the sheet's id column; a grouped announcement is hidden only when every paper in it is listed.",
+    "hide_publication_ids": [
+        "biomedical-2026-alzheimers-robust-rank-pooling"
+    ]
+}

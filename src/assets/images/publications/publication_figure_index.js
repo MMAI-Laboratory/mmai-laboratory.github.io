@@ -31,6 +31,7 @@ import SWEEPNET_FIGURE_4 from "./figures/sweepnet-figure-4.webp";
 import DFT_POOLING_FIGURE_1 from "./figures/dft-pooling-figure-1.webp";
 import GCFN_FIGURE_OVERVIEW from "./figures/gcfn-figure-overview.webp";
 import FACE_DOMAIN_TRANSFER_FIGURE_OVERVIEW from "./figures/face-domain-transfer-figure-overview.webp";
+import ALZHEIMERS_RANK_POOLING_FIGURE_OVERVIEW from "./figures/alzheimers-rank-pooling-figure-overview.webp";
 
 const PUBLICATION_FIGURES = {
     "biomedical-bapub4-style-kd-class-imbalanced-medical-image": {
@@ -247,6 +248,12 @@ const PUBLICATION_FIGURES = {
         figureLabel: "Overview",
         alt: "Overview of unsupervised face domain transfer: generative face augmentation adds high-to-low resolution samples across poses, and spatial resolution adaptation then clusters high- and low-resolution faces of the same identity together.",
         sourceUrl: "https://ieeexplore.ieee.org/document/8945345",
+    },
+    "biomedical-2026-alzheimers-robust-rank-pooling": {
+        image: ALZHEIMERS_RANK_POOLING_FIGURE_OVERVIEW,
+        figureLabel: "Overview",
+        alt: "Overview of robust rank pooling: sliding windows over a 3D brain MRI volume are each compressed into a single image, and a selection procedure picks a robust combination of the compressed images for Alzheimer's disease classification.",
+        sourceUrl: "https://www.nature.com/articles/s41598-026-74059-5",
     },
 };
 

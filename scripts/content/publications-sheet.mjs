@@ -18,7 +18,6 @@ import {
 import {
     buildPublicationItem,
     getPublicationCategories,
-    sortPublicationItems,
 } from "./publications.mjs";
 import {
     PUBLICATION_SHEET_COLUMNS,
@@ -218,7 +217,8 @@ export const normalizeSheetRows = async (csvText, previousItems = []) => {
         throw new Error("[sheet] No enabled publication rows were found.");
     }
 
-    return sortPublicationItems(items);
+    // Row order is display order, so operators reorder papers by moving rows.
+    return items;
 };
 
 const csvCell = (value) => `"${String(value ?? "").replace(/"/g, '""')}"`;
