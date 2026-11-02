@@ -1,1 +1,7 @@
-{}
+{
+    "GHSA-g3hv-75wg-m249": {
+        "active": true,
+        "expiry": "2026-12-31",
+        "notes": "minimatch ReDoS via globparts amplification, patched only in 11.0.1+. Dev-only: reached through eslint (minimatch 3.x) and eslint-plugin-react (3.x); even the latest eslint 10.14 still depends on minimatch 10.x, so no compatible fix exists yet. Not part of the production bundle, and the globs come from this repository's own lint config. Expires so the audit re-checks once eslint ships a patched dependency."
+    }
+}
