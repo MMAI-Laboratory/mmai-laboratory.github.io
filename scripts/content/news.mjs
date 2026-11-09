@@ -85,6 +85,9 @@ const parseNewsFile = async (filePath) => {
     const internalSlug =
         normalizeText(data.internal_slug) || normalizeSlug(id || title);
     const isExternal = data.is_external === true || Boolean(externalUrl);
+    // Text of the link button on the news card, e.g. "AAIG". Defaults to
+    // "Open" on the site.
+    const linkLabel = normalizeText(data.link_label);
     const featured = data.featured === true;
     // Set `show_on_home: false` to keep an item off the home page's Latest
     // News; it still appears on the News page.
@@ -134,6 +137,7 @@ const parseNewsFile = async (filePath) => {
         external_url: externalUrl,
         internal_slug: internalSlug,
         is_external: isExternal,
+        link_label: linkLabel,
         featured,
         show_on_home: showOnHome,
         publication_id: publicationId,

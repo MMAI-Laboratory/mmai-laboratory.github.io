@@ -125,6 +125,7 @@ const normalizeStructuredNewsItems = (items) =>
             internal_slug: normalizeText(item?.internal_slug),
             is_external:
                 normalizeBoolean(item?.is_external) && Boolean(externalUrl),
+            link_label: normalizeText(item?.link_label),
             featured: normalizeBoolean(item?.featured),
             // Missing means shown, so older generated data keeps working.
             show_on_home: item?.show_on_home !== false,

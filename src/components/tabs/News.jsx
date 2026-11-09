@@ -250,7 +250,10 @@ function News() {
                                                         target="_blank"
                                                         rel="noreferrer"
                                                         className="news-page__action-link btn btn--tertiary animated-underline">
-                                                        <span>Open</span>
+                                                        <span>
+                                                            {item.link_label ||
+                                                                "Open"}
+                                                        </span>
                                                         <span className="news-page__action-arrow">
                                                             ↗
                                                         </span>
