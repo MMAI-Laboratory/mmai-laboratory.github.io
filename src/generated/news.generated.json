@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "4.0",
-    "generated_at": "2026-11-13T04:31:34.766Z",
+    "generated_at": "2026-11-13T04:52:59.093Z",
     "default_sort": "date_desc",
     "source": "content/news + publications(published)",
     "type_labels": {
@@ -55,7 +55,7 @@
       "publication_title": "Knowledge distillation with lightweight peer branches for learning diverse representations",
       "publication_query": "Knowledge distillation with lightweight peer branches for learning diverse representations",
       "generated_from": "publications-auto",
-      "show_on_home": true
+      "show_on_home": false
     },
     {
       "id": "publication-biomedical-2026-alzheimers-robust-rank-pooling",
