@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.1",
-    "generated_at": "2026-10-27T06:10:22.367Z",
+    "generated_at": "2026-11-13T04:08:36.060Z",
     "source": "content/publications/sheet.snapshot.json",
     "categories": [
       "computer_vision_and_learning_algorithms",
@@ -133,6 +133,33 @@
         "github_link": "https://mmai-laboratory.github.io/flowvla/",
         "project_link": "",
         "source_code_link": "https://mmai-laboratory.github.io/flowvla/",
+        "paper_link": ""
+      },
+      "content": {
+        "problem": "",
+        "solve": "",
+        "expermental_result": ""
+      }
+    },
+    {
+      "id": "core-2026-knowledge-distillation-lightweight-peer-branches",
+      "key": "core-2026-knowledge-distillation-lightweight-peer-branches",
+      "category": "computer_vision_and_learning_algorithms",
+      "status": "published",
+      "title": "Knowledge distillation with lightweight peer branches for learning diverse representations",
+      "summary": "",
+      "featured": false,
+      "research_meta": {
+        "author": "Dongkyu Kim, Soohyun Pyo, Junhyeong Go and Jongbin Ryu",
+        "published_place": "Scientific Reports",
+        "published_date": "2026-11-10",
+        "accepted_date": "2026-10-31",
+        "keywords": [],
+        "pdf_link": "https://www.nature.com/articles/s41598-026-79466-2",
+        "arxiv_link": "",
+        "github_link": "",
+        "project_link": "",
+        "source_code_link": "",
         "paper_link": ""
       },
       "content": {

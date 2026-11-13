@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "4.0",
-    "generated_at": "2026-11-09T05:01:18.402Z",
+    "generated_at": "2026-11-13T04:08:36.134Z",
     "default_sort": "date_desc",
     "source": "content/news + publications(published)",
     "type_labels": {
@@ -37,6 +37,25 @@
       "publication_title": "",
       "publication_query": "",
       "generated_from": ""
+    },
+    {
+      "id": "publication-core-2026-knowledge-distillation-lightweight-peer-branches",
+      "type": "paper_accepted",
+      "title": "A paper has been accepted at Scientific Reports",
+      "summary": "Knowledge distillation with lightweight peer branches for learning diverse representations",
+      "date": "2026-10-31",
+      "year": 2026,
+      "related_person": "Dongkyu Kim, Soohyun Pyo, Junhyeong Go and Jongbin Ryu",
+      "venue": "Scientific Reports",
+      "external_url": "",
+      "internal_slug": "publication-core-2026-knowledge-distillation-lightweight-peer-branches",
+      "is_external": false,
+      "featured": false,
+      "publication_id": "core-2026-knowledge-distillation-lightweight-peer-branches",
+      "publication_title": "Knowledge distillation with lightweight peer branches for learning diverse representations",
+      "publication_query": "Knowledge distillation with lightweight peer branches for learning diverse representations",
+      "generated_from": "publications-auto",
+      "show_on_home": true
     },
     {
       "id": "publication-biomedical-2026-alzheimers-robust-rank-pooling",
