@@ -33,6 +33,7 @@ import DFT_POOLING_FIGURE_1 from "./figures/dft-pooling-figure-1.webp";
 import GCFN_FIGURE_OVERVIEW from "./figures/gcfn-figure-overview.webp";
 import FACE_DOMAIN_TRANSFER_FIGURE_OVERVIEW from "./figures/face-domain-transfer-figure-overview.webp";
 import ALZHEIMERS_RANK_POOLING_FIGURE_OVERVIEW from "./figures/alzheimers-rank-pooling-figure-overview.webp";
+import PEER_BRANCHES_KD_FIGURE_OVERVIEW from "./figures/peer-branches-kd-figure-overview.webp";
 
 const PUBLICATION_FIGURES = {
     "biomedical-bapub4-style-kd-class-imbalanced-medical-image": {
@@ -256,17 +257,35 @@ const PUBLICATION_FIGURES = {
         alt: "Overview of robust rank pooling: sliding windows over a 3D brain MRI volume are each compressed into a single image, and a selection procedure picks a robust combination of the compressed images for Alzheimer's disease classification.",
         sourceUrl: "https://www.nature.com/articles/s41598-026-74059-5",
     },
+    "core-2026-knowledge-distillation-lightweight-peer-branches": {
+        image: PEER_BRANCHES_KD_FIGURE_OVERVIEW,
+        figureLabel: "Overview",
+        alt: "Overview of knowledge distillation with lightweight peer branches: multi-stage backbone features are resampled and concatenated to feed diverse peer branch networks, whose predictions are decorrelated around an anchor point and distilled into the student through ensemble and branch-wise KD.",
+        sourceUrl: "https://www.nature.com/articles/s41598-026-79466-2",
+    },
 };
 
-// Figures fetched by the publication sheet sync for papers that have no
-// hand-picked one above (scripts/content/publication_figures.py). A
-// hand-picked entry always wins.
-const AUTO_FIGURE_IMAGES = import.meta.glob("./figures/auto/*.webp", {
-    eager: true,
-    import: "default",
-});
+// figures/auto/ holds figures without a hand-picked entry above:
+// - <id>.png / .jpg / .jpeg uploaded by an operator (e.g. through the GitHub
+//   web UI), which need no other change, and
+// - <id>.webp fetched by the publication sheet sync
+//   (scripts/content/publication_figures.py), described in index.json.
+// A hand-picked entry always wins; an uploaded file wins over a fetched one.
+const AUTO_FIGURE_IMAGES = import.meta.glob(
+    "./figures/auto/*.{png,jpg,jpeg,PNG,JPG,JPEG,webp}",
+    { eager: true, import: "default" },
+);
+const UPLOAD_EXTENSIONS = ["png", "jpg", "jpeg", "PNG", "JPG", "JPEG"];
 
 const getAutoFigure = (publicationId) => {
+    const uploaded = UPLOAD_EXTENSIONS.map(
+        (extension) =>
+            AUTO_FIGURE_IMAGES[`./figures/auto/${publicationId}.${extension}`],
+    ).find(Boolean);
+    if (uploaded) {
+        return { image: uploaded, figureLabel: "", alt: "", sourceUrl: "" };
+    }
+
     const entry = AUTO_FIGURE_INDEX[publicationId];
     const image = AUTO_FIGURE_IMAGES[`./figures/auto/${publicationId}.webp`];
     if (entry?.status !== "ok" || !image) {
@@ -275,7 +294,7 @@ const getAutoFigure = (publicationId) => {
     return {
         image,
         figureLabel: entry.figureLabel || "Figure 1",
-        alt: entry.alt || "Figure 1",
+        alt: entry.alt || "",
         sourceUrl: entry.sourceUrl || "",
     };
 };

@@ -40,6 +40,7 @@ function PublicationCard({
     >
       <PublicationFigure
         publicationId={publicationId}
+        title={title}
         className="publication__card-media"
         sizes="(max-width: 768px) 13rem, 11.2rem"
       />

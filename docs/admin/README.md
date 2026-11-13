@@ -170,11 +170,18 @@ Worker 코드는 `mmai_publications` 탭만 다루지만, 더 막으려면 AAIG 
 
 - **대표 그림**: 동기화할 때 그림이 없는 논문은 공개 원문에서 Figure 1을 자동으로
   가져와 검토 PR에 함께 넣습니다(arXiv HTML → arXiv PDF → 논문 PDF → Nature/Springer
-  페이지 순). 구독 논문이나 접근이 막힌 곳은 건너뛰고 PR 본문에 "가져오지 못한 논문"으로
-  적습니다. 자동 그림은 `src/assets/images/publications/figures/auto/`에 저장되며,
-  `publication_figure_index.js`에 직접 넣은 그림이 있으면 그쪽이 우선입니다. 링크가
-  바뀌면 다시 시도하고, 로컬에서는 `pip install -r scripts/content/requirements-figures.txt`
-  후 `npm run publications:figures`로 실행합니다.
+  페이지 순). 구독 논문이나 접근이 막힌 곳은 건너뛰고 PR 본문에 "가져오지 못한 논문"과
+  올릴 파일 이름을 적습니다.
+- **그림 직접 올리기**: PR을 병합한 뒤 GitHub 저장소에서
+  `src/assets/images/publications/figures/auto/` 폴더 → **Add file → Upload files**로
+  `논문ID.png`(또는 `.jpg`) 파일을 `main`에 올리면, 배포 후 바로 그 그림이 표시됩니다.
+  코드나 목록 파일을 고칠 필요가 없고, 이후 자동 추출도 그 논문은 건너뜁니다. 논문 ID는
+  Sheet의 `id` 칸이나 PR 본문에 있습니다. 동기화 PR 브랜치에는 올리지 마세요(다음
+  동기화 때 덮어써집니다). 그림은 가로 1600px 안팎, 1MB 이하로 올리는 것이 좋습니다.
+- **우선순위**: `publication_figure_index.js`에 직접 등록한 그림 → 올린 png/jpg →
+  자동으로 가져온 webp 순입니다. 로컬에서 자동 추출을 돌리려면
+  `pip install -r scripts/content/requirements-figures.txt` 후
+  `npm run publications:figures`를 실행합니다.
 - **홈 화면 Latest News**: 최근 소식 4개가 날짜순으로 나옵니다. 특정 논문의 게재
   소식을 홈에서 빼려면 `content/news/home.json`의 `hide_publication_ids`에 논문 ID를
   추가합니다. News 페이지에는 그대로 남습니다.

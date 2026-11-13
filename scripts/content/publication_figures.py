@@ -182,9 +182,17 @@ def from_pdf(url, landing):
 
 
 def from_springer_html(item):
-    page_url = item["research_meta"].get("project_link") or ""
-    if not re.search(r"//(www\.)?(nature\.com|link\.springer\.com)/", page_url):
+    meta = item["research_meta"]
+    # The article page may sit in the PDF column too, when the publisher only
+    # offers the PDF behind a download button on that page.
+    pages = [
+        url for url in (meta.get("project_link"), meta.get("pdf_link"))
+        if url and re.search(r"//(www\.)?(nature\.com|link\.springer\.com)/", url)
+        and not url.lower().endswith(".pdf")
+    ]
+    if not pages:
         raise SourceUnavailable("no Nature/Springer page")
+    page_url = pages[0]
     html = fetch(page_url, "text/html")[0].decode("utf-8", "replace")
     # Article pages also show thumbnails of related articles, so only an
     # image whose path carries this article's own DOI counts.
@@ -236,6 +244,17 @@ def manual_figure_ids():
     return set(re.findall(r'^\s{4}"([a-z0-9-]+)": \{', text, re.M))
 
 
+UPLOAD_SUFFIXES = (".png", ".jpg", ".jpeg")
+
+
+def uploaded_figure(paper_id):
+    """An <id>.png/.jpg an operator put in figures/auto/ by hand."""
+    for path in AUTO_DIR.glob(f"{paper_id}.*"):
+        if path.suffix.lower() in UPLOAD_SUFFIXES:
+            return path
+    return None
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--report", help="write a Markdown summary for the pull request here")
@@ -261,6 +280,12 @@ def main():
         if args.only and paper_id not in args.only:
             continue
         if item.get("status", "published") != "published" or paper_id in manual:
+            continue
+        upload = uploaded_figure(paper_id)
+        if upload:
+            # The operator's own figure replaces any automatic attempt.
+            if index.get(paper_id, {}).get("status") != "uploaded":
+                index[paper_id] = {"status": "uploaded", "file": upload.name}
             continue
         entry = index.get(paper_id, {})
         if entry.get("status") == "ok" and (AUTO_DIR / f"{paper_id}.webp").exists():
@@ -309,8 +334,13 @@ def main():
             lines.append("\n잘린 영역이 적절한지 Files changed 탭에서 확인해주세요.")
         if missing:
             lines.append("### 대표 그림을 가져오지 못한 논문")
-            lines += [f"- {item['title']}" for item, _ in missing]
-            lines.append("\n공개된 원문이 없거나 접근이 막힌 경우입니다. 그림은 저장소에 직접 추가해야 합니다.")
+            lines += [f"- {item['title']} — 파일 이름: `{item['id']}.png`" for item, _ in missing]
+            lines.append(
+                "\n공개된 원문이 없거나 접근이 막힌 경우입니다. 이 PR을 병합한 뒤 GitHub에서 "
+                "`src/assets/images/publications/figures/auto/` 폴더 → Add file → Upload files로 "
+                "위 파일 이름(.png 또는 .jpg)의 그림을 main에 올리면 배포 후 바로 표시됩니다. "
+                "이 PR 브랜치에는 올리지 마세요(다음 동기화 때 덮어써집니다)."
+            )
         Path(args.report).write_text("\n".join(lines) + "\n" if lines else "", encoding="utf-8")
     return 0
 

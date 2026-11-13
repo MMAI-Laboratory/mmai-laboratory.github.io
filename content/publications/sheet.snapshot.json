@@ -3,7 +3,7 @@
     "schema_version": "1.0",
     "source": "google-sheets",
     "source_url": "https://docs.google.com/spreadsheets/d/1PRm4WZoLHfLwasA2GI3XbuZhO-Qnm8HNAfeRhdZzwCE/edit?gid=96961462#gid=96961462",
-    "synced_at": "2026-11-13T04:08:26.242Z"
+    "synced_at": "2026-11-13T04:31:29.459Z"
   },
   "items": [
     {
@@ -301,7 +301,7 @@
           "Continuous Wavelet Transform"
         ],
         "pdf_link": "https://www.sciencedirect.com/science/article/pii/S0306261926014546/pdfft?isDTMRedir=true&download=false",
-        "arxiv_link": "",
+        "arxiv_link": "https://arxiv.org/abs/2610.34159",
         "github_link": "",
         "project_link": "https://www.sciencedirect.com/science/article/pii/S0306261926014546?dgcid=coauthor",
         "source_code_link": "",
