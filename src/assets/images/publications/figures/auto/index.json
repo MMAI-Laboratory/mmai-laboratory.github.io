@@ -1,1 +1,8 @@
-{}
+{
+  "core-2026-knowledge-distillation-lightweight-peer-branches": {
+    "status": "unavailable",
+    "reason": "arXiv HTML: no arXiv link; paper PDF: https://www.nature.com/articles/s41598-026-79466-2 did not return a PDF; article page: no Nature/Springer page",
+    "links_key": "b153d67eb137",
+    "checked_at": "2026-11-13"
+  }
+}
